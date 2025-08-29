@@ -1,0 +1,117 @@
+{
+    "ADPCM": {
+        "name": "ADPCM",
+        "top_level": "adpcm_main",
+        "directives_path": "data/directives/adpcm.json",
+        "base_solution_dir": "data/base_solutions/ADPCM/solution0",
+        "base_directives_tcl": "data/base_directives/adpcm.tcl",
+        "source_files": [
+            "data/benchmarks/adpcm/adpcm.c"
+        ],
+        "last_base_index": 83
+    },
+    "AES": {
+        "name": "AES",
+        "top_level": "aes_main",
+        "directives_path": "data/directives/aes.json",
+        "base_solution_dir": "data/base_solutions/AES/solution0",
+        "base_directives_tcl": "data/base_directives/aes.tcl",
+        "source_files": [
+            "data/benchmarks/aes/aes_dec.c",
+            "data/benchmarks/aes/aes_enc.c",
+            "data/benchmarks/aes/aes.c",
+            "data/benchmarks/aes/aes_key.c"
+        ],
+        "last_base_index": 65
+    },
+    "BACKPROP": {
+        "name": "BACKPROP",
+        "top_level": "backprop",
+        "directives_path": "data/directives/backprop.json",
+        "base_solution_dir": "data/base_solutions/BACKPROP/solution0",
+        "base_directives_tcl": "data/base_directives/backprop.tcl",
+        "source_files": [
+            "data/benchmarks/backprop/backprop.c"
+        ],
+        "last_base_index": 261
+    },
+    "GEMM": {
+        "name": "GEMM",
+        "top_level": "bbgemm",
+        "directives_path": "data/directives/gemm.json",
+        "base_solution_dir": "data/base_solutions/GEMM/solution0",
+        "base_directives_tcl": "data/base_directives/gemm.tcl",
+        "source_files": [
+            "data/benchmarks/gemm/gemm.c"
+        ],
+        "last_base_index": 70
+    },
+    "GRAMSCHMIDT": {
+        "name": "GRAMSCHMIDT",
+        "top_level": "kernel_gramschmidt",
+        "directives_path": "data/directives/gramschmidt.json",
+        "base_solution_dir": "data/base_solutions/GRAMSCHMIDT/solution0",
+        "base_directives_tcl": "data/base_directives/gramschmidt.tcl",
+        "source_files": [
+            "data/benchmarks/gramschmidt/gramschmidt.c"
+        ],
+        "last_base_index": 102
+    },
+    "GSM": {
+        "name": "GSM",
+        "top_level": "Gsm_LPC_Analysis",
+        "directives_path": "data/directives/gsm.json",
+        "base_solution_dir": "data/base_solutions/GSM/solution0",
+        "base_directives_tcl": "data/base_directives/gsm.tcl",
+        "source_files": [
+            "data/benchmarks/gsm/gsm_add.c",
+            "data/benchmarks/gsm/gsm.c",
+            "data/benchmarks/gsm/gsm_lpc.c"
+        ],
+        "last_base_index": 56
+    },
+    "KNN": {
+        "name": "KNN",
+        "top_level": "md_kernel",
+        "directives_path": "data/directives/knn.json",
+        "base_solution_dir": "data/base_solutions/KNN/solution0",
+        "base_directives_tcl": "data/base_directives/knn.tcl",
+        "source_files": [
+            "data/benchmarks/knn/md.c"
+        ],
+        "last_base_index": 94
+    },
+    "SHA": {
+        "name": "SHA",
+        "top_level": "sha_stream",
+        "directives_path": "data/directives/sha.json",
+        "base_solution_dir": "data/base_solutions/SHA/solution0",
+        "base_directives_tcl": "data/base_directives/sha.tcl",
+        "source_files": [
+            "data/benchmarks/sha/sha.c"
+        ],
+        "last_base_index": 60
+    },
+    "STENCIL3D": {
+        "name": "STENCIL3D",
+        "top_level": "stencil3d",
+        "directives_path": "data/directives/stencil3d.json",
+        "base_solution_dir": "data/base_solutions/STENCIL3D/solution0",
+        "base_directives_tcl": "data/base_directives/stencil3d.tcl",
+        "source_files": [
+            "data/benchmarks/stencil3d/stencil.c"
+        ],
+        "last_base_index": 64
+    },
+    "TRANS_FFT": {
+        "name": "TRANS_FFT",
+        "top_level": "fft1D_512",
+        "directives_path": "data/directives/transposed_fft.json",
+        "base_solution_dir": "data/base_solutions/TRANS_FFT/solution0",
+        "base_directives_tcl": "data/base_directives/transposed_fft.tcl",
+        "source_files": [
+            "data/benchmarks/transposed_fft/transposed_fft.c"
+        ],
+        "last_base_index": 130
+    }
+}
