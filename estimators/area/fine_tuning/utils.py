@@ -17,125 +17,57 @@ from estimators.area.dataset import HLSDataset, StatsDict
 
 
 def get_layerwise_decay_params(model, initial_lr, weight_decay, decay_rate=0.9):
-    """Creates parameter groups with a decaying learning rate for each GNN layer."""
+    """Creates parameter groups with a decaying learning rate for each layer."""
+
+    def add_param_groups(named_params, lr, wd):
+        decay_params = [p for n, p in named_params if n not in no_decay_param_names]
+        no_decay_params = [p for n, p in named_params if n in no_decay_param_names]
+        if decay_params:
+            params.append({'params': decay_params, 'lr': lr, 'weight_decay': wd})
+        if no_decay_params:
+            params.append({'params': no_decay_params, 'lr': lr, 'weight_decay': 0.0})
+
     params = []
+    assigned_param_names = set()
     no_decay_param_names = get_no_decay_param_names(model)
-
-    # Add the head MLPs with the highest learning rate
-    head_prefixes = ['mlps.']
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in head_prefixes)
-            and n not in no_decay_param_names
-        ],
-        'lr': initial_lr,
-        'weight_decay': weight_decay
-    })
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in head_prefixes)
-            and n in no_decay_param_names
-        ],
-        'lr': initial_lr,
-        'weight_decay': 0.0
-    })
-
-    # Add each GNN layer with a successively larger LR
     num_gnn_layers = model.gnn.num_layers
+
+    group_definitions = [
+        # Head MLPs with the highest LR
+        {'lr': initial_lr, 'prefixes': ['mlps.']},
+        # JK, readout, and attention layers with intermediate LRs
+        {'lr': initial_lr * decay_rate, 'prefixes': ['graph_att.', 'node_att.', 'gnn_out_ln.', 'graph_attr_mlp.']},
+        {'lr': initial_lr * (decay_rate ** 1.5), 'prefixes': ['gnn.jk.', 'gnn.out_lin']},
+    ]
+    
+    # Add GNN layers with decaying LR
     for i in range(num_gnn_layers):
         layer_lr = initial_lr * (decay_rate ** (num_gnn_layers - i + 1))
-        layer_prefixes = [f'gnn.convs.{i}.', f'gnn.norms.{i}.']
-        params.append({
-            'params': [
-                p for n, p in model.named_parameters() 
-                if any(n.startswith(prefix) for prefix in layer_prefixes)
-                and n not in no_decay_param_names
-            ],
+        group_definitions.append({
             'lr': layer_lr,
-            'weight_decay': weight_decay
-        })
-        params.append({
-            'params': [
-                p for n, p in model.named_parameters() 
-                if any(n.startswith(prefix) for prefix in layer_prefixes)
-                and n in no_decay_param_names
-            ],
-            'lr': layer_lr,
-            'weight_decay': 0.0
+            'prefixes': [f'gnn.convs.{i}.', f'gnn.norms.{i}.']
         })
 
-    # For JK, node_lin and pool layers, use a LR that is slightly lower than the head MLPs
-    jk_readout_prefixes = ['gnn.jk.', 'gnn.out_lin']
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in jk_readout_prefixes)
-            and n not in no_decay_param_names
-        ],
-        'lr': initial_lr * (decay_rate ** 1.5),
-        'weight_decay': weight_decay
-    })
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in jk_readout_prefixes)
-            and n in no_decay_param_names
-        ],
-        'lr': initial_lr * (decay_rate ** 1.5),
-        'weight_decay': 0.0
-    })
+    # Assign parameters to their respective groups
+    all_named_params = list(model.named_parameters())
+    for group_def in group_definitions:
+        params_to_assign = [
+            (n, p) for n, p in all_named_params
+            if n not in assigned_param_names and any(n.startswith(pfx) for pfx in group_def['prefixes'])
+        ]
+        if params_to_assign:
+            add_param_groups(params_to_assign, group_def['lr'], weight_decay)
+            assigned_param_names.update(n for n, p in params_to_assign)
 
-    glob_att_prefixes = ['graph_att.', 'node_att.', 'gnn_out_ln.', 'graph_attr_mlp.']
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in glob_att_prefixes)
-            and n not in no_decay_param_names
-        ],
-        'lr': initial_lr * decay_rate,
-        'weight_decay': weight_decay
-    })
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if any(n.startswith(prefix) for prefix in glob_att_prefixes)
-            and n in no_decay_param_names
-        ],
-        'lr': initial_lr * decay_rate,
-        'weight_decay': 0.0
-    })
+    # Handle all remaining parameters with the lowest LR
+    remaining_params = [(n, p) for n, p in all_named_params if n not in assigned_param_names]
+    lowest_lr = initial_lr * (decay_rate ** (num_gnn_layers + 2))
+    add_param_groups(remaining_params, lowest_lr, weight_decay)
 
-    # Finally, add any remaining parameters with the lowest LR
-    prefixes = head_prefixes + glob_att_prefixes + ['gnn.convs.', 'gnn.norms.']
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if not any(n.startswith(pfx) for pfx in prefixes)
-            and n not in no_decay_param_names
-        ],
-        'lr': initial_lr * (decay_rate ** (num_gnn_layers + 2)),
-        'weight_decay': weight_decay
-    })
-    params.append({
-        'params': [
-            p for n, p in model.named_parameters() 
-            if not any(n.startswith(pfx) for pfx in prefixes)
-            and n in no_decay_param_names
-        ],
-        'lr': initial_lr * (decay_rate ** (num_gnn_layers + 2)),
-        'weight_decay': 0.0
-    })
-
-    # Filter out any empty parameter groups
-    params = [p for p in params if p['params']]
-
-    # Ensure all parameters are included
-    all_params = set(p for group in params for p in group['params'])
-    missing_params = set(model.parameters()) - all_params
-    if missing_params:
-        raise ValueError(f"Some parameters are not included in any group: {missing_params}")
+    # Ensure all parameters have been assigned to a group
+    all_params_in_groups = set(id(p) for group in params for p in group['params'])
+    if len(all_params_in_groups) != len(all_named_params):
+        raise ValueError("Some parameters were missed during grouping.")
 
     return params
 
@@ -146,14 +78,12 @@ def prepare_data_loader(
     scaling_stats: StatsDict,
     target_scaling_stats: StatsDict,
     graph_attr_scaling_stats: StatsDict,
-    batch_size: int = 5,
+    batch_size: int = 4,
     mode: str = "fine_tune",
     preprocess: bool = True,
     processed_dataset_dir: Optional[str] = None
 ) -> DataLoader:
     if preprocess or processed_dataset_dir is None:
-        if not isinstance(benchmark, list):
-            benchmark = [benchmark]
         dataset = HLSDataset(
             root=dataset_dir,
             mode=mode,

@@ -432,7 +432,6 @@ def main(args: Dict[str, Any]):
         train_loader, val_loader, test_loader, epochs, 
         scheduler=scheduler, 
         mean_target=mean_target, std_target=std_target,
-        output_dir=output_dir,
         max_norm=max_norm,
         available_resources=available_resources
     )
@@ -465,7 +464,6 @@ def main(args: Dict[str, Any]):
             except (IndexError, ValueError):
                 print(f"Skipping {mape_path} due to parsing error.")
                 continue
-
             perf_score = 1 / (mape + 1e-6)
             epoch_decay = 0.9 ** model_index
             score = perf_score * epoch_decay

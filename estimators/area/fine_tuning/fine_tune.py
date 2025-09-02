@@ -174,6 +174,7 @@ def main(args: Dict[str, str]):
     # else:
     #     raise ValueError(f"Unsupported loss function: {loss}")
 
+    # L1 loss was found to work best for fine-tuning
     loss_fn = nn.L1Loss()
 
     set_random_seeds(seed)

@@ -128,6 +128,28 @@ class HGTJK(nn.Module):
 
 
 class HLSQoREstimator(nn.Module):
+    r"""Heterogeneous Graph Transformer (HGT) model with Jumping Knowledge and
+    attention-based graph pooling for HLS QoR estimation.
+
+    Args:
+        in_channels (int or Dict[str, int]): Size of each input sample of every
+            node type, or :obj:`-1` to derive the size from the first input(s)
+            to the forward method.
+        hidden_channels (int): Size of the hidden node feature vectors.
+        metadata (Tuple[List[str], List[Tuple[str, str, str]]]): The metadata
+            of the heterogeneous graph, *i.e.* its node and edge types given
+            by a list of strings and a list of string triplets, respectively.
+            See :meth:`torch_geometric.data.HeteroData.metadata` for more
+            information.
+        num_layers (int): Number of HGT layers.
+        graph_attr_dim (int): Dimension of the graph-level attributes.
+        heads (int, optional): Number of attention heads. (default: :obj:`1`)
+        dropout (float, optional): Dropout probability. (default: :obj:`0.0`)
+        jk_mode (str, optional): Jumping knowledge aggregation scheme to use.
+            (default: :obj:`'cat'`)
+        graph_attr_emb_dim (int, optional): Dimension of the graph attribute
+            embedding. (default: :obj:`32`)
+    """
     def __init__(
         self,
         in_channels: Union[int, Dict[NodeType, int]],
@@ -225,6 +247,15 @@ class HLSQoREstimator(nn.Module):
                 layer.reset_parameters()
 
     def forward(self, data: HeteroData) -> Tensor:
+        r"""Performs a forward pass of the model.
+        
+        Args:
+            data (HeteroData): The input heterogeneous data object holding
+                node features, edge indices, batch information, and graph-level
+                attributes.
+        Returns:
+            Tensor: The output predictions of shape :obj:`[num_graphs, NUM_TARGETS]`.
+        """
         x_dict = data.x_dict
         edge_index_dict = data.edge_index_dict
         batch_dict = data.batch_dict

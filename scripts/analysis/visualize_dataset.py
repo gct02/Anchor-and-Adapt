@@ -15,7 +15,7 @@ from estimators.common.analysis_utils import (
 )
 
 
-def generate_metrics_plot(
+def visualize_data(
     metrics: pd.DataFrame,
     benchmark: str,
     x_metric: str,
@@ -160,7 +160,7 @@ def main(args):
         dataset_dir, benchmark, filtered=filtered,
         dct_config_path=directive_config_path
     )
-    generate_metrics_plot(
+    visualize_data(
         metrics, benchmark, x_data, y_data, directives=directives,
         output_dir=output_dir, n_clusters=n_clusters, 
         cluster_method=cluster_method, n_components=principal_components

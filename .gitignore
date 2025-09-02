@@ -19,21 +19,7 @@ llvm/profiler/
 llvm/utils/
 llvm/clang_plugins/
 
-figures/data/
-figures/shap/
-/tests/
-
-estimators/*/models/
-estimators/*/dataset/
-estimators/*/fine_tuning/dataset/
-
 hls_utils/*.tcl
 
 # Scripts for generating datasets for fine-tuning (updates needed)
 estimators/area/fine_tuning/dataset_gen.py
-
-# Instance selector for testing the fine-tuning process
-estimators/area/fine_tuning/select_instances.py
-
-# Ensemble method previously used for testing
-estimators/area/ensemble.py

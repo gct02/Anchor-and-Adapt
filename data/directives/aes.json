@@ -299,15 +299,6 @@
       "label":"MixColumn_AddRoundKey_label1",
       "directive_type":"unroll"
     },
-    "inline aes_main":{
-      "possible_directives":[
-        "",
-        "set_directive_inline \"aes_main\""
-      ],
-      "function":"aes_main",
-      "label":"",
-      "directive_type":"inline"
-    },
     "pipeline KeySchedule_label4":{
       "possible_directives":[
         "set_directive_pipeline -off \"KeySchedule/KeySchedule_label4\"",

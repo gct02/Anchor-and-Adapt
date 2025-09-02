@@ -14,7 +14,7 @@ from estimators.common.metrics import compute_snru
 from estimators.common.losses import mape_loss
 
 
-def compute_baseline_error(
+def compute_hls_error(
     dataset_dir: Union[str, Path],
     metrics: Optional[List[str]] = None,
     benchmarks: Optional[List[str]] = None,
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    error = compute_baseline_error(
+    error = compute_hls_error(
         dataset_dir=args.dataset_dir, 
         metrics=args.metrics, 
         benchmarks=args.benchmarks,

@@ -41,7 +41,6 @@ for bench in BENCHMARKS:
             util_dict[metric].append(float(util[metric]))
 
     sol0_util = None
-    # sol0_dir = os.path.join(bench_dir, 'solution0')
     sol0_dir = os.path.join(base_sols_dir, bench, 'solution0')
     if os.path.exists(sol0_dir):
         sol0_util = extract_area_metrics(sol0_dir)

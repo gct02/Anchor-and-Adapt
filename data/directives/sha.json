@@ -197,15 +197,6 @@
       "variable":"W",
       "directive_type":"array_partition"
     },
-    "inline sha_stream":{
-      "possible_directives":[
-        "",
-        "set_directive_inline \"sha_stream\""
-      ],
-      "function":"sha_stream",
-      "label":"",
-      "directive_type":"inline"
-    },
     "inline local_memset":{
       "possible_directives":[
         "",
