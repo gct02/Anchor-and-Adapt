@@ -2115,40 +2115,41 @@ def update_with_directives(
     # and for inference during the DSE heuristic, this logic should be skipped
     # since it relies on the Vitis log file, which will not be available.
     
-    if not vitis_log_path:
-        kernel_graph.graph_attr = kernel_graph.compute_graph_attrs()
-        return kernel_graph
+    # if not vitis_log_path:
+    #     kernel_graph.graph_attr = kernel_graph.compute_graph_attrs()
+    #     return kernel_graph
     
-    if not os.path.exists(vitis_log_path):
-        print(f"Warning: Vitis log file '{vitis_log_path}' does not exist.")
-        kernel_graph.graph_attr = kernel_graph.compute_graph_attrs()
-        return kernel_graph
+    # if not os.path.exists(vitis_log_path):
+    #     print(f"Warning: Vitis log file '{vitis_log_path}' does not exist.")
+    #     kernel_graph.graph_attr = kernel_graph.compute_graph_attrs()
+    #     return kernel_graph
     
-    auto_dcts = extract_auto_dcts_from_log(vitis_log_path)
-    auto_inline = auto_dcts.get("inline", set())
-    auto_pipeline = auto_dcts.get("pipeline", set())
-    auto_loop_flatten = auto_dcts.get("loop_flatten", set())
+    # auto_dcts = extract_auto_dcts_from_log(vitis_log_path)
+    # auto_inline = auto_dcts.get("inline", set())
+    # auto_pipeline = auto_dcts.get("pipeline", set())
+    # auto_loop_flatten = auto_dcts.get("loop_flatten", set())
 
-    for function_name in auto_inline:
-        node = find_function_node(kernel_graph, function_name)
-        if node is not None:
-            node.feature_dict["inline"] = 1
-            continue
+    # for function_name in auto_inline:
+    #     node = find_function_node(kernel_graph, function_name)
+    #     if node is not None:
+    #         node.feature_dict["inline"] = 1
+    #         continue
 
-    for loop_name in auto_pipeline:
-        for node in kernel_graph.nodes.values():
-            if node.node_type == 'region' and node.name == loop_name:
-                node.feature_dict["pipeline"] = 1
-                if node.is_loop:
-                    _unroll_pipelined_subloops(kernel_graph, node)
-                break
+    # for loop_name in auto_pipeline:
+    #     for node in kernel_graph.nodes.values():
+    #         if node.node_type == 'region' and node.name == loop_name:
+    #             node.feature_dict["pipeline"] = 1
+    #             if node.is_loop:
+    #                 _unroll_pipelined_subloops(kernel_graph, node)
+    #             break
 
-    for loop_name, function_name in auto_loop_flatten:
-        node = find_region_node(kernel_graph, loop_name, function_name)
-        if node is not None:
-            node.feature_dict["loop_flatten"] = 1
+    # for loop_name, function_name in auto_loop_flatten:
+    #     node = find_region_node(kernel_graph, loop_name, function_name)
+    #     if node is not None:
+    #         node.feature_dict["loop_flatten"] = 1
 
     kernel_graph.graph_attr = kernel_graph.compute_graph_attrs()
+
     return kernel_graph
 
 

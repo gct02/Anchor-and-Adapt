@@ -28,7 +28,6 @@ class CheckpointManager:
 
         if milestone_epochs is None:
             milestone_epochs = [75, 150, 225]
-            # milestone_epochs = [25, 50, 100, 150, 200, 250]
         else:
             if (not all(isinstance(epoch, int) for epoch in milestone_epochs) or
                 not all(epoch >= self.burn_in_epochs for epoch in milestone_epochs)):

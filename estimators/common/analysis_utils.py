@@ -29,11 +29,13 @@ def parse_predictions(filepath: str) -> Tuple[List[int], List[float], List[float
     preds = []
 
     with open(filepath, 'r') as f:
-        for line in f:
-            index, target, pred = line.strip().split(',')
-            indices.append(int(index))
-            targets.append(float(target))
-            preds.append(float(pred))
+        lines = f.readlines()[1:]  # Skip header
+
+    for line in lines:
+        index, target, pred = line.strip().split(',')
+        indices.append(int(index))
+        targets.append(float(target))
+        preds.append(float(pred))
 
     return indices, targets, preds
 
