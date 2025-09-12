@@ -16,7 +16,8 @@ our_ft_mapes = []
 harp_mapes = []
 hgp_mapes = []
 
-vitis_hls_mape = 1.3781  # From analyze_hls_area_estimates.py output
+# Computed from our dataset (with analyze_hls_estimates.py)
+vitis_hls_mape = 1.3781 
 
 
 def compute_test_mape(file_path):

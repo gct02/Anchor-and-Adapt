@@ -11,9 +11,10 @@ FINISHED_ARCH_SYN_STR = 'INFO: [HLS 200-111] Finished Architecture Synthesis'
 FINISHED_RTL_GEN_STR = 'INFO: [HLS 200-111] Finished Generating all RTL models'
 GENERATING_RTL_STR = 'INFO: [HLS 200-10] -- Generating RTL'
 
-INFERENCE_TIME = 0.5  # seconds
-EMSEMBLE_INFERENCE_TIME = 0.5 * 4
+INFERENCE_TIME = 0.032  # seconds
+INFERENCE_TIME_HGBO = 0.028
 
+FINE_TUNING_TIME = 5.25
 
 def find_lines_containing(lines: List[str], search_str: str) -> List[str]:
     return [line for line in lines if search_str in line]
@@ -382,6 +383,8 @@ def summarize_timing_info(dataset_dir: Path):
 
 
 if __name__ == "__main__":
+    r"""Plot the graph comparing the speed of our approach 
+    versus the approach presented in HGBO-DSE."""
     import sys
     import matplotlib.pyplot as plt
 
@@ -397,35 +400,31 @@ if __name__ == "__main__":
     non_base_hls_mean = stats["non_base_hls"]["mean"]
     non_base_impl_mean = stats["non_base_impl"]["mean"]
 
-    # Plot the graph comparing the speed of our approach 
-    # (implementing an anchor instance, then taking a small amount of time for each inference)
-    # versus the approach presented in HGBO-DSE (running HLS from scratch each time).
-
     x = np.arange(1, 1001)
 
     t_calibration = 5 * INFERENCE_TIME
-    our_approach = base_impl_mean + t_calibration + x * INFERENCE_TIME
+    upfront_cost_calibration = base_impl_mean + t_calibration
+    our_approach = upfront_cost_calibration + x * INFERENCE_TIME
 
     t_anchor = base_impl_mean
     t_constrained_points = 5 * base_impl_mean
     t_complex_points = 4 * non_base_impl_mean
-    t_fine_tuning = 15 # Placeholder, should be replaced with actual fine-tuning time when available
-    upfront_cost_ft = t_anchor + t_constrained_points + t_complex_points + t_fine_tuning
+    upfront_cost_ft = t_anchor + t_constrained_points + t_complex_points + FINE_TUNING_TIME
     our_approach_fine_tuning = upfront_cost_ft + x * INFERENCE_TIME
 
-    hgbo_dse_approach = x * (non_base_hls_mean + INFERENCE_TIME)
+    hgbo_dse_approach = x * (non_base_hls_mean + INFERENCE_TIME_HGBO)
 
     # Find where our zero-cost approach becomes faster than the baseline
     if non_base_hls_mean > 0:
-        x_break_even = base_impl_mean / non_base_hls_mean
-        y_break_even = x_break_even * (non_base_hls_mean + INFERENCE_TIME)
+        x_break_even = upfront_cost_calibration / non_base_hls_mean
+        y_break_even = x_break_even * (non_base_hls_mean + INFERENCE_TIME_HGBO)
     else:
         x_break_even = -1
 
     # Find where our fine-tuning becomes faster than the baseline
     if non_base_hls_mean > 0:
         x_ft_break_even = upfront_cost_ft / non_base_hls_mean
-        y_ft_break_even = x_ft_break_even * (non_base_hls_mean + INFERENCE_TIME)
+        y_ft_break_even = x_ft_break_even * (non_base_hls_mean + INFERENCE_TIME_HGBO)
     else:
         x_ft_break_even = -1
 

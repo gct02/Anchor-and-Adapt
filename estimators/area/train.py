@@ -48,15 +48,12 @@ def average_model_weights(
     
     avg_state_dict = None
 
-    for i, model_path in enumerate(model_paths.items()):
+    for i, model_path in enumerate(model_paths):
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Model file {model_path} does not exist.")
         
-        if not i in model_scores:
-            raise ValueError(f"Model index {i} not found in model_scores.")
-        
-        score = model_scores[i]
         state_dict = torch.load(model_path, map_location=DEVICE)
+        score = model_scores[i]
         
         if avg_state_dict is None:
             avg_state_dict = {key: torch.zeros_like(value) for key, value in state_dict.items()}
@@ -65,76 +62,6 @@ def average_model_weights(
             avg_state_dict[key] += state_dict[key] * score
 
     return avg_state_dict
-
-
-def evaluate_ensemble(
-    model: nn.Module,
-    model_paths: List[str],
-    model_scores: List[float],
-    loader: DataLoader,
-    mean_target: Tensor,
-    std_target: Tensor,
-    available_resources: Optional[Tensor] = None,
-    output_dir: str = None
-) -> Tuple[List[float], List[float], float]:
-    targets = []
-    for data in loader:
-        data = data.to(DEVICE)
-        targets.append(data.original_y)
-
-    targets = compute_snru(torch.cat(targets, dim=0), available_resources)
-    target_list = targets.tolist()
-
-    all_preds = []
-
-    for i, model_path in enumerate(model_paths):
-        if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Model file {model_path} does not exist.")
-
-        model.load_state_dict(torch.load(model_path, map_location=DEVICE))
-        model.eval()
-
-        preds = []
-        with torch.no_grad():
-            for data in loader:
-                data = data.to(DEVICE)
-                pred = model(data)
-                pred = pred * std_target + mean_target
-                pred *= model_scores[i]
-                preds.append(pred)
-
-        all_preds.append(torch.cat(preds, dim=0))
-
-    # Aggregate predictions from all models
-    preds = torch.sum(torch.stack(all_preds), dim=0)
-    preds = torch.expm1(preds)
-    preds = compute_snru(preds, available_resources)
-    pred_list = preds.tolist()
-
-    mape = mape_loss(preds, targets).item()
-    print(f"\nMAPE after ensembling: {mape:.4f}")
-
-    if output_dir:
-        indices = [data.solution_index for data in loader.dataset]
-        benchmark = loader.dataset[0].benchmark
-        plot_prediction_bars(
-            target_list, pred_list, indices, benchmark, 'area',
-            output_path=os.path.join(output_dir, 'predictions.png'),
-            mape=mape
-        )
-        plot_prediction_scatter(
-            targets=target_list, 
-            preds=pred_list, 
-            output_path=os.path.join(output_dir, 'predictions_scatter.png'), 
-            mape=mape
-        )
-        output_csv = os.path.join(output_dir, 'predictions.csv')
-        with open(output_csv, 'w') as f:
-            f.write("index,target,prediction\n")
-            for idx, target, pred in zip(indices, targets, preds):
-                f.write(f"{idx},{target},{pred}\n")
-
-    return pred_list, target_list, mape
 
 
 def evaluate_ensemble_swa(
@@ -282,6 +209,7 @@ def train_model(
                 evaluate(
                     model=model,
                     loader=test_loader,
+                    epoch=epoch,
                     mean_target=mean_target,
                     std_target=std_target,
                     available_resources=available_resources,
@@ -493,12 +421,6 @@ def main(args: Dict[str, Any]):
         available_resources=available_resources,
         output_dir=output_dir
     )
-    # evaluate_ensemble(
-    #     model, model_paths, model_scores, 
-    #     test_loader, mean_target, std_target,
-    #     available_resources=available_resources,
-    #     output_dir=output_dir
-    # )
     
 
 def prepare_data_loaders(

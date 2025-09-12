@@ -16,7 +16,7 @@ from estimators.common.parsers import (
     extract_per_module_area,
     extract_area_metrics,
     parse_tcl_directives,
-    extract_auto_dcts_from_log
+    # extract_auto_dcts_from_log
 )
 
 DIRECTIVES = [
