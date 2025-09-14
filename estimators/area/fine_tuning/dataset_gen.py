@@ -204,7 +204,7 @@ class DatasetGenerator:
                     shutil.copy(self._directives_tcl_path, solution_dir / 'directives.tcl')
                     return True
 
-                if (time.time() - start_time) > self.design_flow_timeout:
+                if (time.time() - start_time) > self.run_timeout:
                     print(f'\n** Run exceeded time limit ({solution_dir.name}) **\n')
                     for child in parent_proc.children(recursive=True):
                         child.kill()
@@ -419,6 +419,8 @@ class DatasetGenerator:
     
     def _select_base_directives(self):
         if self.is_large_kernel:
+            # Using more constrained solutions and no complex solution 
+            # improved performance and reduced runtime for large kernels
             num_unrolls = NUM_UNROLLS_LARGE
             num_partitions = NUM_PARTITIONS_LARGE
             num_pipelines = NUM_PIPELINES_LARGE
@@ -786,8 +788,8 @@ if __name__ == '__main__':
 
     dataset_dir = '../dataset-fine-tuning'
     benchmark = 'ADPCM'
-    kernel_graph_path = 'estimators/area/dataset/full/ADPCM/base_graph.pkl'
-    metrics_path = 'estimators/area/dataset/full/ADPCM/base_metrics.json'
+    kernel_graph_path = 'estimators/area/fine_tuning/dataset/full/ADPCM/base_graph.pkl'
+    metrics_path = 'estimators/area/fine_tuning/dataset/full/ADPCM/base_metrics.json'
 
     with open(metrics_path, 'r') as f:
         metrics = json.load(f)
