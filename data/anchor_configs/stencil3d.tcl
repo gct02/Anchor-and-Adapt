@@ -1,0 +1,15 @@
+set_directive_pipeline -off stencil3d/height_bound_col
+set_directive_pipeline -off stencil3d/height_bound_row
+set_directive_pipeline -off stencil3d/col_bound_height
+set_directive_pipeline -off stencil3d/col_bound_row
+set_directive_pipeline -off stencil3d/row_bound_height
+set_directive_pipeline -off stencil3d/row_bound_col
+set_directive_pipeline -off stencil3d/loop_height
+set_directive_pipeline -off stencil3d/loop_col
+set_directive_pipeline -off stencil3d/loop_row
+set_directive_pipeline -off stencil3d
+set_directive_loop_flatten -off stencil3d/height_bound_row
+set_directive_loop_flatten -off stencil3d/col_bound_row
+set_directive_loop_flatten -off stencil3d/row_bound_col
+set_directive_loop_flatten -off stencil3d/loop_col
+set_directive_loop_flatten -off stencil3d/loop_row

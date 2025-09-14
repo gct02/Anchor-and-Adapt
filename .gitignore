@@ -20,6 +20,5 @@ llvm/utils/
 llvm/clang_plugins/
 
 hls_utils/*.tcl
-
-# Scripts for generating datasets for fine-tuning (updates needed)
-estimators/area/fine_tuning/dataset_gen.py
+hls.app
+.temp/
