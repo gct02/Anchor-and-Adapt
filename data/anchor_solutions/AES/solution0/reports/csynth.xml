@@ -1,0 +1,1407 @@
+<profile>
+    <ReportVersion>
+        <Version>2023.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtexuplusHBM</ProductFamily>
+        <Part>xcu50-fsvh2104-2-e</Part>
+        <TopModelName>aes_main</TopModelName>
+        <TargetClockPeriod>8.00</TargetClockPeriod>
+        <ClockUncertainty>2.16</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>4.978</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>2634</Best-caseLatency>
+            <Average-caseLatency>2634</Average-caseLatency>
+            <Worst-caseLatency>2634</Worst-caseLatency>
+            <Best-caseRealTimeLatency>21.072 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>21.072 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>21.072 us</Worst-caseRealTimeLatency>
+            <Interval-min>2635</Interval-min>
+            <Interval-max>2635</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfViolations>
+            <IssueType>-</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>/home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_configs/aes.tcl:16</SourceLocation>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>1</BRAM_18K>
+            <FF>1666</FF>
+            <LUT>8442</LUT>
+            <URAM>0</URAM>
+            <DSP>0</DSP>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>2688</BRAM_18K>
+            <DSP>5952</DSP>
+            <FF>1743360</FF>
+            <LUT>871680</LUT>
+            <URAM>640</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_return</name>
+            <Object>aes_main</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_address0</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>5</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_ce0</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_we0</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_d0</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_q0</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_address1</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>5</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_ce1</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_we1</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_d1</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>statemt_q1</name>
+            <Object>statemt</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_address0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>5</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_ce0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_q0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="4">
+            <ModuleName>aes_main</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_encrypt_fu_38</InstName>
+                    <ModuleName>encrypt</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>38</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_KeySchedule_fu_52</InstName>
+                            <ModuleName>KeySchedule</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>52</ID>
+                            <BindInstances>add_ln554_fu_315_p2 add_ln557_fu_344_p2 sub_ln559_fu_392_p2 add_ln559_fu_354_p2 add_ln571_fu_429_p2 add_ln571_2_fu_443_p2 add_ln572_fu_454_p2 add_ln573_fu_469_p2 sub_ln571_fu_487_p2 sub_ln571_1_fu_503_p2 sub_ln571_2_fu_551_p2 sub_ln571_3_fu_569_p2 add_ln571_3_fu_587_p2 add_ln571_1_fu_607_p2 sub_ln572_fu_618_p2 sub_ln572_1_fu_634_p2 sub_ln572_2_fu_682_p2 sub_ln572_3_fu_700_p2 add_ln572_1_fu_718_p2 sub_ln573_fu_760_p2 sub_ln573_1_fu_776_p2 sub_ln573_2_fu_824_p2 sub_ln573_3_fu_842_p2 add_ln573_1_fu_860_p2 sub_ln574_fu_871_p2 sub_ln574_1_fu_887_p2 sub_ln574_2_fu_935_p2 sub_ln574_3_fu_953_p2 add_ln574_fu_971_p2 empty_70_fu_1022_p2 add_ln592_fu_1041_p2 sub_ln594_fu_1067_p2 add_ln594_fu_1073_p2 add_ln594_1_fu_1083_p2 add_ln565_fu_1098_p2 Sbox_U Rcon0_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_AddRoundKey_fu_64</InstName>
+                            <ModuleName>AddRoundKey</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>64</ID>
+                            <BindInstances>add_ln469_fu_192_p2 add_ln471_fu_202_p2 add_ln472_fu_216_p2 add_ln473_fu_263_p2 add_ln474_fu_274_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_ByteSub_ShiftRow_fu_75</InstName>
+                            <ModuleName>ByteSub_ShiftRow</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>75</ID>
+                            <BindInstances>Sbox_1_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_MixColumn_AddRoundKey_fu_83</InstName>
+                            <ModuleName>MixColumn_AddRoundKey</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>83</ID>
+                            <BindInstances>ret_U add_ln324_fu_319_p2 add_ln333_fu_357_p2 add_ln342_fu_371_p2 add_ln351_fu_429_p2 add_ln360_fu_440_p2 add_ln364_fu_844_p2</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>i_3_fu_106_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_decrypt_fu_54</InstName>
+                    <ModuleName>decrypt</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>54</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_KeySchedule_fu_54</InstName>
+                            <ModuleName>KeySchedule</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>54</ID>
+                            <BindInstances>add_ln554_fu_315_p2 add_ln557_fu_344_p2 sub_ln559_fu_392_p2 add_ln559_fu_354_p2 add_ln571_fu_429_p2 add_ln571_2_fu_443_p2 add_ln572_fu_454_p2 add_ln573_fu_469_p2 sub_ln571_fu_487_p2 sub_ln571_1_fu_503_p2 sub_ln571_2_fu_551_p2 sub_ln571_3_fu_569_p2 add_ln571_3_fu_587_p2 add_ln571_1_fu_607_p2 sub_ln572_fu_618_p2 sub_ln572_1_fu_634_p2 sub_ln572_2_fu_682_p2 sub_ln572_3_fu_700_p2 add_ln572_1_fu_718_p2 sub_ln573_fu_760_p2 sub_ln573_1_fu_776_p2 sub_ln573_2_fu_824_p2 sub_ln573_3_fu_842_p2 add_ln573_1_fu_860_p2 sub_ln574_fu_871_p2 sub_ln574_1_fu_887_p2 sub_ln574_2_fu_935_p2 sub_ln574_3_fu_953_p2 add_ln574_fu_971_p2 empty_70_fu_1022_p2 add_ln592_fu_1041_p2 sub_ln594_fu_1067_p2 add_ln594_fu_1073_p2 add_ln594_1_fu_1083_p2 add_ln565_fu_1098_p2 Sbox_U Rcon0_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_AddRoundKey_fu_66</InstName>
+                            <ModuleName>AddRoundKey</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>66</ID>
+                            <BindInstances>add_ln469_fu_192_p2 add_ln471_fu_202_p2 add_ln472_fu_216_p2 add_ln473_fu_263_p2 add_ln474_fu_274_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_InversShiftRow_ByteSub_fu_77</InstName>
+                            <ModuleName>InversShiftRow_ByteSub</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>77</ID>
+                            <BindInstances>invSbox_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_AddRoundKey_InversMixColumn_fu_85</InstName>
+                            <ModuleName>AddRoundKey_InversMixColumn</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>85</ID>
+                            <BindInstances>ret_U add_ln380_fu_385_p2 add_ln382_fu_395_p2 add_ln383_fu_409_p2 add_ln384_fu_461_p2 add_ln385_fu_472_p2 add_ln389_fu_512_p2 add_ln404_fu_541_p2 add_ln394_fu_551_p2 add_ln424_fu_888_p2 add_ln436_fu_1219_p2</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>i_fu_109_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>word_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>KeySchedule</Name>
+            <Loops>
+                <KeySchedule_label4>
+                    <KeySchedule_label5/>
+                </KeySchedule_label4>
+                <KeySchedule_label6>
+                    <KeySchedule_label9/>
+                </KeySchedule_label6>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>3.942</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>562</Best-caseLatency>
+                    <Average-caseLatency>562</Average-caseLatency>
+                    <Worst-caseLatency>562</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>4.496 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>4.496 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>4.496 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>562</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <KeySchedule_label4>
+                        <Name>KeySchedule_label4</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>40</Latency>
+                        <AbsoluteTimeLatency>0.320 us</AbsoluteTimeLatency>
+                        <IterationLatency>10</IterationLatency>
+                        <PipelineDepth>10</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                        <KeySchedule_label5>
+                            <Name>KeySchedule_label5</Name>
+                            <Slack>5.84</Slack>
+                            <TripCount>4</TripCount>
+                            <Latency>8</Latency>
+                            <AbsoluteTimeLatency>64.000 ns</AbsoluteTimeLatency>
+                            <IterationLatency>2</IterationLatency>
+                            <PipelineDepth>2</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                        </KeySchedule_label5>
+                    </KeySchedule_label4>
+                    <KeySchedule_label6>
+                        <Name>KeySchedule_label6</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>40</TripCount>
+                        <Latency>520</Latency>
+                        <AbsoluteTimeLatency>4.160 us</AbsoluteTimeLatency>
+                        <IterationLatency>13</IterationLatency>
+                        <PipelineDepth>13</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                        <KeySchedule_label9>
+                            <Name>KeySchedule_label9</Name>
+                            <Slack>5.84</Slack>
+                            <TripCount>4</TripCount>
+                            <Latency>8</Latency>
+                            <AbsoluteTimeLatency>64.000 ns</AbsoluteTimeLatency>
+                            <IterationLatency>2</IterationLatency>
+                            <PipelineDepth>2</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                        </KeySchedule_label9>
+                    </KeySchedule_label6>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:501</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <KeySchedule_label4>
+                            <Name>KeySchedule_label4</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:554</SourceLocation>
+                            <KeySchedule_label5>
+                                <Name>KeySchedule_label5</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>data/benchmarks/aes/aes_key.c:557</SourceLocation>
+                            </KeySchedule_label5>
+                        </KeySchedule_label4>
+                        <KeySchedule_label6>
+                            <Name>KeySchedule_label6</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:565</SourceLocation>
+                            <KeySchedule_label9>
+                                <Name>KeySchedule_label9</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>data/benchmarks/aes/aes_key.c:592</SourceLocation>
+                            </KeySchedule_label9>
+                        </KeySchedule_label6>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>313</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>994</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln554_fu_315_p2" SOURCE="data/benchmarks/aes/aes_key.c:554" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln554"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln557_fu_344_p2" SOURCE="data/benchmarks/aes/aes_key.c:557" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln557"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln559_fu_392_p2" SOURCE="data/benchmarks/aes/aes_key.c:559" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln559"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln559_fu_354_p2" SOURCE="data/benchmarks/aes/aes_key.c:559" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln559"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln571_fu_429_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln571"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln571_2_fu_443_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln571_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln572_fu_454_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln572"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln573_fu_469_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln573"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln571_fu_487_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln571"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln571_1_fu_503_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln571_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln571_2_fu_551_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln571_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln571_3_fu_569_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln571_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln571_3_fu_587_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln571_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln571_1_fu_607_p2" SOURCE="data/benchmarks/aes/aes_key.c:571" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln571_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln572_fu_618_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln572"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln572_1_fu_634_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln572_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln572_2_fu_682_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln572_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln572_3_fu_700_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln572_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln572_1_fu_718_p2" SOURCE="data/benchmarks/aes/aes_key.c:572" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln572_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln573_fu_760_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln573"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln573_1_fu_776_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln573_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln573_2_fu_824_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln573_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln573_3_fu_842_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln573_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln573_1_fu_860_p2" SOURCE="data/benchmarks/aes/aes_key.c:573" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln573_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln574_fu_871_p2" SOURCE="data/benchmarks/aes/aes_key.c:574" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln574"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln574_1_fu_887_p2" SOURCE="data/benchmarks/aes/aes_key.c:574" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln574_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln574_2_fu_935_p2" SOURCE="data/benchmarks/aes/aes_key.c:574" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln574_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln574_3_fu_953_p2" SOURCE="data/benchmarks/aes/aes_key.c:574" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln574_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln574_fu_971_p2" SOURCE="data/benchmarks/aes/aes_key.c:574" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln574"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="empty_70_fu_1022_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_70"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label9" OPTYPE="add" PRAGMA="" RTLNAME="add_ln592_fu_1041_p2" SOURCE="data/benchmarks/aes/aes_key.c:592" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln592"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label9" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln594_fu_1067_p2" SOURCE="data/benchmarks/aes/aes_key.c:594" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln594"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label9" OPTYPE="add" PRAGMA="" RTLNAME="add_ln594_fu_1073_p2" SOURCE="data/benchmarks/aes/aes_key.c:594" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln594"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label9" OPTYPE="add" PRAGMA="" RTLNAME="add_ln594_1_fu_1083_p2" SOURCE="data/benchmarks/aes/aes_key.c:594" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln594_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="KeySchedule_label6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln565_fu_1098_p2" SOURCE="data/benchmarks/aes/aes_key.c:565" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln565"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_2p" PRAGMA="" RTLNAME="Sbox_U" SOURCE="" STORAGESIZE="8 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_2p" URAM="0" VARIABLE="Sbox"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="Rcon0_U" SOURCE="" STORAGESIZE="8 30 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="Rcon0"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AddRoundKey</Name>
+            <Loops>
+                <AddRoundKey_label0/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>2.607</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>17</Best-caseLatency>
+                    <Average-caseLatency>17</Average-caseLatency>
+                    <Worst-caseLatency>17</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.136 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.136 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.136 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>17</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <AddRoundKey_label0>
+                        <Name>AddRoundKey_label0</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.128 us</AbsoluteTimeLatency>
+                        <IterationLatency>4</IterationLatency>
+                        <PipelineDepth>4</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                    </AddRoundKey_label0>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:448</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <AddRoundKey_label0>
+                            <Name>AddRoundKey_label0</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:471</SourceLocation>
+                        </AddRoundKey_label0>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>92</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>278</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln469_fu_192_p2" SOURCE="data/benchmarks/aes/aes_key.c:469" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln469"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln471_fu_202_p2" SOURCE="data/benchmarks/aes/aes_key.c:471" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln471"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln472_fu_216_p2" SOURCE="data/benchmarks/aes/aes_key.c:472" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln472"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln473_fu_263_p2" SOURCE="data/benchmarks/aes/aes_key.c:473" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln473"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln474_fu_274_p2" SOURCE="data/benchmarks/aes/aes_key.c:474" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln474"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>ByteSub_ShiftRow</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>1.325</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>15</Best-caseLatency>
+                    <Average-caseLatency>15</Average-caseLatency>
+                    <Worst-caseLatency>15</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.120 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.120 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.120 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>15</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:102</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>152</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>472</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_2p" PRAGMA="" RTLNAME="Sbox_1_U" SOURCE="" STORAGESIZE="8 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_2p" URAM="0" VARIABLE="Sbox_1"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>MixColumn_AddRoundKey</Name>
+            <Loops>
+                <MixColumn_AddRoundKey_label0/>
+                <MixColumn_AddRoundKey_label1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>2.925</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>30</Best-caseLatency>
+                    <Average-caseLatency>30</Average-caseLatency>
+                    <Worst-caseLatency>30</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.240 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.240 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.240 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>30</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <MixColumn_AddRoundKey_label0>
+                        <Name>MixColumn_AddRoundKey_label0</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.128 us</AbsoluteTimeLatency>
+                        <IterationLatency>4</IterationLatency>
+                        <PipelineDepth>4</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                    </MixColumn_AddRoundKey_label0>
+                    <MixColumn_AddRoundKey_label1>
+                        <Name>MixColumn_AddRoundKey_label1</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>12</Latency>
+                        <AbsoluteTimeLatency>96.000 ns</AbsoluteTimeLatency>
+                        <IterationLatency>3</IterationLatency>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                    </MixColumn_AddRoundKey_label1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:320</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <MixColumn_AddRoundKey_label0>
+                            <Name>MixColumn_AddRoundKey_label0</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:326</SourceLocation>
+                        </MixColumn_AddRoundKey_label0>
+                        <MixColumn_AddRoundKey_label1>
+                            <Name>MixColumn_AddRoundKey_label1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:366</SourceLocation>
+                        </MixColumn_AddRoundKey_label1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>270</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1852</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="ret_U" SOURCE="data/benchmarks/aes/aes_key.c:320" STORAGESIZE="32 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p array" URAM="0" VARIABLE="ret"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln324_fu_319_p2" SOURCE="data/benchmarks/aes/aes_key.c:324" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln324"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln333_fu_357_p2" SOURCE="data/benchmarks/aes/aes_key.c:333" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln333"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln342_fu_371_p2" SOURCE="data/benchmarks/aes/aes_key.c:342" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln342"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln351_fu_429_p2" SOURCE="data/benchmarks/aes/aes_key.c:351" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln351"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln360_fu_440_p2" SOURCE="data/benchmarks/aes/aes_key.c:360" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln360"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MixColumn_AddRoundKey_label1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln364_fu_844_p2" SOURCE="data/benchmarks/aes/aes_key.c:364" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln364"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>encrypt</Name>
+            <Loops>
+                <encrypt_label1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>3.942</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1059</Best-caseLatency>
+                    <Average-caseLatency>1059</Average-caseLatency>
+                    <Worst-caseLatency>1059</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>8.472 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>8.472 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>8.472 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1059</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <encrypt_label1>
+                        <Name>encrypt_label1</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>9</TripCount>
+                        <Latency>441</Latency>
+                        <AbsoluteTimeLatency>3.528 us</AbsoluteTimeLatency>
+                        <IterationLatency>49</IterationLatency>
+                        <PipelineDepth>49</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_ByteSub_ShiftRow_fu_75</Instance>
+                            <Instance>grp_MixColumn_AddRoundKey_fu_83</Instance>
+                        </InstanceList>
+                    </encrypt_label1>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_enc.c:67</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <encrypt_label1>
+                            <Name>encrypt_label1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_enc.c:110</SourceLocation>
+                        </encrypt_label1>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>850</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>3957</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="encrypt_label1" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_106_p2" SOURCE="data/benchmarks/aes/aes_enc.c:110" STORAGESUBTYPE="" URAM="0" VARIABLE="i_3"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>InversShiftRow_ByteSub</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>1.325</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>15</Best-caseLatency>
+                    <Average-caseLatency>15</Average-caseLatency>
+                    <Worst-caseLatency>15</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.120 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.120 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.120 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>15</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:222</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>152</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>472</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_2p" PRAGMA="" RTLNAME="invSbox_U" SOURCE="" STORAGESIZE="8 256 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_2p" URAM="0" VARIABLE="invSbox"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AddRoundKey_InversMixColumn</Name>
+            <Loops>
+                <AddRoundKey_InversMixColumn_label2/>
+                <AddRoundKey_InversMixColumn_label0>
+                    <AddRoundKey_InversMixColumn_label1/>
+                </AddRoundKey_InversMixColumn_label0>
+                <AddRoundKey_InversMixColumn_label3/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>4.978</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>87</Best-caseLatency>
+                    <Average-caseLatency>87</Average-caseLatency>
+                    <Worst-caseLatency>87</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.696 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.696 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.696 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>87</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <AddRoundKey_InversMixColumn_label2>
+                        <Name>AddRoundKey_InversMixColumn_label2</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.128 us</AbsoluteTimeLatency>
+                        <IterationLatency>4</IterationLatency>
+                        <PipelineDepth>4</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                    </AddRoundKey_InversMixColumn_label2>
+                    <AddRoundKey_InversMixColumn_label0>
+                        <Name>AddRoundKey_InversMixColumn_label0</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>56</Latency>
+                        <AbsoluteTimeLatency>0.448 us</AbsoluteTimeLatency>
+                        <IterationLatency>14</IterationLatency>
+                        <PipelineDepth>14</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                        <AddRoundKey_InversMixColumn_label1>
+                            <Name>AddRoundKey_InversMixColumn_label1</Name>
+                            <Slack>5.84</Slack>
+                            <TripCount>4</TripCount>
+                            <Latency>12</Latency>
+                            <AbsoluteTimeLatency>96.000 ns</AbsoluteTimeLatency>
+                            <IterationLatency>3</IterationLatency>
+                            <PipelineDepth>3</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                        </AddRoundKey_InversMixColumn_label1>
+                    </AddRoundKey_InversMixColumn_label0>
+                    <AddRoundKey_InversMixColumn_label3>
+                        <Name>AddRoundKey_InversMixColumn_label3</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>4</TripCount>
+                        <Latency>12</Latency>
+                        <AbsoluteTimeLatency>96.000 ns</AbsoluteTimeLatency>
+                        <IterationLatency>3</IterationLatency>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                    </AddRoundKey_InversMixColumn_label3>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_key.c:376</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <AddRoundKey_InversMixColumn_label2>
+                            <Name>AddRoundKey_InversMixColumn_label2</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:382</SourceLocation>
+                        </AddRoundKey_InversMixColumn_label2>
+                        <AddRoundKey_InversMixColumn_label0>
+                            <Name>AddRoundKey_InversMixColumn_label0</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:389</SourceLocation>
+                            <AddRoundKey_InversMixColumn_label1>
+                                <Name>AddRoundKey_InversMixColumn_label1</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>data/benchmarks/aes/aes_key.c:404</SourceLocation>
+                            </AddRoundKey_InversMixColumn_label1>
+                        </AddRoundKey_InversMixColumn_label0>
+                        <AddRoundKey_InversMixColumn_label3>
+                            <Name>AddRoundKey_InversMixColumn_label3</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_key.c:438</SourceLocation>
+                        </AddRoundKey_InversMixColumn_label3>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>230</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>2130</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="ret_U" SOURCE="data/benchmarks/aes/aes_key.c:376" STORAGESIZE="32 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="ret"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln380_fu_385_p2" SOURCE="data/benchmarks/aes/aes_key.c:380" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln380"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln382_fu_395_p2" SOURCE="data/benchmarks/aes/aes_key.c:382" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln382"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln383_fu_409_p2" SOURCE="data/benchmarks/aes/aes_key.c:383" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln383"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln384_fu_461_p2" SOURCE="data/benchmarks/aes/aes_key.c:384" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln384"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln385_fu_472_p2" SOURCE="data/benchmarks/aes/aes_key.c:385" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln385"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln389_fu_512_p2" SOURCE="data/benchmarks/aes/aes_key.c:389" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln389"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln404_fu_541_p2" SOURCE="data/benchmarks/aes/aes_key.c:404" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln404"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln394_fu_551_p2" SOURCE="data/benchmarks/aes/aes_key.c:394" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln394"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln424_fu_888_p2" SOURCE="data/benchmarks/aes/aes_key.c:424" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln424"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="AddRoundKey_InversMixColumn_label3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln436_fu_1219_p2" SOURCE="data/benchmarks/aes/aes_key.c:436" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln436"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>decrypt</Name>
+            <Loops>
+                <decrypt_label4/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>4.978</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1572</Best-caseLatency>
+                    <Average-caseLatency>1572</Average-caseLatency>
+                    <Worst-caseLatency>1572</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>12.576 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>12.576 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>12.576 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1572</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <decrypt_label4>
+                        <Name>decrypt_label4</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>9</TripCount>
+                        <Latency>954</Latency>
+                        <AbsoluteTimeLatency>7.632 us</AbsoluteTimeLatency>
+                        <IterationLatency>106</IterationLatency>
+                        <PipelineDepth>106</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_AddRoundKey_InversMixColumn_fu_85</Instance>
+                        </InstanceList>
+                    </decrypt_label4>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/aes/aes_dec.c:67</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <decrypt_label4>
+                            <Name>decrypt_label4</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/aes/aes_dec.c:116</SourceLocation>
+                        </decrypt_label4>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>810</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>4235</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="decrypt_label4" OPTYPE="add" PRAGMA="" RTLNAME="i_fu_109_p2" SOURCE="data/benchmarks/aes/aes_dec.c:116" STORAGESUBTYPE="" URAM="0" VARIABLE="i"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>aes_main</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>4.978</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>2634</Best-caseLatency>
+                    <Average-caseLatency>2634</Average-caseLatency>
+                    <Worst-caseLatency>2634</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>21.072 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.072 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>21.072 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2635</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>/home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_configs/aes.tcl:16</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>1</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>1666</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>8442</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="word_U" SOURCE="" STORAGESIZE="32 480 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p" URAM="0" VARIABLE="word"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_array_partition throughput_driven="off"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="statemt" index="0" direction="inout" srcType="int*" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="statemt_address0" name="statemt_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="statemt_ce0" name="statemt_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="statemt_we0" name="statemt_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="statemt_d0" name="statemt_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="statemt_q0" name="statemt_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="statemt_address1" name="statemt_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="statemt_ce1" name="statemt_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="statemt_we1" name="statemt_we1" usage="control" direction="out"/>
+                <hwRef type="port" interface="statemt_d1" name="statemt_d1" usage="data" direction="out"/>
+                <hwRef type="port" interface="statemt_q1" name="statemt_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="key" index="1" direction="in" srcType="int*" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="key_address0" name="key_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="key_ce0" name="key_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="key_q0" name="key_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <ReturnValue ReturnValueName="srcType">int</ReturnValue>
+    <ReturnValue ReturnValueName="srcSize">32</ReturnValue>
+    <ReturnValue ReturnValueName="hwRefs" type="port" interface="ap_return" name="ap_return" usage="data" direction="out"/>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_return" type="data" busTypeName="data" protocol="ap_ctrl_hs" mode="master" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="ap_return">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_return</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="statemt_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="5">
+            <portMaps>
+                <portMap portMapName="statemt_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="statemt_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="statemt_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="statemt_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="statemt_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="statemt_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="5">
+            <portMaps>
+                <portMap portMapName="statemt_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="statemt_d1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="statemt_d1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_d1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="statemt_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="statemt_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>statemt_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="statemt"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="key_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="5">
+            <portMaps>
+                <portMap portMapName="key_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="key_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="key_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table>
+                    <keys size="3">Port, Direction, Bitwidth</keys>
+                    <column name="key_address0">out, 5</column>
+                    <column name="key_q0">in, 32</column>
+                    <column name="statemt_address0">out, 5</column>
+                    <column name="statemt_address1">out, 5</column>
+                    <column name="statemt_d0">out, 32</column>
+                    <column name="statemt_d1">out, 32</column>
+                    <column name="statemt_q0">in, 32</column>
+                    <column name="statemt_q1">in, 32</column>
+                </table>
+            </item>
+            <item name="Other Ports">
+                <table>
+                    <keys size="3">Port, Direction, Bitwidth</keys>
+                    <column name="ap_return">out, 32</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst">reset, ap_rst</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="statemt">inout, int*</column>
+                    <column name="key">in, int*</column>
+                    <column name="return">out, int</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="4">Argument, HW Interface, HW Type, HW Usage</keys>
+                    <column name="statemt">statemt_address0, port, offset</column>
+                    <column name="statemt">statemt_ce0, port, </column>
+                    <column name="statemt">statemt_we0, port, </column>
+                    <column name="statemt">statemt_d0, port, </column>
+                    <column name="statemt">statemt_q0, port, </column>
+                    <column name="statemt">statemt_address1, port, offset</column>
+                    <column name="statemt">statemt_ce1, port, </column>
+                    <column name="statemt">statemt_we1, port, </column>
+                    <column name="statemt">statemt_d1, port, </column>
+                    <column name="statemt">statemt_q1, port, </column>
+                    <column name="key">key_address0, port, offset</column>
+                    <column name="key">key_ce0, port, </column>
+                    <column name="key">key_q0, port, </column>
+                    <column name="return">ap_return, port, </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <PragmaReport>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_dec.c:117" status="valid" parentFunction="decrypt" variable="" isDirective="0" options="min=9 max=9 avg=9"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_enc.c:111" status="valid" parentFunction="encrypt" variable="" isDirective="0" options="min=9 max=9 avg=9"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:325" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:365" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:381" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:390" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:393" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:437" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:470" status="valid" parentFunction="addroundkey" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:555" status="valid" parentFunction="keyschedule" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:558" status="valid" parentFunction="keyschedule" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:566" status="valid" parentFunction="keyschedule" variable="" isDirective="0" options="min=40 max=40 avg=40"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:586" status="valid" parentFunction="keyschedule" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/aes/aes_key.c:593" status="valid" parentFunction="keyschedule" variable="" isDirective="0" options="min=4 max=4 avg=4"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:34" status="valid" parentFunction="addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:7" status="valid" parentFunction="addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:22" status="valid" parentFunction="addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:30" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:23" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:1" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:2" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:3" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:4" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:18" status="valid" parentFunction="addroundkey_inversmixcolumn" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:16" status="valid" parentFunction="aes_main" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:32" status="valid" parentFunction="decrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:15" status="valid" parentFunction="decrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:20" status="valid" parentFunction="decrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:31" status="valid" parentFunction="encrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:14" status="valid" parentFunction="encrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:19" status="valid" parentFunction="encrypt" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:33" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:24" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:25" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:26" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:27" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="loop_flatten" location="../anchor_configs/aes.tcl:28" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:8" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:9" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:10" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:11" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:12" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:13" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:21" status="valid" parentFunction="keyschedule" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="inline" location="../anchor_configs/aes.tcl:29" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:5" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:6" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/aes.tcl:17" status="valid" parentFunction="mixcolumn_addroundkey" variable="" isDirective="1" options="off=true"/>
+    </PragmaReport>
+</profile>
+

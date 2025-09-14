@@ -1,0 +1,12 @@
+set_directive_pipeline -off kernel_gramschmidt/loop1
+set_directive_pipeline -off kernel_gramschmidt/loop2
+set_directive_pipeline -off kernel_gramschmidt/loop3
+set_directive_pipeline -off kernel_gramschmidt/loop4
+set_directive_pipeline -off kernel_gramschmidt/loop5
+set_directive_pipeline -off kernel_gramschmidt/loop6
+set_directive_pipeline -off kernel_gramschmidt
+set_directive_loop_flatten -off kernel_gramschmidt/loop2
+set_directive_loop_flatten -off kernel_gramschmidt/loop3
+set_directive_loop_flatten -off kernel_gramschmidt/loop4
+set_directive_loop_flatten -off kernel_gramschmidt/loop5
+set_directive_loop_flatten -off kernel_gramschmidt/loop6

@@ -1,0 +1,70 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="kernel_gramschmidt" label="loop1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop3" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop4" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop5" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop6" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop2" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop3" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop4" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop5" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="loop6" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="true" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="kernel_gramschmidt" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="kernel_gramschmidt"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

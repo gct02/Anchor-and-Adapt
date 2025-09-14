@@ -1,0 +1,649 @@
+{
+  "Top": "kernel_gramschmidt",
+  "RtlTop": "kernel_gramschmidt",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "kernel_gramschmidt_",
+  "SourceLanguage": "c",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "virtexuplushbm",
+    "Device": "xcu50",
+    "Package": "-fsvh2104",
+    "Speed": "-2-e",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "ni": {
+      "index": "0",
+      "direction": "in",
+      "srcType": "int",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "ni",
+          "name": "ni",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "nj": {
+      "index": "1",
+      "direction": "in",
+      "srcType": "int",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "nj",
+          "name": "nj",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "A": {
+      "index": "2",
+      "direction": "inout",
+      "srcType": "double*",
+      "srcSize": "64",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "A_address0",
+          "name": "A_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_ce0",
+          "name": "A_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_we0",
+          "name": "A_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_d0",
+          "name": "A_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_q0",
+          "name": "A_q0",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    },
+    "R": {
+      "index": "3",
+      "direction": "out",
+      "srcType": "double*",
+      "srcSize": "64",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "R_address0",
+          "name": "R_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "R_ce0",
+          "name": "R_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "R_we0",
+          "name": "R_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "R_d0",
+          "name": "R_d0",
+          "usage": "data",
+          "direction": "out"
+        }
+      ]
+    },
+    "Q": {
+      "index": "4",
+      "direction": "inout",
+      "srcType": "double*",
+      "srcSize": "64",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "Q_address0",
+          "name": "Q_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "Q_ce0",
+          "name": "Q_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "Q_we0",
+          "name": "Q_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "Q_d0",
+          "name": "Q_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "Q_q0",
+          "name": "Q_q0",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "ConfigTcl": [
+      "config_array_partition -throughput_driven=off",
+      "config_export -flow=impl",
+      "config_export -format=syn_dcp",
+      "config_export -rtl=verilog"
+    ],
+    "DirectiveTcl": [
+      "set_directive_pipeline kernel_gramschmidt\/loop1 -off=true",
+      "set_directive_pipeline kernel_gramschmidt\/loop2 -off=true",
+      "set_directive_pipeline kernel_gramschmidt\/loop3 -off=true",
+      "set_directive_pipeline kernel_gramschmidt\/loop4 -off=true",
+      "set_directive_pipeline kernel_gramschmidt\/loop5 -off=true",
+      "set_directive_pipeline kernel_gramschmidt\/loop6 -off=true",
+      "set_directive_pipeline kernel_gramschmidt -off=true",
+      "set_directive_loop_flatten kernel_gramschmidt\/loop2 -off=true",
+      "set_directive_loop_flatten kernel_gramschmidt\/loop3 -off=true",
+      "set_directive_loop_flatten kernel_gramschmidt\/loop4 -off=true",
+      "set_directive_loop_flatten kernel_gramschmidt\/loop5 -off=true",
+      "set_directive_loop_flatten kernel_gramschmidt\/loop6 -off=true",
+      "set_directive_top kernel_gramschmidt -name kernel_gramschmidt"
+    ],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "kernel_gramschmidt"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "8",
+    "Uncertainty": "2.16",
+    "IsCombinational": "0",
+    "II": "12592642 ~ 2820938242",
+    "Latency": "12592641"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 8.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "kernel_gramschmidt",
+    "Version": "1.0",
+    "DisplayName": "Kernel_gramschmidt",
+    "Revision": "2114259330",
+    "Description": "An IP generated by Vitis HLS",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "xilinx_com_hls_kernel_gramschmidt_1_0.zip"
+  },
+  "Files": {
+    "CSource": ["..\/..\/..\/benchmarks\/gramschmidt\/gramschmidt.c"],
+    "Vhdl": [
+      "impl\/vhdl\/kernel_gramschmidt_dadddsub_64ns_64ns_64_4_full_dsp_1.vhd",
+      "impl\/vhdl\/kernel_gramschmidt_ddiv_64ns_64ns_64_14_no_dsp_1.vhd",
+      "impl\/vhdl\/kernel_gramschmidt_dmul_64ns_64ns_64_4_max_dsp_1.vhd",
+      "impl\/vhdl\/kernel_gramschmidt_dsqrt_64ns_64ns_64_12_no_dsp_1.vhd",
+      "impl\/vhdl\/kernel_gramschmidt.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/kernel_gramschmidt_dadddsub_64ns_64ns_64_4_full_dsp_1.v",
+      "impl\/verilog\/kernel_gramschmidt_ddiv_64ns_64ns_64_14_no_dsp_1.v",
+      "impl\/verilog\/kernel_gramschmidt_dmul_64ns_64ns_64_4_max_dsp_1.v",
+      "impl\/verilog\/kernel_gramschmidt_dsqrt_64ns_64ns_64_12_no_dsp_1.v",
+      "impl\/verilog\/kernel_gramschmidt.v"
+    ],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/kernel_gramschmidt_dadddsub_64ns_64ns_64_4_full_dsp_1_ip.tcl",
+      "impl\/misc\/kernel_gramschmidt_ddiv_64ns_64ns_64_14_no_dsp_1_ip.tcl",
+      "impl\/misc\/kernel_gramschmidt_dmul_64ns_64ns_64_4_max_dsp_1_ip.tcl",
+      "impl\/misc\/kernel_gramschmidt_dsqrt_64ns_64ns_64_12_no_dsp_1_ip.tcl"
+    ],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [".debug\/kernel_gramschmidt.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": [
+      {
+        "Name": "kernel_gramschmidt_dadddsub_64ns_64ns_64_4_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name kernel_gramschmidt_dadddsub_64ns_64ns_64_4_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "kernel_gramschmidt_ddiv_64ns_64ns_64_14_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 12 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name kernel_gramschmidt_ddiv_64ns_64ns_64_14_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "kernel_gramschmidt_dmul_64ns_64ns_64_4_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name kernel_gramschmidt_dmul_64ns_64ns_64_4_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "kernel_gramschmidt_dsqrt_64ns_64ns_64_12_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 10 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name kernel_gramschmidt_dsqrt_64ns_64ns_64_12_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Square_Root CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {"ASSOCIATED_RESET": "ap_rst"},
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_HIGH"},
+      "portMap": {"ap_rst": "RST"},
+      "ports": ["ap_rst"]
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "busTypeName": "acc_handshake",
+      "mode": "slave",
+      "portMap": {
+        "ap_start": "start",
+        "ap_done": "done",
+        "ap_idle": "idle",
+        "ap_ready": "ready"
+      },
+      "ports": [
+        "ap_done",
+        "ap_idle",
+        "ap_ready",
+        "ap_start"
+      ]
+    },
+    "ni": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"ni": "DATA"},
+      "ports": ["ni"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "ni"
+        }]
+    },
+    "nj": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"nj": "DATA"},
+      "ports": ["nj"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "nj"
+        }]
+    },
+    "A_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "18",
+      "portMap": {"A_address0": "DATA"},
+      "ports": ["A_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "A_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"A_d0": "DATA"},
+      "ports": ["A_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "A_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"A_q0": "DATA"},
+      "ports": ["A_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "R_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "18",
+      "portMap": {"R_address0": "DATA"},
+      "ports": ["R_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "R"
+        }]
+    },
+    "R_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"R_d0": "DATA"},
+      "ports": ["R_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "R"
+        }]
+    },
+    "Q_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "18",
+      "portMap": {"Q_address0": "DATA"},
+      "ports": ["Q_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "Q"
+        }]
+    },
+    "Q_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"Q_d0": "DATA"},
+      "ports": ["Q_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "Q"
+        }]
+    },
+    "Q_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"Q_q0": "DATA"},
+      "ports": ["Q_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "Q"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ni": {
+      "dir": "in",
+      "width": "32"
+    },
+    "nj": {
+      "dir": "in",
+      "width": "32"
+    },
+    "A_address0": {
+      "dir": "out",
+      "width": "18"
+    },
+    "A_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "A_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "A_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "A_q0": {
+      "dir": "in",
+      "width": "64"
+    },
+    "R_address0": {
+      "dir": "out",
+      "width": "18"
+    },
+    "R_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "R_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "R_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "Q_address0": {
+      "dir": "out",
+      "width": "18"
+    },
+    "Q_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "Q_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "Q_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "Q_q0": {
+      "dir": "in",
+      "width": "64"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {"ModuleName": "kernel_gramschmidt"},
+    "Info": {"kernel_gramschmidt": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }},
+    "Metrics": {"kernel_gramschmidt": {
+        "Latency": {
+          "LatencyBest": "12592641",
+          "LatencyAvg": "1416765441",
+          "LatencyWorst": "2820938241",
+          "PipelineIIMin": "12592642",
+          "PipelineIIMax": "2820938242",
+          "PipelineII": "12592642 ~ 2820938242",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "8.00",
+          "Uncertainty": "2.16",
+          "Estimate": "5.473"
+        },
+        "Loops": [{
+            "Name": "loop1",
+            "TripCount": "512",
+            "LatencyMin": "12592640",
+            "LatencyMax": "2820938240",
+            "Latency": "12592640 ~ 2820938240",
+            "PipelineII": "",
+            "PipelineDepthMin": "24595",
+            "PipelineDepthMax": "5509645",
+            "PipelineDepth": "24595 ~ 5509645",
+            "Loops": [
+              {
+                "Name": "loop2",
+                "TripCount": "512",
+                "Latency": "5120",
+                "PipelineII": "",
+                "PipelineDepth": "10"
+              },
+              {
+                "Name": "loop3",
+                "TripCount": "512",
+                "Latency": "8704",
+                "PipelineII": "",
+                "PipelineDepth": "17"
+              },
+              {
+                "Name": "loop4",
+                "TripCount": "",
+                "LatencyMin": "10755",
+                "LatencyMax": "5495805",
+                "Latency": "10755 ~ 5495805",
+                "PipelineII": "",
+                "PipelineDepth": "10755",
+                "Loops": [
+                  {
+                    "Name": "loop5",
+                    "TripCount": "512",
+                    "Latency": "5120",
+                    "PipelineII": "",
+                    "PipelineDepth": "10"
+                  },
+                  {
+                    "Name": "loop6",
+                    "TripCount": "512",
+                    "Latency": "5632",
+                    "PipelineII": "",
+                    "PipelineDepth": "11"
+                  }
+                ]
+              }
+            ]
+          }],
+        "Area": {
+          "DSP": "11",
+          "AVAIL_DSP": "5952",
+          "UTIL_DSP": "~0",
+          "FF": "1787",
+          "AVAIL_FF": "1743360",
+          "UTIL_FF": "~0",
+          "LUT": "1985",
+          "AVAIL_LUT": "871680",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "2688",
+          "UTIL_BRAM": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "640",
+          "UTIL_URAM": "0"
+        }
+      }}
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2025-09-14 01:30:01 -03",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2023.2"
+  }
+}

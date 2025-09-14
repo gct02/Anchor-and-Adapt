@@ -1,0 +1,230 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: config_array_partition -throughput_driven off 
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label0 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label3 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label4 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label5 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients/Reflection_coefficients_label6 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label0 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label3 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label4 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation/Autocorrelation_label5 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off gsm_div/gsm_div_label0 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Gsm_LPC_Analysis 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off gsm_div 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Autocorrelation 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off Reflection_coefficients 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten -off Reflection_coefficients/Reflection_coefficients_label5 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten -off Reflection_coefficients/Reflection_coefficients_label6 
+INFO: [HLS 200-1510] Running: set_directive_inline -off gsm_div 
+INFO: [HLS 200-1510] Running: set_directive_inline -off Autocorrelation 
+INFO: [HLS 200-1510] Running: set_directive_inline -off Reflection_coefficients 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 226.859 MB.
+INFO: [HLS 200-10] Analyzing design file 'data/benchmarks/gsm/gsm_add.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'data/benchmarks/gsm/gsm.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'data/benchmarks/gsm/gsm_lpc.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.52 seconds. CPU system time: 0.62 seconds. Elapsed time: 1.15 seconds; current allocated memory: 229.426 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 1,625 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,460 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 978 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 867 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 856 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 862 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 862 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 862 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 862 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 889 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 863 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 855 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 855 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 859 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 910 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/gabriel/Documents/UFRGS/RAISE/AHLS/AHLS/data/anchor_solutions/GSM/solution0/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'gsm_abs' into 'Autocorrelation' (data/benchmarks/gsm/gsm_lpc.c:38:0)
+INFO: [HLS 214-178] Inlining function 'gsm_norm' into 'Autocorrelation' (data/benchmarks/gsm/gsm_lpc.c:38:0)
+INFO: [HLS 214-178] Inlining function 'gsm_mult_r' into 'Autocorrelation' (data/benchmarks/gsm/gsm_lpc.c:38:0)
+INFO: [HLS 214-178] Inlining function 'gsm_norm' into 'Reflection_coefficients' (data/benchmarks/gsm/gsm_lpc.c:164:0)
+INFO: [HLS 214-178] Inlining function 'gsm_abs' into 'Reflection_coefficients' (data/benchmarks/gsm/gsm_lpc.c:164:0)
+INFO: [HLS 214-178] Inlining function 'gsm_mult_r' into 'Reflection_coefficients' (data/benchmarks/gsm/gsm_lpc.c:164:0)
+INFO: [HLS 214-178] Inlining function 'gsm_add' into 'Reflection_coefficients' (data/benchmarks/gsm/gsm_lpc.c:164:0)
+INFO: [HLS 214-178] Inlining function 'gsm_abs' into 'Transformation_to_Log_Area_Ratios' (data/benchmarks/gsm/gsm_lpc.c:242:0)
+INFO: [HLS 214-178] Inlining function 'gsm_mult' into 'Quantization_and_coding' (data/benchmarks/gsm/gsm_lpc.c:268:0)
+INFO: [HLS 214-178] Inlining function 'gsm_add' into 'Quantization_and_coding' (data/benchmarks/gsm/gsm_lpc.c:268:0)
+INFO: [HLS 214-178] Inlining function 'Transformation_to_Log_Area_Ratios' into 'Gsm_LPC_Analysis' (data/benchmarks/gsm/gsm.c:8:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:131:7)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:134:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:135:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:136:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:137:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:138:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:139:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (data/benchmarks/gsm/gsm_lpc.c:140:37)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< Transformation_to_Log_Area_Ratios_label0> at data/benchmarks/gsm/gsm_lpc.c:248:5 
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.11 seconds. CPU system time: 0.29 seconds. Elapsed time: 6.94 seconds; current allocated memory: 231.375 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 231.375 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 232.562 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 233.281 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_add.c:51:22) to (data/benchmarks/gsm/gsm_lpc.c:229:9) in function 'Reflection_coefficients'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_add.c:70:24) to (data/benchmarks/gsm/gsm_lpc.c:184:5) in function 'Reflection_coefficients'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (data/benchmarks/gsm/gsm_lpc.c:300:1) in function 'Quantization_and_coding'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_lpc.c:244:18) to (data/benchmarks/gsm/gsm_lpc.c:248:5) in function 'Gsm_LPC_Analysis'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_lpc.c:50:9) to (data/benchmarks/gsm/gsm_lpc.c:49:5) in function 'Autocorrelation'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_lpc.c:66:9) to (data/benchmarks/gsm/gsm_lpc.c:65:9) in function 'Autocorrelation'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (data/benchmarks/gsm/gsm_lpc.c:49:5) to (data/benchmarks/gsm/gsm_lpc.c:62:22) in function 'Autocorrelation'... converting 13 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'Autocorrelation' (data/benchmarks/gsm/gsm_lpc.c:17:9)...26 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 258.664 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 292.492 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Gsm_LPC_Analysis' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Autocorrelation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=prod) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln125_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln124_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln123_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln123_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln122_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln121_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln121_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln120_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln120_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln119_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln119_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln119_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln119_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=tmp28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=tmp22) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.32 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 297.691 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 297.691 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gsm_div' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 297.691 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 297.691 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Reflection_coefficients' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=prod) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=prod_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=prod_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 299.953 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 299.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Quantization_and_coding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 301.066 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 301.066 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Gsm_LPC_Analysis' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Transformation_to_Log_Area_Ratios_label0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Transformation_to_Log_Area_Ratios_label0'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 301.711 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 301.711 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Autocorrelation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'am_addmul_16s_16s_16s_33_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_16s_16s_16s_32s_33_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_16s_16s_16s_33s_34_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_15ns_15ns_31_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_32s_33_4_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_33s_33_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_16s_32_1_1': 23 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Autocorrelation'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 303.789 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gsm_div' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gsm_div'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 312.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Reflection_coefficients' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_15ns_31_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Reflection_coefficients'.
+INFO: [RTMG 210-278] Implementing memory 'Gsm_LPC_Analysis_Reflection_coefficients_ACF_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 313.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Quantization_and_coding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_15ns_31_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Quantization_and_coding'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 319.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Gsm_LPC_Analysis' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Gsm_LPC_Analysis/indata' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Gsm_LPC_Analysis/LARc' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Gsm_LPC_Analysis' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Gsm_LPC_Analysis'.
+INFO: [RTMG 210-279] Implementing memory 'Gsm_LPC_Analysis_bitoff_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'Gsm_LPC_Analysis_L_ACF_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 323.871 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.32 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 328.723 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.36 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.37 seconds; current allocated memory: 336.074 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Gsm_LPC_Analysis.
+INFO: [VLOG 209-307] Generating Verilog RTL for Gsm_LPC_Analysis.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 176.30 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.11 seconds. CPU system time: 1.07 seconds. Elapsed time: 10.73 seconds; current allocated memory: 109.812 MB.
+INFO: [HLS 200-1510] Running: export_design -flow impl -format syn_dcp -rtl verilog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+INFO: [HLS 200-802] Generated output file data/anchor_solutions/GSM/solution0/impl/export.dcp
+INFO: [HLS 200-802] Generated output file data/anchor_solutions/GSM/solution0/impl/export.veo
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 187.14 seconds. CPU system time: 9.42 seconds. Elapsed time: 348.47 seconds; current allocated memory: 7.539 MB.

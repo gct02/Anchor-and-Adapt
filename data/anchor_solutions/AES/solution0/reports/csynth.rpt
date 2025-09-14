@@ -1,0 +1,322 @@
+
+
+================================================================
+== Synthesis Summary Report of 'aes_main'
+================================================================
++ General Information: 
+    * Date:           Sun Sep 14 01:07:19 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        AES
+    * Solution:       solution0 (Vivado IP Flow Target)
+    * Product family: virtexuplusHBM
+    * Target device:  xcu50-fsvh2104-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |                  Modules                  | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |    |            |            |     |
+    |                  & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF     |     LUT    | URAM|
+    +-------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |+ aes_main                                 |     -|  0.86|     2634|  2.107e+04|         -|     2635|     -|        no|  1 (~0%)|   -|  1666 (~0%)|  8442 (~0%)|    -|
+    | + encrypt                                 |     -|  1.90|     1059|  8.472e+03|         -|     1059|     -|        no|        -|   -|   850 (~0%)|  3957 (~0%)|    -|
+    |  + KeySchedule                            |     -|  1.90|      562|  4.496e+03|         -|      562|     -|        no|        -|   -|   313 (~0%)|   994 (~0%)|    -|
+    |   o KeySchedule_label4                    |     -|  5.84|       40|    320.000|        10|        -|     4|        no|        -|   -|           -|           -|    -|
+    |    o KeySchedule_label5                   |     -|  5.84|        8|     64.000|         2|        -|     4|        no|        -|   -|           -|           -|    -|
+    |   o KeySchedule_label6                    |     -|  5.84|      520|  4.160e+03|        13|        -|    40|        no|        -|   -|           -|           -|    -|
+    |    o KeySchedule_label9                   |     -|  5.84|        8|     64.000|         2|        -|     4|        no|        -|   -|           -|           -|    -|
+    |  + AddRoundKey                            |     -|  3.23|       17|    136.000|         -|       17|     -|        no|        -|   -|    92 (~0%)|   278 (~0%)|    -|
+    |   o AddRoundKey_label0                    |     -|  5.84|       16|    128.000|         4|        -|     4|        no|        -|   -|           -|           -|    -|
+    |  o encrypt_label1                         |     -|  5.84|      441|  3.528e+03|        49|        -|     9|        no|        -|   -|           -|           -|    -|
+    |   + ByteSub_ShiftRow                      |     -|  4.51|       15|    120.000|         -|       15|     -|        no|        -|   -|   152 (~0%)|   472 (~0%)|    -|
+    |   + MixColumn_AddRoundKey                 |     -|  2.92|       30|    240.000|         -|       30|     -|        no|        -|   -|   270 (~0%)|  1852 (~0%)|    -|
+    |    o MixColumn_AddRoundKey_label0         |     -|  5.84|       16|    128.000|         4|        -|     4|        no|        -|   -|           -|           -|    -|
+    |    o MixColumn_AddRoundKey_label1         |     -|  5.84|       12|     96.000|         3|        -|     4|        no|        -|   -|           -|           -|    -|
+    | + decrypt                                 |     -|  0.86|     1572|  1.258e+04|         -|     1572|     -|        no|        -|   -|   810 (~0%)|  4235 (~0%)|    -|
+    |  + KeySchedule                            |     -|  1.90|      562|  4.496e+03|         -|      562|     -|        no|        -|   -|   313 (~0%)|   994 (~0%)|    -|
+    |   o KeySchedule_label4                    |     -|  5.84|       40|    320.000|        10|        -|     4|        no|        -|   -|           -|           -|    -|
+    |    o KeySchedule_label5                   |     -|  5.84|        8|     64.000|         2|        -|     4|        no|        -|   -|           -|           -|    -|
+    |   o KeySchedule_label6                    |     -|  5.84|      520|  4.160e+03|        13|        -|    40|        no|        -|   -|           -|           -|    -|
+    |    o KeySchedule_label9                   |     -|  5.84|        8|     64.000|         2|        -|     4|        no|        -|   -|           -|           -|    -|
+    |  + AddRoundKey                            |     -|  3.23|       17|    136.000|         -|       17|     -|        no|        -|   -|    92 (~0%)|   278 (~0%)|    -|
+    |   o AddRoundKey_label0                    |     -|  5.84|       16|    128.000|         4|        -|     4|        no|        -|   -|           -|           -|    -|
+    |  + InversShiftRow_ByteSub                 |     -|  4.51|       15|    120.000|         -|       15|     -|        no|        -|   -|   152 (~0%)|   472 (~0%)|    -|
+    |  o decrypt_label4                         |     -|  5.84|      954|  7.632e+03|       106|        -|     9|        no|        -|   -|           -|           -|    -|
+    |   + AddRoundKey_InversMixColumn           |     -|  0.86|       87|    696.000|         -|       87|     -|        no|        -|   -|   230 (~0%)|  2130 (~0%)|    -|
+    |    o AddRoundKey_InversMixColumn_label2   |     -|  5.84|       16|    128.000|         4|        -|     4|        no|        -|   -|           -|           -|    -|
+    |    o AddRoundKey_InversMixColumn_label0   |     -|  5.84|       56|    448.000|        14|        -|     4|        no|        -|   -|           -|           -|    -|
+    |     o AddRoundKey_InversMixColumn_label1  |     -|  5.84|       12|     96.000|         3|        -|     4|        no|        -|   -|           -|           -|    -|
+    |    o AddRoundKey_InversMixColumn_label3   |     -|  5.84|       12|     96.000|         3|        -|     4|        no|        -|   -|           -|           -|    -|
+    +-------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++------------------+-----------+----------+
+| Port             | Direction | Bitwidth |
++------------------+-----------+----------+
+| key_address0     | out       | 5        |
+| key_q0           | in        | 32       |
+| statemt_address0 | out       | 5        |
+| statemt_address1 | out       | 5        |
+| statemt_d0       | out       | 32       |
+| statemt_d1       | out       | 32       |
+| statemt_q0       | in        | 32       |
+| statemt_q1       | in        | 32       |
++------------------+-----------+----------+
+
+* Other Ports
++-----------+-----------+----------+
+| Port      | Direction | Bitwidth |
++-----------+-----------+----------+
+| ap_return | out       | 32       |
++-----------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| statemt  | inout     | int*     |
+| key      | in        | int*     |
+| return   | out       | int      |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+------------------+---------+----------+
+| Argument | HW Interface     | HW Type | HW Usage |
++----------+------------------+---------+----------+
+| statemt  | statemt_address0 | port    | offset   |
+| statemt  | statemt_ce0      | port    |          |
+| statemt  | statemt_we0      | port    |          |
+| statemt  | statemt_d0       | port    |          |
+| statemt  | statemt_q0       | port    |          |
+| statemt  | statemt_address1 | port    | offset   |
+| statemt  | statemt_ce1      | port    |          |
+| statemt  | statemt_we1      | port    |          |
+| statemt  | statemt_d1       | port    |          |
+| statemt  | statemt_q1       | port    |          |
+| key      | key_address0     | port    | offset   |
+| key      | key_ce0          | port    |          |
+| key      | key_q0           | port    |          |
+| return   | ap_return        | port    |          |
++----------+------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                    | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++-----------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + aes_main                              | 0   |        |             |     |        |         |
+|  + encrypt                              | 0   |        |             |     |        |         |
+|    i_3_fu_106_p2                        |     |        | i_3         | add | fabric | 0       |
+|   + KeySchedule (grp_KeySchedule_fu_52) | 0   |        |             |     |        |         |
+|     add_ln554_fu_315_p2                 |     |        | add_ln554   | add | fabric | 0       |
+|     add_ln557_fu_344_p2                 |     |        | add_ln557   | add | fabric | 0       |
+|     sub_ln559_fu_392_p2                 |     |        | sub_ln559   | sub | fabric | 0       |
+|     add_ln559_fu_354_p2                 |     |        | add_ln559   | add | fabric | 0       |
+|     add_ln571_fu_429_p2                 |     |        | add_ln571   | add | fabric | 0       |
+|     add_ln571_2_fu_443_p2               |     |        | add_ln571_2 | add | fabric | 0       |
+|     add_ln572_fu_454_p2                 |     |        | add_ln572   | add | fabric | 0       |
+|     add_ln573_fu_469_p2                 |     |        | add_ln573   | add | fabric | 0       |
+|     sub_ln571_fu_487_p2                 |     |        | sub_ln571   | sub | fabric | 0       |
+|     sub_ln571_1_fu_503_p2               |     |        | sub_ln571_1 | sub | fabric | 0       |
+|     sub_ln571_2_fu_551_p2               |     |        | sub_ln571_2 | sub | fabric | 0       |
+|     sub_ln571_3_fu_569_p2               |     |        | sub_ln571_3 | sub | fabric | 0       |
+|     add_ln571_3_fu_587_p2               |     |        | add_ln571_3 | add | fabric | 0       |
+|     add_ln571_1_fu_607_p2               |     |        | add_ln571_1 | add | fabric | 0       |
+|     sub_ln572_fu_618_p2                 |     |        | sub_ln572   | sub | fabric | 0       |
+|     sub_ln572_1_fu_634_p2               |     |        | sub_ln572_1 | sub | fabric | 0       |
+|     sub_ln572_2_fu_682_p2               |     |        | sub_ln572_2 | sub | fabric | 0       |
+|     sub_ln572_3_fu_700_p2               |     |        | sub_ln572_3 | sub | fabric | 0       |
+|     add_ln572_1_fu_718_p2               |     |        | add_ln572_1 | add | fabric | 0       |
+|     sub_ln573_fu_760_p2                 |     |        | sub_ln573   | sub | fabric | 0       |
+|     sub_ln573_1_fu_776_p2               |     |        | sub_ln573_1 | sub | fabric | 0       |
+|     sub_ln573_2_fu_824_p2               |     |        | sub_ln573_2 | sub | fabric | 0       |
+|     sub_ln573_3_fu_842_p2               |     |        | sub_ln573_3 | sub | fabric | 0       |
+|     add_ln573_1_fu_860_p2               |     |        | add_ln573_1 | add | fabric | 0       |
+|     sub_ln574_fu_871_p2                 |     |        | sub_ln574   | sub | fabric | 0       |
+|     sub_ln574_1_fu_887_p2               |     |        | sub_ln574_1 | sub | fabric | 0       |
+|     sub_ln574_2_fu_935_p2               |     |        | sub_ln574_2 | sub | fabric | 0       |
+|     sub_ln574_3_fu_953_p2               |     |        | sub_ln574_3 | sub | fabric | 0       |
+|     add_ln574_fu_971_p2                 |     |        | add_ln574   | add | fabric | 0       |
+|     empty_70_fu_1022_p2                 |     |        | empty_70    | add | fabric | 0       |
+|     add_ln592_fu_1041_p2                |     |        | add_ln592   | add | fabric | 0       |
+|     sub_ln594_fu_1067_p2                |     |        | sub_ln594   | sub | fabric | 0       |
+|     add_ln594_fu_1073_p2                |     |        | add_ln594   | add | fabric | 0       |
+|     add_ln594_1_fu_1083_p2              |     |        | add_ln594_1 | add | fabric | 0       |
+|     add_ln565_fu_1098_p2                |     |        | add_ln565   | add | fabric | 0       |
+|   + AddRoundKey (grp_AddRoundKey_fu_64) | 0   |        |             |     |        |         |
+|     add_ln469_fu_192_p2                 |     |        | add_ln469   | add | fabric | 0       |
+|     add_ln471_fu_202_p2                 |     |        | add_ln471   | add | fabric | 0       |
+|     add_ln472_fu_216_p2                 |     |        | add_ln472   | add | fabric | 0       |
+|     add_ln473_fu_263_p2                 |     |        | add_ln473   | add | fabric | 0       |
+|     add_ln474_fu_274_p2                 |     |        | add_ln474   | add | fabric | 0       |
+|   + MixColumn_AddRoundKey               | 0   |        |             |     |        |         |
+|     add_ln324_fu_319_p2                 |     |        | add_ln324   | add | fabric | 0       |
+|     add_ln333_fu_357_p2                 |     |        | add_ln333   | add | fabric | 0       |
+|     add_ln342_fu_371_p2                 |     |        | add_ln342   | add | fabric | 0       |
+|     add_ln351_fu_429_p2                 |     |        | add_ln351   | add | fabric | 0       |
+|     add_ln360_fu_440_p2                 |     |        | add_ln360   | add | fabric | 0       |
+|     add_ln364_fu_844_p2                 |     |        | add_ln364   | add | fabric | 0       |
+|  + decrypt                              | 0   |        |             |     |        |         |
+|    i_fu_109_p2                          |     |        | i           | add | fabric | 0       |
+|   + KeySchedule (grp_KeySchedule_fu_54) | 0   |        |             |     |        |         |
+|     add_ln554_fu_315_p2                 |     |        | add_ln554   | add | fabric | 0       |
+|     add_ln557_fu_344_p2                 |     |        | add_ln557   | add | fabric | 0       |
+|     sub_ln559_fu_392_p2                 |     |        | sub_ln559   | sub | fabric | 0       |
+|     add_ln559_fu_354_p2                 |     |        | add_ln559   | add | fabric | 0       |
+|     add_ln571_fu_429_p2                 |     |        | add_ln571   | add | fabric | 0       |
+|     add_ln571_2_fu_443_p2               |     |        | add_ln571_2 | add | fabric | 0       |
+|     add_ln572_fu_454_p2                 |     |        | add_ln572   | add | fabric | 0       |
+|     add_ln573_fu_469_p2                 |     |        | add_ln573   | add | fabric | 0       |
+|     sub_ln571_fu_487_p2                 |     |        | sub_ln571   | sub | fabric | 0       |
+|     sub_ln571_1_fu_503_p2               |     |        | sub_ln571_1 | sub | fabric | 0       |
+|     sub_ln571_2_fu_551_p2               |     |        | sub_ln571_2 | sub | fabric | 0       |
+|     sub_ln571_3_fu_569_p2               |     |        | sub_ln571_3 | sub | fabric | 0       |
+|     add_ln571_3_fu_587_p2               |     |        | add_ln571_3 | add | fabric | 0       |
+|     add_ln571_1_fu_607_p2               |     |        | add_ln571_1 | add | fabric | 0       |
+|     sub_ln572_fu_618_p2                 |     |        | sub_ln572   | sub | fabric | 0       |
+|     sub_ln572_1_fu_634_p2               |     |        | sub_ln572_1 | sub | fabric | 0       |
+|     sub_ln572_2_fu_682_p2               |     |        | sub_ln572_2 | sub | fabric | 0       |
+|     sub_ln572_3_fu_700_p2               |     |        | sub_ln572_3 | sub | fabric | 0       |
+|     add_ln572_1_fu_718_p2               |     |        | add_ln572_1 | add | fabric | 0       |
+|     sub_ln573_fu_760_p2                 |     |        | sub_ln573   | sub | fabric | 0       |
+|     sub_ln573_1_fu_776_p2               |     |        | sub_ln573_1 | sub | fabric | 0       |
+|     sub_ln573_2_fu_824_p2               |     |        | sub_ln573_2 | sub | fabric | 0       |
+|     sub_ln573_3_fu_842_p2               |     |        | sub_ln573_3 | sub | fabric | 0       |
+|     add_ln573_1_fu_860_p2               |     |        | add_ln573_1 | add | fabric | 0       |
+|     sub_ln574_fu_871_p2                 |     |        | sub_ln574   | sub | fabric | 0       |
+|     sub_ln574_1_fu_887_p2               |     |        | sub_ln574_1 | sub | fabric | 0       |
+|     sub_ln574_2_fu_935_p2               |     |        | sub_ln574_2 | sub | fabric | 0       |
+|     sub_ln574_3_fu_953_p2               |     |        | sub_ln574_3 | sub | fabric | 0       |
+|     add_ln574_fu_971_p2                 |     |        | add_ln574   | add | fabric | 0       |
+|     empty_70_fu_1022_p2                 |     |        | empty_70    | add | fabric | 0       |
+|     add_ln592_fu_1041_p2                |     |        | add_ln592   | add | fabric | 0       |
+|     sub_ln594_fu_1067_p2                |     |        | sub_ln594   | sub | fabric | 0       |
+|     add_ln594_fu_1073_p2                |     |        | add_ln594   | add | fabric | 0       |
+|     add_ln594_1_fu_1083_p2              |     |        | add_ln594_1 | add | fabric | 0       |
+|     add_ln565_fu_1098_p2                |     |        | add_ln565   | add | fabric | 0       |
+|   + AddRoundKey (grp_AddRoundKey_fu_66) | 0   |        |             |     |        |         |
+|     add_ln469_fu_192_p2                 |     |        | add_ln469   | add | fabric | 0       |
+|     add_ln471_fu_202_p2                 |     |        | add_ln471   | add | fabric | 0       |
+|     add_ln472_fu_216_p2                 |     |        | add_ln472   | add | fabric | 0       |
+|     add_ln473_fu_263_p2                 |     |        | add_ln473   | add | fabric | 0       |
+|     add_ln474_fu_274_p2                 |     |        | add_ln474   | add | fabric | 0       |
+|   + AddRoundKey_InversMixColumn         | 0   |        |             |     |        |         |
+|     add_ln380_fu_385_p2                 |     |        | add_ln380   | add | fabric | 0       |
+|     add_ln382_fu_395_p2                 |     |        | add_ln382   | add | fabric | 0       |
+|     add_ln383_fu_409_p2                 |     |        | add_ln383   | add | fabric | 0       |
+|     add_ln384_fu_461_p2                 |     |        | add_ln384   | add | fabric | 0       |
+|     add_ln385_fu_472_p2                 |     |        | add_ln385   | add | fabric | 0       |
+|     add_ln389_fu_512_p2                 |     |        | add_ln389   | add | fabric | 0       |
+|     add_ln404_fu_541_p2                 |     |        | add_ln404   | add | fabric | 0       |
+|     add_ln394_fu_551_p2                 |     |        | add_ln394   | add | fabric | 0       |
+|     add_ln424_fu_888_p2                 |     |        | add_ln424   | add | fabric | 0       |
+|     add_ln436_fu_1219_p2                |     |        | add_ln436   | add | fabric | 0       |
++-----------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-----------------------------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| Name                                    | Usage         | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                                         |               |      |      |      |        |          |      |         | Banks            |
++-----------------------------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| + aes_main                              |               |      | 1    | 0    |        |          |      |         |                  |
+|   word_U                                | ram_s2p       |      | 1    |      |        | word     | auto | 1       | 32, 480, 1       |
+|  + encrypt                              |               |      | 0    | 0    |        |          |      |         |                  |
+|   + KeySchedule (grp_KeySchedule_fu_52) |               |      | 0    | 0    |        |          |      |         |                  |
+|     Sbox_U                              | rom_2p        |      |      |      |        | Sbox     | auto | 1       | 8, 256, 1        |
+|     Rcon0_U                             | rom_1p        |      |      |      |        | Rcon0    | auto | 1       | 8, 30, 1         |
+|   + ByteSub_ShiftRow                    |               |      | 0    | 0    |        |          |      |         |                  |
+|     Sbox_1_U                            | rom_2p        |      |      |      |        | Sbox_1   | auto | 1       | 8, 256, 1        |
+|   + MixColumn_AddRoundKey               |               |      | 0    | 0    |        |          |      |         |                  |
+|     ret_U                               | ram_t2p array |      |      |      |        | ret      | auto | 1       | 32, 32, 1        |
+|  + decrypt                              |               |      | 0    | 0    |        |          |      |         |                  |
+|   + KeySchedule (grp_KeySchedule_fu_54) |               |      | 0    | 0    |        |          |      |         |                  |
+|     Sbox_U                              | rom_2p        |      |      |      |        | Sbox     | auto | 1       | 8, 256, 1        |
+|     Rcon0_U                             | rom_1p        |      |      |      |        | Rcon0    | auto | 1       | 8, 30, 1         |
+|   + InversShiftRow_ByteSub              |               |      | 0    | 0    |        |          |      |         |                  |
+|     invSbox_U                           | rom_2p        |      |      |      |        | invSbox  | auto | 1       | 8, 256, 1        |
+|   + AddRoundKey_InversMixColumn         |               |      | 0    | 0    |        |          |      |         |                  |
+|     ret_U                               | ram_s2p array |      |      |      |        | ret      | auto | 1       | 32, 32, 1        |
++-----------------------------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+----------------------+------------------------------------------------------------------+
+| Type           | Options              | Location                                                         |
++----------------+----------------------+------------------------------------------------------------------+
+| loop_tripcount | min=9 max=9 avg=9    | data/benchmarks/aes/aes_dec.c:117 in decrypt                     |
+| loop_tripcount | min=9 max=9 avg=9    | data/benchmarks/aes/aes_enc.c:111 in encrypt                     |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:325 in mixcolumn_addroundkey       |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:365 in mixcolumn_addroundkey       |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:381 in addroundkey_inversmixcolumn |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:390 in addroundkey_inversmixcolumn |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:393 in addroundkey_inversmixcolumn |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:437 in addroundkey_inversmixcolumn |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:470 in addroundkey                 |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:555 in keyschedule                 |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:558 in keyschedule                 |
+| loop_tripcount | min=40 max=40 avg=40 | data/benchmarks/aes/aes_key.c:566 in keyschedule                 |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:586 in keyschedule                 |
+| loop_tripcount | min=4 max=4 avg=4    | data/benchmarks/aes/aes_key.c:593 in keyschedule                 |
+| inline         | off=true             | ../anchor_configs/aes.tcl:34 in addroundkey                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:7 in addroundkey                       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:22 in addroundkey                      |
+| inline         | off=true             | ../anchor_configs/aes.tcl:30 in addroundkey_inversmixcolumn      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:23 in addroundkey_inversmixcolumn      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:1 in addroundkey_inversmixcolumn       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:2 in addroundkey_inversmixcolumn       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:3 in addroundkey_inversmixcolumn       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:4 in addroundkey_inversmixcolumn       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:18 in addroundkey_inversmixcolumn      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:16 in aes_main                         |
+| inline         | off=true             | ../anchor_configs/aes.tcl:32 in decrypt                          |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:15 in decrypt                          |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:20 in decrypt                          |
+| inline         | off=true             | ../anchor_configs/aes.tcl:31 in encrypt                          |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:14 in encrypt                          |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:19 in encrypt                          |
+| inline         | off=true             | ../anchor_configs/aes.tcl:33 in keyschedule                      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:24 in keyschedule                      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:25 in keyschedule                      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:26 in keyschedule                      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:27 in keyschedule                      |
+| loop_flatten   | off=true             | ../anchor_configs/aes.tcl:28 in keyschedule                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:8 in keyschedule                       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:9 in keyschedule                       |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:10 in keyschedule                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:11 in keyschedule                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:12 in keyschedule                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:13 in keyschedule                      |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:21 in keyschedule                      |
+| inline         | off=true             | ../anchor_configs/aes.tcl:29 in mixcolumn_addroundkey            |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:5 in mixcolumn_addroundkey             |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:6 in mixcolumn_addroundkey             |
+| pipeline       | off=true             | ../anchor_configs/aes.tcl:17 in mixcolumn_addroundkey            |
++----------------+----------------------+------------------------------------------------------------------+
+
+

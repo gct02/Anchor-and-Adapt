@@ -1,0 +1,900 @@
+{
+  "Top": "fft1D_512",
+  "RtlTop": "fft1D_512",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "fft1D_512_",
+  "SourceLanguage": "c",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "virtexuplushbm",
+    "Device": "xcu50",
+    "Package": "-fsvh2104",
+    "Speed": "-2-e",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "work_x": {
+      "index": "0",
+      "direction": "inout",
+      "srcType": "double*",
+      "srcSize": "64",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "work_x_address0",
+          "name": "work_x_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_ce0",
+          "name": "work_x_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_we0",
+          "name": "work_x_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_d0",
+          "name": "work_x_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_q0",
+          "name": "work_x_q0",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_address1",
+          "name": "work_x_address1",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_ce1",
+          "name": "work_x_ce1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_we1",
+          "name": "work_x_we1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_d1",
+          "name": "work_x_d1",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_x_q1",
+          "name": "work_x_q1",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    },
+    "work_y": {
+      "index": "1",
+      "direction": "inout",
+      "srcType": "double*",
+      "srcSize": "64",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "work_y_address0",
+          "name": "work_y_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_ce0",
+          "name": "work_y_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_we0",
+          "name": "work_y_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_d0",
+          "name": "work_y_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_q0",
+          "name": "work_y_q0",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_address1",
+          "name": "work_y_address1",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_ce1",
+          "name": "work_y_ce1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_we1",
+          "name": "work_y_we1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_d1",
+          "name": "work_y_d1",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "work_y_q1",
+          "name": "work_y_q1",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "ConfigTcl": [
+      "config_array_partition -throughput_driven=off",
+      "config_export -flow=impl",
+      "config_export -format=syn_dcp",
+      "config_export -rtl=verilog"
+    ],
+    "DirectiveTcl": [
+      "set_directive_pipeline fft1D_512\/loop1 -off=true",
+      "set_directive_pipeline fft1D_512\/loop2 -off=true",
+      "set_directive_pipeline fft1D_512\/loop3 -off=true",
+      "set_directive_pipeline fft1D_512\/loop4 -off=true",
+      "set_directive_pipeline fft1D_512\/loop5 -off=true",
+      "set_directive_pipeline fft1D_512\/loop6 -off=true",
+      "set_directive_pipeline fft1D_512\/loop7 -off=true",
+      "set_directive_pipeline fft1D_512\/loop8 -off=true",
+      "set_directive_pipeline fft1D_512\/loop9 -off=true",
+      "set_directive_pipeline fft1D_512\/loop10 -off=true",
+      "set_directive_pipeline fft1D_512\/loop11 -off=true",
+      "set_directive_pipeline fft1D_512 -off=true",
+      "set_directive_pipeline twiddles8 -off=true",
+      "set_directive_inline twiddles8 -off=true",
+      "set_directive_top fft1D_512 -name fft1D_512"
+    ],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "fft1D_512"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "8",
+    "Uncertainty": "2.16",
+    "IsCombinational": "0",
+    "II": "15695",
+    "Latency": "15694"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 8.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "fft1D_512",
+    "Version": "1.0",
+    "DisplayName": "Fft1d_512",
+    "Revision": "2114259359",
+    "Description": "An IP generated by Vitis HLS",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "xilinx_com_hls_fft1D_512_1_0.zip"
+  },
+  "Files": {
+    "CSource": ["..\/..\/..\/benchmarks\/transposed_fft\/transposed_fft.c"],
+    "Vhdl": [
+      "impl\/vhdl\/fft1D_512_dadd_64ns_64ns_64_4_full_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_dadddsub_64ns_64ns_64_4_full_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_DATA_x_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/fft1D_512_data_x_RAM_AUTO_1R1W_x.vhd",
+      "impl\/vhdl\/fft1D_512_ddiv_64ns_64ns_64_14_no_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_dmul_64ns_64ns_64_4_max_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_dsub_64ns_64ns_64_4_full_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_35ns_25ns_60_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_42ns_33ns_75_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_49ns_44s_93_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_49ns_49ns_98_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_56ns_52s_108_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_64s_63ns_126_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_mul_170s_53ns_170_2_1.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K0_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K1_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K2_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K3_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K4_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sin_or_cos_double_s_ref_4oPi_table_256_ROM_AUTO_1R.vhd",
+      "impl\/vhdl\/fft1D_512_sitodp_32ns_64_2_no_dsp_1.vhd",
+      "impl\/vhdl\/fft1D_512_smem_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/fft1D_512_sparsemux_17_3_1_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_sparsemux_33_4_1_1_1.vhd",
+      "impl\/vhdl\/fft1D_512_twiddles8.vhd",
+      "impl\/vhdl\/fft1D_512_twiddles8_twiddles8_reversed8_ROM_AUTO_1R.vhd",
+      "impl\/vhdl\/fft1D_512.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/fft1D_512_dadd_64ns_64ns_64_4_full_dsp_1.v",
+      "impl\/verilog\/fft1D_512_dadddsub_64ns_64ns_64_4_full_dsp_1.v",
+      "impl\/verilog\/fft1D_512_DATA_x_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/fft1D_512_data_x_RAM_AUTO_1R1W_x.v",
+      "impl\/verilog\/fft1D_512_ddiv_64ns_64ns_64_14_no_dsp_1.v",
+      "impl\/verilog\/fft1D_512_dmul_64ns_64ns_64_4_max_dsp_1.v",
+      "impl\/verilog\/fft1D_512_dsub_64ns_64ns_64_4_full_dsp_1.v",
+      "impl\/verilog\/fft1D_512_mul_35ns_25ns_60_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_42ns_33ns_75_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_49ns_44s_93_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_49ns_49ns_98_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_56ns_52s_108_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_64s_63ns_126_1_1.v",
+      "impl\/verilog\/fft1D_512_mul_170s_53ns_170_2_1.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K0_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K0_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K1_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K1_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K2_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K2_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K3_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K3_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K4_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K4_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_ref_4oPi_table_256_ROM_AUTO_1R.dat",
+      "impl\/verilog\/fft1D_512_sin_or_cos_double_s_ref_4oPi_table_256_ROM_AUTO_1R.v",
+      "impl\/verilog\/fft1D_512_sitodp_32ns_64_2_no_dsp_1.v",
+      "impl\/verilog\/fft1D_512_smem_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/fft1D_512_sparsemux_17_3_1_1_1.v",
+      "impl\/verilog\/fft1D_512_sparsemux_33_4_1_1_1.v",
+      "impl\/verilog\/fft1D_512_twiddles8.v",
+      "impl\/verilog\/fft1D_512_twiddles8_twiddles8_reversed8_ROM_AUTO_1R.dat",
+      "impl\/verilog\/fft1D_512_twiddles8_twiddles8_reversed8_ROM_AUTO_1R.v",
+      "impl\/verilog\/fft1D_512.v"
+    ],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/fft1D_512_dadd_64ns_64ns_64_4_full_dsp_1_ip.tcl",
+      "impl\/misc\/fft1D_512_dadddsub_64ns_64ns_64_4_full_dsp_1_ip.tcl",
+      "impl\/misc\/fft1D_512_ddiv_64ns_64ns_64_14_no_dsp_1_ip.tcl",
+      "impl\/misc\/fft1D_512_dmul_64ns_64ns_64_4_max_dsp_1_ip.tcl",
+      "impl\/misc\/fft1D_512_dsub_64ns_64ns_64_4_full_dsp_1_ip.tcl",
+      "impl\/misc\/fft1D_512_sitodp_32ns_64_2_no_dsp_1_ip.tcl"
+    ],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [".debug\/fft1D_512.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": [
+      {
+        "Name": "fft1D_512_dadd_64ns_64ns_64_4_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_dadd_64ns_64ns_64_4_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "fft1D_512_dadddsub_64ns_64ns_64_4_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_dadddsub_64ns_64ns_64_4_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "fft1D_512_ddiv_64ns_64ns_64_14_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 12 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_ddiv_64ns_64ns_64_14_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "fft1D_512_dmul_64ns_64ns_64_4_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_dmul_64ns_64ns_64_4_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "fft1D_512_dsub_64ns_64ns_64_4_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Subtract CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_dsub_64ns_64ns_64_4_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "fft1D_512_sitodp_32ns_64_2_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name fft1D_512_sitodp_32ns_64_2_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {"ASSOCIATED_RESET": "ap_rst"},
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_HIGH"},
+      "portMap": {"ap_rst": "RST"},
+      "ports": ["ap_rst"]
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "busTypeName": "acc_handshake",
+      "mode": "slave",
+      "portMap": {
+        "ap_start": "start",
+        "ap_done": "done",
+        "ap_idle": "idle",
+        "ap_ready": "ready"
+      },
+      "ports": [
+        "ap_done",
+        "ap_idle",
+        "ap_ready",
+        "ap_start"
+      ]
+    },
+    "work_x_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "9",
+      "portMap": {"work_x_address0": "DATA"},
+      "ports": ["work_x_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_x_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"work_x_d0": "DATA"},
+      "ports": ["work_x_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_x_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"work_x_q0": "DATA"},
+      "ports": ["work_x_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_x_address1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "9",
+      "portMap": {"work_x_address1": "DATA"},
+      "ports": ["work_x_address1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_x_d1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"work_x_d1": "DATA"},
+      "ports": ["work_x_d1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_x_q1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"work_x_q1": "DATA"},
+      "ports": ["work_x_q1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_x"
+        }]
+    },
+    "work_y_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "9",
+      "portMap": {"work_y_address0": "DATA"},
+      "ports": ["work_y_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    },
+    "work_y_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"work_y_d0": "DATA"},
+      "ports": ["work_y_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    },
+    "work_y_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"work_y_q0": "DATA"},
+      "ports": ["work_y_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    },
+    "work_y_address1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "9",
+      "portMap": {"work_y_address1": "DATA"},
+      "ports": ["work_y_address1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    },
+    "work_y_d1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"work_y_d1": "DATA"},
+      "ports": ["work_y_d1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    },
+    "work_y_q1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"work_y_q1": "DATA"},
+      "ports": ["work_y_q1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "work_y"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_x_address0": {
+      "dir": "out",
+      "width": "9"
+    },
+    "work_x_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_x_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_x_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "work_x_q0": {
+      "dir": "in",
+      "width": "64"
+    },
+    "work_x_address1": {
+      "dir": "out",
+      "width": "9"
+    },
+    "work_x_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_x_we1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_x_d1": {
+      "dir": "out",
+      "width": "64"
+    },
+    "work_x_q1": {
+      "dir": "in",
+      "width": "64"
+    },
+    "work_y_address0": {
+      "dir": "out",
+      "width": "9"
+    },
+    "work_y_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_y_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_y_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "work_y_q0": {
+      "dir": "in",
+      "width": "64"
+    },
+    "work_y_address1": {
+      "dir": "out",
+      "width": "9"
+    },
+    "work_y_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_y_we1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "work_y_d1": {
+      "dir": "out",
+      "width": "64"
+    },
+    "work_y_q1": {
+      "dir": "in",
+      "width": "64"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "fft1D_512",
+      "Instances": [{
+          "ModuleName": "twiddles8",
+          "InstanceName": "grp_twiddles8_fu_1971",
+          "Instances": [
+            {
+              "ModuleName": "sin_or_cos_double_s",
+              "InstanceName": "grp_sin_or_cos_double_s_fu_119"
+            },
+            {
+              "ModuleName": "sin_or_cos_double_s",
+              "InstanceName": "grp_sin_or_cos_double_s_fu_138"
+            }
+          ]
+        }]
+    },
+    "Info": {
+      "sin_or_cos_double_s": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "twiddles8": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "fft1D_512": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }
+    },
+    "Metrics": {
+      "sin_or_cos_double_s": {
+        "Latency": {
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "1",
+          "PipelineDepth": "9",
+          "PipelineType": "yes"
+        },
+        "Timing": {
+          "Target": "8.00",
+          "Uncertainty": "2.16",
+          "Estimate": "5.558"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "2688",
+          "UTIL_BRAM": "0",
+          "DSP": "91",
+          "AVAIL_DSP": "5952",
+          "UTIL_DSP": "1",
+          "FF": "2527",
+          "AVAIL_FF": "1743360",
+          "UTIL_FF": "~0",
+          "LUT": "6429",
+          "AVAIL_LUT": "871680",
+          "UTIL_LUT": "~0",
+          "URAM": "0",
+          "AVAIL_URAM": "640",
+          "UTIL_URAM": "0"
+        }
+      },
+      "twiddles8": {
+        "Latency": {
+          "LatencyBest": "50",
+          "LatencyAvg": "50",
+          "LatencyWorst": "50",
+          "PipelineII": "50",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "8.00",
+          "Uncertainty": "2.16",
+          "Estimate": "5.558"
+        },
+        "Loops": [{
+            "Name": "twiddles",
+            "TripCount": "7",
+            "Latency": "47",
+            "PipelineII": "1",
+            "PipelineDepth": "42"
+          }],
+        "Area": {
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "2688",
+          "UTIL_BRAM": "0",
+          "DSP": "236",
+          "AVAIL_DSP": "5952",
+          "UTIL_DSP": "3",
+          "FF": "8615",
+          "AVAIL_FF": "1743360",
+          "UTIL_FF": "~0",
+          "LUT": "15146",
+          "AVAIL_LUT": "871680",
+          "UTIL_LUT": "1",
+          "URAM": "0",
+          "AVAIL_URAM": "640",
+          "UTIL_URAM": "0"
+        }
+      },
+      "fft1D_512": {
+        "Latency": {
+          "LatencyBest": "15694",
+          "LatencyAvg": "15694",
+          "LatencyWorst": "15694",
+          "PipelineII": "15695",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "8.00",
+          "Uncertainty": "2.16",
+          "Estimate": "6.136"
+        },
+        "Loops": [
+          {
+            "Name": "loop1",
+            "TripCount": "64",
+            "Latency": "5568",
+            "PipelineII": "",
+            "PipelineDepth": "87"
+          },
+          {
+            "Name": "loop2",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop3",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop4",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop5",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop6",
+            "TripCount": "64",
+            "Latency": "5568",
+            "PipelineII": "",
+            "PipelineDepth": "87"
+          },
+          {
+            "Name": "loop7",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop8",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop9",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop10",
+            "TripCount": "64",
+            "Latency": "320",
+            "PipelineII": "",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "loop11",
+            "TripCount": "64",
+            "Latency": "1984",
+            "PipelineII": "",
+            "PipelineDepth": "31"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "8",
+          "AVAIL_BRAM": "2688",
+          "UTIL_BRAM": "~0",
+          "DSP": "308",
+          "AVAIL_DSP": "5952",
+          "UTIL_DSP": "5",
+          "FF": "17091",
+          "AVAIL_FF": "1743360",
+          "UTIL_FF": "~0",
+          "LUT": "29068",
+          "AVAIL_LUT": "871680",
+          "UTIL_LUT": "3",
+          "URAM": "0",
+          "AVAIL_URAM": "640",
+          "UTIL_URAM": "0"
+        }
+      }
+    }
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2025-09-14 01:59:26 -03",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2023.2"
+  }
+}

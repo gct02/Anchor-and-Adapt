@@ -1,0 +1,701 @@
+<profile>
+    <ReportVersion>
+        <Version>2023.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtexuplusHBM</ProductFamily>
+        <Part>xcu50-fsvh2104-2-e</Part>
+        <TopModelName>bbgemm</TopModelName>
+        <TargetClockPeriod>8.00</TargetClockPeriod>
+        <ClockUncertainty>2.16</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>4.503</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>2990225</Best-caseLatency>
+            <Average-caseLatency>2990225</Average-caseLatency>
+            <Worst-caseLatency>2990225</Worst-caseLatency>
+            <Best-caseRealTimeLatency>23.922 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>23.922 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>23.922 ms</Worst-caseRealTimeLatency>
+            <Interval-min>2990226</Interval-min>
+            <Interval-max>2990226</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <loopjj>
+                <Slack>5.84</Slack>
+                <TripCount>8</TripCount>
+                <Latency>2990224</Latency>
+                <AbsoluteTimeLatency>23921792</AbsoluteTimeLatency>
+                <IterationLatency>373778</IterationLatency>
+                <InstanceList/>
+                <loopkk>
+                    <Slack>5.84</Slack>
+                    <TripCount>8</TripCount>
+                    <Latency>373776</Latency>
+                    <AbsoluteTimeLatency>2990208</AbsoluteTimeLatency>
+                    <IterationLatency>46722</IterationLatency>
+                    <InstanceList/>
+                    <loopi>
+                        <Slack>5.84</Slack>
+                        <TripCount>64</TripCount>
+                        <Latency>46720</Latency>
+                        <AbsoluteTimeLatency>373760</AbsoluteTimeLatency>
+                        <IterationLatency>730</IterationLatency>
+                        <InstanceList/>
+                        <loopk>
+                            <Slack>5.84</Slack>
+                            <TripCount>8</TripCount>
+                            <Latency>728</Latency>
+                            <AbsoluteTimeLatency>5824</AbsoluteTimeLatency>
+                            <IterationLatency>91</IterationLatency>
+                            <InstanceList/>
+                            <loopj>
+                                <Slack>5.84</Slack>
+                                <TripCount>8</TripCount>
+                                <Latency>88</Latency>
+                                <AbsoluteTimeLatency>704</AbsoluteTimeLatency>
+                                <IterationLatency>11</IterationLatency>
+                                <InstanceList/>
+                            </loopj>
+                        </loopk>
+                    </loopi>
+                </loopkk>
+            </loopjj>
+        </SummaryOfLoopLatency>
+        <SummaryOfViolations>
+            <IssueType>-</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>data/benchmarks/gemm/gemm.c:11</SourceLocation>
+            <SummaryOfLoopViolations>
+                <loopjj>
+                    <Name>loopjj</Name>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/gemm/gemm.c:15</SourceLocation>
+                    <loopkk>
+                        <Name>loopkk</Name>
+                        <IssueType>-</IssueType>
+                        <ViolationType>-</ViolationType>
+                        <SourceLocation>data/benchmarks/gemm/gemm.c:17</SourceLocation>
+                        <loopi>
+                            <Name>loopi</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/gemm/gemm.c:19</SourceLocation>
+                            <loopk>
+                                <Name>loopk</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>data/benchmarks/gemm/gemm.c:21</SourceLocation>
+                                <loopj>
+                                    <Name>loopj</Name>
+                                    <IssueType>-</IssueType>
+                                    <ViolationType>-</ViolationType>
+                                    <SourceLocation>data/benchmarks/gemm/gemm.c:26</SourceLocation>
+                                </loopj>
+                            </loopk>
+                        </loopi>
+                    </loopkk>
+                </loopjj>
+            </SummaryOfLoopViolations>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <DSP>11</DSP>
+            <FF>1128</FF>
+            <LUT>1092</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>2688</BRAM_18K>
+            <DSP>5952</DSP>
+            <FF>1743360</FF>
+            <LUT>871680</LUT>
+            <URAM>640</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>bbgemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_address0</name>
+            <Object>m1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>12</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_ce0</name>
+            <Object>m1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_q0</name>
+            <Object>m1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>64</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_address0</name>
+            <Object>m2</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>12</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_ce0</name>
+            <Object>m2</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_q0</name>
+            <Object>m2</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>64</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_address0</name>
+            <Object>prod</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>12</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_ce0</name>
+            <Object>prod</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_we0</name>
+            <Object>prod</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_d0</name>
+            <Object>prod</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_q0</name>
+            <Object>prod</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>64</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="2">
+            <ModuleName>bbgemm</ModuleName>
+            <BindInstances>add_ln19_fu_219_p2 add_ln21_fu_237_p2 add_ln25_fu_261_p2 add_ln26_fu_293_p2 add_ln28_fu_303_p2 dmul_64ns_64ns_64_4_max_dsp_1_U2 dadd_64ns_64ns_64_4_full_dsp_1_U1 add_ln17_fu_225_p2 add_ln15_fu_203_p2</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>bbgemm</Name>
+            <Loops>
+                <loopjj>
+                    <loopkk>
+                        <loopi>
+                            <loopk>
+                                <loopj/>
+                            </loopk>
+                        </loopi>
+                    </loopkk>
+                </loopjj>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>4.503</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>2990225</Best-caseLatency>
+                    <Average-caseLatency>2990225</Average-caseLatency>
+                    <Worst-caseLatency>2990225</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>23.922 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>23.922 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>23.922 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2990226</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <loopjj>
+                        <Name>loopjj</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>8</TripCount>
+                        <Latency>2990224</Latency>
+                        <AbsoluteTimeLatency>23.922 ms</AbsoluteTimeLatency>
+                        <IterationLatency>373778</IterationLatency>
+                        <PipelineDepth>373778</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                        <loopkk>
+                            <Name>loopkk</Name>
+                            <Slack>5.84</Slack>
+                            <TripCount>8</TripCount>
+                            <Latency>373776</Latency>
+                            <AbsoluteTimeLatency>2.990 ms</AbsoluteTimeLatency>
+                            <IterationLatency>46722</IterationLatency>
+                            <PipelineDepth>46722</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                            <loopi>
+                                <Name>loopi</Name>
+                                <Slack>5.84</Slack>
+                                <TripCount>64</TripCount>
+                                <Latency>46720</Latency>
+                                <AbsoluteTimeLatency>0.374 ms</AbsoluteTimeLatency>
+                                <IterationLatency>730</IterationLatency>
+                                <PipelineDepth>730</PipelineDepth>
+                                <PipelineType>no</PipelineType>
+                                <InstanceList/>
+                                <loopk>
+                                    <Name>loopk</Name>
+                                    <Slack>5.84</Slack>
+                                    <TripCount>8</TripCount>
+                                    <Latency>728</Latency>
+                                    <AbsoluteTimeLatency>5.824 us</AbsoluteTimeLatency>
+                                    <IterationLatency>91</IterationLatency>
+                                    <PipelineDepth>91</PipelineDepth>
+                                    <PipelineType>no</PipelineType>
+                                    <InstanceList/>
+                                    <loopj>
+                                        <Name>loopj</Name>
+                                        <Slack>5.84</Slack>
+                                        <TripCount>8</TripCount>
+                                        <Latency>88</Latency>
+                                        <AbsoluteTimeLatency>0.704 us</AbsoluteTimeLatency>
+                                        <IterationLatency>11</IterationLatency>
+                                        <PipelineDepth>11</PipelineDepth>
+                                        <PipelineType>no</PipelineType>
+                                        <InstanceList/>
+                                    </loopj>
+                                </loopk>
+                            </loopi>
+                        </loopkk>
+                    </loopjj>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>data/benchmarks/gemm/gemm.c:11</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <loopjj>
+                            <Name>loopjj</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>data/benchmarks/gemm/gemm.c:15</SourceLocation>
+                            <loopkk>
+                                <Name>loopkk</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>data/benchmarks/gemm/gemm.c:17</SourceLocation>
+                                <loopi>
+                                    <Name>loopi</Name>
+                                    <IssueType>-</IssueType>
+                                    <ViolationType>-</ViolationType>
+                                    <SourceLocation>data/benchmarks/gemm/gemm.c:19</SourceLocation>
+                                    <loopk>
+                                        <Name>loopk</Name>
+                                        <IssueType>-</IssueType>
+                                        <ViolationType>-</ViolationType>
+                                        <SourceLocation>data/benchmarks/gemm/gemm.c:21</SourceLocation>
+                                        <loopj>
+                                            <Name>loopj</Name>
+                                            <IssueType>-</IssueType>
+                                            <ViolationType>-</ViolationType>
+                                            <SourceLocation>data/benchmarks/gemm/gemm.c:26</SourceLocation>
+                                        </loopj>
+                                    </loopk>
+                                </loopi>
+                            </loopkk>
+                        </loopjj>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>11</DSP>
+                    <AVAIL_DSP>5952</AVAIL_DSP>
+                    <UTIL_DSP>~0</UTIL_DSP>
+                    <FF>1128</FF>
+                    <AVAIL_FF>1743360</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1092</LUT>
+                    <AVAIL_LUT>871680</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2688</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>640</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopi" OPTYPE="add" PRAGMA="" RTLNAME="add_ln19_fu_219_p2" SOURCE="data/benchmarks/gemm/gemm.c:19" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopk" OPTYPE="add" PRAGMA="" RTLNAME="add_ln21_fu_237_p2" SOURCE="data/benchmarks/gemm/gemm.c:21" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopk" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_fu_261_p2" SOURCE="data/benchmarks/gemm/gemm.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopj" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_fu_293_p2" SOURCE="data/benchmarks/gemm/gemm.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopj" OPTYPE="add" PRAGMA="" RTLNAME="add_ln28_fu_303_p2" SOURCE="data/benchmarks/gemm/gemm.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="8" ID="" IMPL="maxdsp" LATENCY="3" LOOP="loopj" OPTYPE="dmul" PRAGMA="" RTLNAME="dmul_64ns_64ns_64_4_max_dsp_1_U2" SOURCE="data/benchmarks/gemm/gemm.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="mul"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="3" LOOP="loopj" OPTYPE="dadd" PRAGMA="" RTLNAME="dadd_64ns_64ns_64_4_full_dsp_1_U1" SOURCE="data/benchmarks/gemm/gemm.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopkk" OPTYPE="add" PRAGMA="" RTLNAME="add_ln17_fu_225_p2" SOURCE="data/benchmarks/gemm/gemm.c:17" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="loopjj" OPTYPE="add" PRAGMA="" RTLNAME="add_ln15_fu_203_p2" SOURCE="data/benchmarks/gemm/gemm.c:15" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln15"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_array_partition throughput_driven="off"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="m1" index="0" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="m1_address0" name="m1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m1_ce0" name="m1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m1_q0" name="m1_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="m2" index="1" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="m2_address0" name="m2_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m2_ce0" name="m2_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m2_q0" name="m2_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="prod" index="2" direction="inout" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="prod_address0" name="prod_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="prod_ce0" name="prod_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_we0" name="prod_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_d0" name="prod_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="prod_q0" name="prod_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="m1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="12">
+            <portMaps>
+                <portMap portMapName="m1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="64">
+            <portMaps>
+                <portMap portMapName="m1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="12">
+            <portMaps>
+                <portMap portMapName="m2_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="64">
+            <portMaps>
+                <portMap portMapName="m2_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="12">
+            <portMaps>
+                <portMap portMapName="prod_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="64">
+            <portMaps>
+                <portMap portMapName="prod_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="64">
+            <portMaps>
+                <portMap portMapName="prod_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table>
+                    <keys size="3">Port, Direction, Bitwidth</keys>
+                    <column name="m1_address0">out, 12</column>
+                    <column name="m1_q0">in, 64</column>
+                    <column name="m2_address0">out, 12</column>
+                    <column name="m2_q0">in, 64</column>
+                    <column name="prod_address0">out, 12</column>
+                    <column name="prod_d0">out, 64</column>
+                    <column name="prod_q0">in, 64</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst">reset, ap_rst</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="m1">in, double*</column>
+                    <column name="m2">in, double*</column>
+                    <column name="prod">inout, double*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="4">Argument, HW Interface, HW Type, HW Usage</keys>
+                    <column name="m1">m1_address0, port, offset</column>
+                    <column name="m1">m1_ce0, port, </column>
+                    <column name="m1">m1_q0, port, </column>
+                    <column name="m2">m2_address0, port, offset</column>
+                    <column name="m2">m2_ce0, port, </column>
+                    <column name="m2">m2_q0, port, </column>
+                    <column name="prod">prod_address0, port, offset</column>
+                    <column name="prod">prod_ce0, port, </column>
+                    <column name="prod">prod_we0, port, </column>
+                    <column name="prod">prod_d0, port, </column>
+                    <column name="prod">prod_q0, port, </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <PragmaReport>
+        <Pragma type="loop_tripcount" location="data/benchmarks/gemm/gemm.c:16" status="valid" parentFunction="bbgemm" variable="" isDirective="0" options="min=8 max=8 avg=8"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/gemm/gemm.c:18" status="valid" parentFunction="bbgemm" variable="" isDirective="0" options="min=8 max=8 avg=8"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/gemm/gemm.c:20" status="valid" parentFunction="bbgemm" variable="" isDirective="0" options="min=64 max=64 avg=64"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/gemm/gemm.c:22" status="valid" parentFunction="bbgemm" variable="" isDirective="0" options="min=8 max=8 avg=8"/>
+        <Pragma type="loop_tripcount" location="data/benchmarks/gemm/gemm.c:27" status="valid" parentFunction="bbgemm" variable="" isDirective="0" options="min=8 max=8 avg=8"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:1" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:2" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:3" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:4" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:5" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+        <Pragma type="pipeline" location="../anchor_configs/gemm.tcl:6" status="valid" parentFunction="bbgemm" variable="" isDirective="1" options="off=true"/>
+    </PragmaReport>
+</profile>
+

@@ -1,0 +1,316 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2023.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>8.000</TargetClockPeriod>
+  <AchievedClockPeriod>5.022</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>5.022</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>5.022</CP_SYNTH>
+  <CP_TARGET>8.000</CP_TARGET>
+  <SLACK_FINAL>2.978</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>2.978</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>2.978</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>2.978</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>6</BRAM>
+    <CLB>0</CLB>
+    <DSP>48</DSP>
+    <FF>11433</FF>
+    <LATCH>0</LATCH>
+    <LUT>15066</LUT>
+    <SRL>298</SRL>
+    <URAM>1</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>2688</BRAM>
+    <CLB>0</CLB>
+    <DSP>5952</DSP>
+    <FF>1743360</FF>
+    <LUT>871680</LUT>
+    <URAM>640</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="backprop" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="31">activations1_U activations2_U dactivations1_U dactivations2_U dadd_64ns_64ns_64_4_full_dsp_1_U168 dadddsub_64ns_64ns_64_4_full_dsp_1_U166 ddiv_64ns_64ns_64_14_no_dsp_1_U169 delta_weights1_U delta_weights2_U delta_weights3_U dexp_64ns_64ns_64_10_full_dsp_1_U170 dmul_64ns_64ns_64_4_max_dsp_1_U167 dmul_64ns_64ns_64_4_max_dsp_1_U171 grp_backprop_Pipeline_RELU_loop11_fu_288 grp_backprop_Pipeline_RELU_loop12_fu_306 grp_backprop_Pipeline_RELU_loop1_fu_272 grp_backprop_Pipeline_backprop_loop1_1_fu_248 grp_backprop_Pipeline_soft_max_loop1_fu_322 grp_backprop_Pipeline_soft_max_loop2_fu_330 grp_backprop_Pipeline_take_difference_loop1_fu_344 grp_get_delta_matrix_weights1_1_fu_399 grp_get_delta_matrix_weights2_fu_383 grp_get_delta_matrix_weights3_fu_363 grp_get_oracle_activations1_1_fu_390 grp_get_oracle_activations2_1_fu_372 grp_matrix_vector_product_with_bias_input_layer_1_fu_260 grp_matrix_vector_product_with_bias_output_layer_1_fu_294 grp_matrix_vector_product_with_bias_second_layer_1_fu_278 grp_update_weights_1_fu_408 oracle_activations1_U oracle_activations2_U</SubModules>
+    <Resources BRAM="6" DSP="48" FF="11433" LUT="15066" LUTRAM="512" LogicLUT="14256" RAMB36="3" SRL="298" URAM="1"/>
+    <LocalResources FF="1088" LUT="20" LogicLUT="20"/>
+  </RtlModule>
+  <RtlModule CELL="inst/activations1_U" BINDMODULE="backprop_activations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_activations1_RAM_AUTO_1R1W">
+    <Resources FF="128" LUT="128" LUTRAM="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/activations2_U" BINDMODULE="backprop_activations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_activations1_RAM_AUTO_1R1W">
+    <Resources FF="128" LUT="256" LUTRAM="128" LogicLUT="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dactivations1_U" BINDMODULE="backprop_dactivations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dactivations1_RAM_AUTO_1R1W">
+    <Resources FF="64" LUT="64" LUTRAM="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dactivations2_U" BINDMODULE="backprop_dactivations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dactivations1_RAM_AUTO_1R1W">
+    <Resources FF="64" LUT="128" LUTRAM="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dadd_64ns_64ns_64_4_full_dsp_1_U168" BINDMODULE="backprop_dadd_64ns_64ns_64_4_full_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dadd_64ns_64ns_64_4_full_dsp_1">
+    <Resources DSP="3" FF="369" LUT="717" LogicLUT="717"/>
+    <LocalResources FF="128" LUT="1" LogicLUT="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dadddsub_64ns_64ns_64_4_full_dsp_1_U166" BINDMODULE="backprop_dadddsub_64ns_64ns_64_4_full_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dadddsub_64ns_64ns_64_4_full_dsp_1">
+    <Resources DSP="3" FF="370" LUT="720" LogicLUT="720"/>
+    <LocalResources FF="129" LUT="3" LogicLUT="3"/>
+  </RtlModule>
+  <RtlModule CELL="inst/ddiv_64ns_64ns_64_14_no_dsp_1_U169" BINDMODULE="backprop_ddiv_64ns_64ns_64_14_no_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_ddiv_64ns_64ns_64_14_no_dsp_1">
+    <Resources FF="1392" LUT="3311" LogicLUT="3251" SRL="60"/>
+    <LocalResources FF="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/delta_weights1_U" BINDMODULE="backprop_delta_weights1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_delta_weights1_RAM_AUTO_1R1W">
+    <Resources BRAM="4" RAMB36="2"/>
+  </RtlModule>
+  <RtlModule CELL="inst/delta_weights2_U" BINDMODULE="backprop_delta_weights2_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_delta_weights2_RAM_AUTO_1R1W">
+    <Resources URAM="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/delta_weights3_U" BINDMODULE="backprop_delta_weights3_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_delta_weights3_RAM_AUTO_1R1W">
+    <Resources BRAM="2" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dexp_64ns_64ns_64_10_full_dsp_1_U170" BINDMODULE="backprop_dexp_64ns_64ns_64_10_full_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dexp_64ns_64ns_64_10_full_dsp_1">
+    <Resources DSP="26" FF="777" LUT="1847" LogicLUT="1831" SRL="16"/>
+    <LocalResources FF="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dmul_64ns_64ns_64_4_max_dsp_1_U167" BINDMODULE="backprop_dmul_64ns_64ns_64_4_max_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dmul_64ns_64ns_64_4_max_dsp_1">
+    <Resources DSP="8" FF="213" LUT="203" LogicLUT="203"/>
+    <LocalResources FF="128" LUT="3" LogicLUT="3"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dmul_64ns_64ns_64_4_max_dsp_1_U171" BINDMODULE="backprop_dmul_64ns_64ns_64_4_max_dsp_1" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dmul_64ns_64ns_64_4_max_dsp_1">
+    <Resources DSP="8" FF="213" LUT="104" LogicLUT="104"/>
+    <LocalResources FF="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop11_fu_288" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_RELU_loop11">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="160" LUT="103" LogicLUT="24" SRL="79"/>
+    <LocalResources FF="158" LUT="87" LogicLUT="8" SRL="79"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop11_fu_288/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_RELU_loop11.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="16" LogicLUT="16"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop12_fu_306" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_RELU_loop12">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="679" LUT="1043" LogicLUT="1043"/>
+    <LocalResources FF="677" LUT="650" LogicLUT="650"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop12_fu_306/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_RELU_loop12.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="393" LogicLUT="393"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop1_fu_272" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_RELU_loop1">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="334" LUT="429" LogicLUT="350" SRL="79"/>
+    <LocalResources FF="332" LUT="415" LogicLUT="336" SRL="79"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_RELU_loop1_fu_272/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_RELU_loop1.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="14" LogicLUT="14"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_backprop_loop1_1_fu_248" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_backprop_loop1_1">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="201" LUT="44" LogicLUT="44"/>
+    <LocalResources FF="199" LUT="1" LogicLUT="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_backprop_loop1_1_fu_248/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_backprop_loop1_1.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="43" LogicLUT="43"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_soft_max_loop1_fu_322" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_soft_max_loop1">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="205" LUT="150" LogicLUT="149" SRL="1"/>
+    <LocalResources FF="203" LUT="74" LogicLUT="73" SRL="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_soft_max_loop1_fu_322/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_soft_max_loop1.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="76" LogicLUT="76"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_soft_max_loop2_fu_330" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_soft_max_loop2">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="351" LUT="143" LogicLUT="139" SRL="4"/>
+    <LocalResources FF="349" LUT="132" LogicLUT="128" SRL="4"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_soft_max_loop2_fu_330/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_soft_max_loop2.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_take_difference_loop1_fu_344" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_backprop_Pipeline_take_difference_loop1">
+    <SubModules count="2">flow_control_loop_pipe_sequential_init_U mux_3_2_64_1_1_U99</SubModules>
+    <Resources FF="223" LUT="275" LogicLUT="269" SRL="6"/>
+    <LocalResources FF="221" LUT="190" LogicLUT="184" SRL="6"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_take_difference_loop1_fu_344/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_take_difference_loop1.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="21" LogicLUT="21"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_backprop_Pipeline_take_difference_loop1_fu_344/mux_3_2_64_1_1_U99" BINDMODULE="backprop_mux_3_2_64_1_1" DEPTH="2" FILE_NAME="backprop_backprop_Pipeline_take_difference_loop1.v" ORIG_REF_NAME="backprop_mux_3_2_64_1_1">
+    <Resources LUT="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_get_delta_matrix_weights1_1_fu_399" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_get_delta_matrix_weights1_1">
+    <Resources FF="108" LUT="31" LogicLUT="31"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_get_delta_matrix_weights2_fu_383" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_get_delta_matrix_weights2">
+    <Resources FF="189" LUT="86" LogicLUT="86"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_get_delta_matrix_weights3_fu_363" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_get_delta_matrix_weights3">
+    <Resources FF="105" LUT="28" LogicLUT="28"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_get_oracle_activations1_1_fu_390" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_get_oracle_activations1_1">
+    <Resources FF="242" LUT="296" LogicLUT="296"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_get_oracle_activations2_1_fu_372" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_get_oracle_activations2_1">
+    <Resources FF="238" LUT="112" LogicLUT="112"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_input_layer_1_fu_260" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_input_layer_1">
+    <SubModules count="1">grp_matrix_vector_product_with_bias_input_layer_1_Pipeline_add_bias_to_activations_l_fu_136</SubModules>
+    <Resources FF="280" LUT="274" LogicLUT="265" SRL="9"/>
+    <LocalResources FF="260" LUT="232" LogicLUT="230" SRL="2"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_input_layer_1_fu_260/grp_matrix_vector_product_with_bias_input_layer_1_Pipeline_add_bias_to_activations_l_fu_136" DEPTH="2" FILE_NAME="backprop_matrix_vector_product_with_bias_input_layer_1.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_input_layer_1_Pipeline_add_bias_to_activations_l">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="20" LUT="42" LogicLUT="35" SRL="7"/>
+    <LocalResources FF="18" LUT="14" LogicLUT="7" SRL="7"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_input_layer_1_fu_260/grp_matrix_vector_product_with_bias_input_layer_1_Pipeline_add_bias_to_activations_l_fu_136/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="3" FILE_NAME="backprop_matrix_vector_product_with_bias_input_layer_1_Pipeline_add_bias_to_activations_l.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="28" LogicLUT="28"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_output_layer_1_fu_294" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_output_layer_1">
+    <SubModules count="1">grp_matrix_vector_product_with_bias_output_layer_1_Pipeline_add_bias_to_activations_s_fu_161</SubModules>
+    <Resources FF="559" LUT="671" LogicLUT="669" SRL="2"/>
+    <LocalResources FF="353" LUT="267" LogicLUT="265" SRL="2"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_output_layer_1_fu_294/grp_matrix_vector_product_with_bias_output_layer_1_Pipeline_add_bias_to_activations_s_fu_161" DEPTH="2" FILE_NAME="backprop_matrix_vector_product_with_bias_output_layer_1.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_output_layer_1_Pipeline_add_bias_to_activations_s">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="206" LUT="404" LogicLUT="404"/>
+    <LocalResources FF="204" LUT="202" LogicLUT="202"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_output_layer_1_fu_294/grp_matrix_vector_product_with_bias_output_layer_1_Pipeline_add_bias_to_activations_s_fu_161/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="3" FILE_NAME="backprop_matrix_vector_product_with_bias_output_layer_1_Pipeline_add_bias_to_activations_s.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="202" LogicLUT="202"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_second_layer_1_fu_278" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_second_layer_1">
+    <SubModules count="1">grp_matrix_vector_product_with_bias_second_layer_1_Pipeline_add_bias_to_activations_s_fu_115</SubModules>
+    <Resources FF="254" LUT="230" LogicLUT="220" SRL="10"/>
+    <LocalResources FF="236" LUT="183" LogicLUT="181" SRL="2"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_second_layer_1_fu_278/grp_matrix_vector_product_with_bias_second_layer_1_Pipeline_add_bias_to_activations_s_fu_115" DEPTH="2" FILE_NAME="backprop_matrix_vector_product_with_bias_second_layer_1.v" ORIG_REF_NAME="backprop_matrix_vector_product_with_bias_second_layer_1_Pipeline_add_bias_to_activations_s">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="18" LUT="47" LogicLUT="39" SRL="8"/>
+    <LocalResources FF="16" LUT="16" LogicLUT="8" SRL="8"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_matrix_vector_product_with_bias_second_layer_1_fu_278/grp_matrix_vector_product_with_bias_second_layer_1_Pipeline_add_bias_to_activations_s_fu_115/flow_control_loop_pipe_sequential_init_U" BINDMODULE="backprop_flow_control_loop_pipe_sequential_init" DEPTH="3" FILE_NAME="backprop_matrix_vector_product_with_bias_second_layer_1_Pipeline_add_bias_to_activations_s.v" ORIG_REF_NAME="backprop_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="31" LogicLUT="31"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_update_weights_1_fu_408" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_update_weights_1">
+    <SubModules count="1">dsqrt_64ns_64ns_64_12_no_dsp_1_U149</SubModules>
+    <Resources FF="2371" LUT="3461" LogicLUT="3429" SRL="32"/>
+    <LocalResources FF="1594" LUT="1583" LogicLUT="1583"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_update_weights_1_fu_408/dsqrt_64ns_64ns_64_12_no_dsp_1_U149" BINDMODULE="backprop_dsqrt_64ns_64ns_64_12_no_dsp_1" DEPTH="2" FILE_NAME="backprop_update_weights_1.v" ORIG_REF_NAME="backprop_dsqrt_64ns_64ns_64_12_no_dsp_1">
+    <Resources FF="777" LUT="1878" LogicLUT="1846" SRL="32"/>
+    <LocalResources FF="64" LUT="192" LogicLUT="192"/>
+  </RtlModule>
+  <RtlModule CELL="inst/oracle_activations1_U" BINDMODULE="backprop_dactivations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dactivations1_RAM_AUTO_1R1W">
+    <Resources FF="64" LUT="128" LUTRAM="64" LogicLUT="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/oracle_activations2_U" BINDMODULE="backprop_dactivations1_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="backprop.v" ORIG_REF_NAME="backprop_dactivations1_RAM_AUTO_1R1W">
+    <Resources FF="64" LUT="64" LUTRAM="64"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="4.985" DATAPATH_LOGIC_DELAY="4.901" DATAPATH_NET_DELAY="0.084" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST/ALU_OUT[0]" LOGIC_LEVELS="12" MAX_FANOUT="1" SLACK="2.978" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.985" DATAPATH_LOGIC_DELAY="4.901" DATAPATH_NET_DELAY="0.084" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST/ALU_OUT[10]" LOGIC_LEVELS="12" MAX_FANOUT="1" SLACK="2.978" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.985" DATAPATH_LOGIC_DELAY="4.901" DATAPATH_NET_DELAY="0.084" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST/ALU_OUT[11]" LOGIC_LEVELS="12" MAX_FANOUT="1" SLACK="2.978" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.985" DATAPATH_LOGIC_DELAY="4.901" DATAPATH_NET_DELAY="0.084" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST/ALU_OUT[12]" LOGIC_LEVELS="12" MAX_FANOUT="1" SLACK="2.978" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.985" DATAPATH_LOGIC_DELAY="4.901" DATAPATH_NET_DELAY="0.084" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST/ALU_OUT[13]" LOGIC_LEVELS="12" MAX_FANOUT="1" SLACK="2.978" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[0].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[0].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[1].bppDSP[2].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dexp_64ns_64ns_64_10_full_dsp_1_U170/backprop_dexp_64ns_64ns_64_10_full_dsp_1_ip_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/g_Fr_other.i_calculate_Fr/dsp_extra_fabric_adder.mult_with_add_low/use_prim.appDSP[2].bppDSP[1].use_dsp.use_dsp48e2.iDSP48E2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" LINE_NUMBER=""/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/backprop_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/backprop_failfast_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/backprop_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/backprop_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/backprop_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/backprop_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

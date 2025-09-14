@@ -377,7 +377,7 @@
       ],
       "directive_type":"unroll"
     },
-    "array_partition adpcm_main":{
+    "array_partition adpcm_main encoded":{
       "possible_directives":[
         "",
         "set_directive_array_partition -type complete -dim 1  \"adpcm_main\" encoded",

@@ -601,7 +601,7 @@
       "label": "update_weights_loop12",
       "directive_type": "pipeline"
     },
-    "array_partition weights1 backprop": {
+    "array_partition backprop weights1": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" weights1",
@@ -623,7 +623,7 @@
       "variable": "weights1",
       "directive_type": "array_partition"
     },
-    "array_partition weights2 backprop": {
+    "array_partition backprop weights2": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" weights2",
@@ -645,7 +645,7 @@
       "variable": "weights2",
       "directive_type": "array_partition"
     },
-    "array_partition weights3 backprop": {
+    "array_partition backprop weights3": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" weights3",
@@ -667,7 +667,7 @@
       "variable": "weights3",
       "directive_type": "array_partition"
     },
-    "array_partition biases1 backprop": {
+    "array_partition backprop biases1": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" biases1",
@@ -683,7 +683,7 @@
       "variable": "biases1",
       "directive_type": "array_partition"
     },
-    "array_partition biases2 backprop": {
+    "array_partition backprop biases2": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" biases2",
@@ -699,7 +699,7 @@
       "variable": "biases2",
       "directive_type": "array_partition"
     },
-    "array_partition biases3 backprop": {
+    "array_partition backprop biases3": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" biases3"
@@ -709,7 +709,7 @@
       "variable": "biases3",
       "directive_type": "array_partition"
     },
-    "array_partition training_data backprop": {
+    "array_partition backprop training_data": {
       "possible_directives": [
         "",
         "set_directive_array_partition -type block -factor 13 \"backprop\" training_data",
@@ -722,7 +722,7 @@
       "variable": "training_data",
       "directive_type": "array_partition"
     },
-    "array_partition training_targets backprop": {
+    "array_partition backprop training_targets": {
       "possible_directives": [
         "",
         "set_directive_array_partition -type block -factor 3 \"backprop\" training_targets",
@@ -735,7 +735,7 @@
       "variable": "training_targets",
       "directive_type": "array_partition"
     },
-    "array_partition delta_weights1 backprop": {
+    "array_partition backprop delta_weights1": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"backprop\" delta_weights1",
@@ -757,7 +757,7 @@
       "variable": "delta_weights1",
       "directive_type": "array_partition"
     },
-    "array_partition delta_weights2 backprop": {
+    "array_partition backprop delta_weights2": {
       "possible_directives": [
         "",
         "set_directive_array_partition -type block -factor 2 \"backprop\" delta_weights2",
@@ -778,7 +778,7 @@
       "variable": "delta_weights2",
       "directive_type": "array_partition"
     },
-    "array_partition d_weights3 update_weights": {
+    "array_partition update_weights d_weights3": {
       "possible_directives": [
         "",
         "set_directive_array_partition \"update_weights\" d_weights3",

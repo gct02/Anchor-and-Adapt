@@ -9,7 +9,7 @@
       "label":"gsm_div_label0",
       "directive_type":"unroll"
     },
-    "array_partition gsm_norm":{
+    "array_partition gsm_norm bitoff":{
       "possible_directives":[
         "",
         "set_directive_array_partition -type complete -dim 1 \"gsm_norm\" bitoff",

@@ -1,0 +1,332 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Sun Sep 14 02:13:43 -03 2025
+    * Version:         2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:         TRANS_FFT
+    * Solution:        solution0 (Vivado IP Flow Target)
+    * Product family:  virtexuplusHBM
+    * Target device:   xcu50-fsvh2104-2-e
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  8 ns
+    * C-Synthesis target clock:    8 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              27669
+FF:               12818
+DSP:              308
+BRAM:             20
+URAM:             0
+SRL:              242
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 8.000       |
+| Post-Synthesis | 6.518       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                     | LUT   | FF    | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                     | 27669 | 12818 | 308 | 20   |      |     |        |      |         |          |        |
+|   (inst)                                 | 195   | 3138  |     |      |      |     |        |      |         |          |        |
+|   DATA_x_U                               | 928   |       |     | 4    |      |     |        |      |         |          |        |
+|   DATA_y_U                               | 974   |       |     | 4    |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U52 | 1505  | 370   | 3   |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U53 | 1547  | 370   | 3   |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U54 | 1418  | 370   | 3   |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U55 | 1390  | 370   | 3   |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U56 | 885   | 370   | 3   |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_4_full_dsp_1_U57 | 860   | 369   | 3   |      |      |     |        |      |         |          |        |
+|   data_x_U_x                             | 7     |       |     | 4    |      |     |        |      |         |          |        |
+|   data_y_U_x                             | 106   |       |     | 4    |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U60      | 185   | 150   | 8   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U61      | 215   | 149   | 8   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U62      | 88    | 149   | 8   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U63      | 88    | 149   | 8   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U64      | 77    | 149   | 8   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U65      | 77    | 149   | 8   |      |      |     |        |      |         |          |        |
+|   dsub_64ns_64ns_64_4_full_dsp_1_U58     | 784   | 369   | 3   |      |      |     |        |      |         |          |        |
+|   dsub_64ns_64ns_64_4_full_dsp_1_U59     | 818   | 369   | 3   |      |      |     |        |      |         |          |        |
+|   grp_twiddles8_fu_1971                  | 14979 | 5828  | 236 |      |      |     |        |      |         |          |        |
+|     (grp_twiddles8_fu_1971)              | 45    | 498   |     |      |      |     |        |      |         |          |        |
+|     dadd_64ns_64ns_64_4_full_dsp_1_U32   | 741   | 369   | 3   |      |      |     |        |      |         |          |        |
+|     ddiv_64ns_64ns_64_14_no_dsp_1_U39    | 3214  | 1391  |     |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U33    | 80    | 212   | 8   |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U34    | 104   | 212   | 8   |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U35    | 104   | 149   | 8   |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U36    | 104   | 149   | 8   |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U37    | 104   | 277   | 8   |      |      |     |        |      |         |          |        |
+|     dmul_64ns_64ns_64_4_max_dsp_1_U38    | 104   | 277   | 8   |      |      |     |        |      |         |          |        |
+|     dsub_64ns_64ns_64_4_full_dsp_1_U31   | 718   | 369   | 3   |      |      |     |        |      |         |          |        |
+|     grp_sin_or_cos_double_s_fu_119       | 4599  | 908   | 91  |      |      |     |        |      |         |          |        |
+|       (grp_sin_or_cos_double_s_fu_119)   | 2948  | 455   |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K0_U   | 226   | 59    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K1_U   | 202   | 18    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K2_U   | 158   | 26    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K3_U   | 126   | 16    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K4_U   | 84    | 25    |     |      |      |     |        |      |         |          |        |
+|       mul_170s_53ns_170_2_1_U9           | 425   | 86    | 27  |      |      |     |        |      |         |          |        |
+|       mul_35ns_25ns_60_1_1_U1            |       |       | 2   |      |      |     |        |      |         |          |        |
+|       mul_42ns_33ns_75_1_1_U2            |       |       | 4   |      |      |     |        |      |         |          |        |
+|       mul_49ns_44s_93_1_1_U3             |       |       | 6   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U4            | 91    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U5            | 81    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U6            | 81    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_56ns_52s_108_1_1_U7            |       |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_64s_63ns_126_1_1_U8            | 184   |       | 16  |      |      |     |        |      |         |          |        |
+|       ref_4oPi_table_256_U               | 46    | 223   |     |      |      |     |        |      |         |          |        |
+|     grp_sin_or_cos_double_s_fu_138       | 4749  | 1003  | 91  |      |      |     |        |      |         |          |        |
+|       (grp_sin_or_cos_double_s_fu_138)   | 3141  | 550   |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K0_U   | 226   | 59    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K1_U   | 201   | 18    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K2_U   | 158   | 26    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K3_U   | 126   | 16    |     |      |      |     |        |      |         |          |        |
+|       fourth_order_double_sin_cos_K4_U   | 84    | 25    |     |      |      |     |        |      |         |          |        |
+|       mul_170s_53ns_170_2_1_U9           | 428   | 86    | 27  |      |      |     |        |      |         |          |        |
+|       mul_35ns_25ns_60_1_1_U1            |       |       | 2   |      |      |     |        |      |         |          |        |
+|       mul_42ns_33ns_75_1_1_U2            |       |       | 4   |      |      |     |        |      |         |          |        |
+|       mul_49ns_44s_93_1_1_U3             |       |       | 6   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U4            | 91    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U5            | 81    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_49ns_49ns_98_1_1_U6            | 81    |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_56ns_52s_108_1_1_U7            |       |       | 9   |      |      |     |        |      |         |          |        |
+|       mul_64s_63ns_126_1_1_U8            | 184   |       | 16  |      |      |     |        |      |         |          |        |
+|       ref_4oPi_table_256_U               | 1     | 223   |     |      |      |     |        |      |         |          |        |
+|     sitodp_32ns_64_2_no_dsp_1_U40        | 156   | 5     |     |      |      |     |        |      |         |          |        |
+|       (sitodp_32ns_64_2_no_dsp_1_U40)    | 1     | 5     |     |      |      |     |        |      |         |          |        |
+|     sitodp_32ns_64_2_no_dsp_1_U41        | 158   | 6     |     |      |      |     |        |      |         |          |        |
+|       (sitodp_32ns_64_2_no_dsp_1_U41)    | 3     | 6     |     |      |      |     |        |      |         |          |        |
+|     twiddles8_reversed8_U                | 3     | 3     |     |      |      |     |        |      |         |          |        |
+|   smem_U                                 | 543   |       |     | 4    |      |     |        |      |         |          |        |
++------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 3.17%  | OK     |
+| FD                                                        | 50%       | 0.74%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.06%  | OK     |
+| CARRY8                                                    | 25%       | 1.02%  | OK     |
+| MUXF7                                                     | 15%       | 0.17%  | OK     |
+| DSP                                                       | 80%       | 5.17%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.74%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 2.96%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 16344     | 123    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 1.23   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.300ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.208ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                               | ENDPOINT PIN                                                                                                        | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                              |                                                                                                                     |              |            |                |          DELAY |        DELAY |
++-------+-------+------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 1.482 | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]/C | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_44s_93_1_1_U3/tmp_product/DSP_A_B_DATA_INST/B[11]     |           20 |        166 |          6.231 |          3.585 |        2.646 |
+| Path2 | 1.482 | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]/C | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_44s_93_1_1_U3/tmp_product__0/DSP_A_B_DATA_INST/B[11]  |           20 |        166 |          6.231 |          3.585 |        2.646 |
+| Path3 | 1.482 | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]/C | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U5/tmp_product__0/DSP_A_B_DATA_INST/B[11] |           20 |        166 |          6.231 |          3.585 |        2.646 |
+| Path4 | 1.482 | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]/C | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U5/tmp_product__4/DSP_A_B_DATA_INST/B[11] |           20 |        166 |          6.231 |          3.585 |        2.646 |
+| Path5 | 1.482 | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]/C | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U6/tmp_product/DSP_A_B_DATA_INST/B[11]    |           20 |        166 |          6.231 |          3.585 |        2.646 |
++-------+-------+------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                   | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]                                    | REGISTER.SDR.FDRE      |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/i___136_i_2                                              | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_311                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_289                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_240                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_166                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_98                                         | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_32                                         | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product_i_4                  | CLB.LUT.LUT4           |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product_i_1                                                                       | CLB.CARRY.CARRY8       |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product__0_i_2                                                                    | CLB.CARRY.CARRY8       |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_44s_93_1_1_U3/tmp_product/DSP_A_B_DATA_INST     | ARITHMETIC.DSP.DSP48E2 |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                   | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]                                    | REGISTER.SDR.FDRE      |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/i___136_i_2                                              | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_311                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_289                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_240                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_166                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_98                                         | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_32                                         | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product_i_4                  | CLB.LUT.LUT4           |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product_i_1                                                                       | CLB.CARRY.CARRY8       |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product__0_i_2                                                                    | CLB.CARRY.CARRY8       |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_44s_93_1_1_U3/tmp_product__0/DSP_A_B_DATA_INST  | ARITHMETIC.DSP.DSP48E2 |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                   | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]                                    | REGISTER.SDR.FDRE      |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/i___136_i_2                                              | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_311                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_289                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_240                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_166                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_98                                         | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_32                                         | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product_i_4                  | CLB.LUT.LUT4           |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product_i_1                                                                       | CLB.CARRY.CARRY8       |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product__0_i_2                                                                    | CLB.CARRY.CARRY8       |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U5/tmp_product__0/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                   | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]                                    | REGISTER.SDR.FDRE      |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/i___136_i_2                                              | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_311                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_289                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_240                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_166                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_98                                         | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_32                                         | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product_i_4                  | CLB.LUT.LUT4           |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product_i_1                                                                       | CLB.CARRY.CARRY8       |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product__0_i_2                                                                    | CLB.CARRY.CARRY8       |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U5/tmp_product__4/DSP_A_B_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                   | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_3_reg_1731_reg[0]                                    | REGISTER.SDR.FDRE      |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/i___136_i_2                                              | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_311                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_289                                        | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_240                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_166                                        | CLB.LUT.LUT5           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_98                                         | CLB.LUT.LUT3           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/tmp_product_i_32                                         | CLB.LUT.LUT6           |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product__1/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U4/tmp_product_i_4                  | CLB.LUT.LUT4           |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product_i_1                                                                       | CLB.CARRY.CARRY8       |
+    | mul_49ns_49ns_98_1_1_U4/tmp_product__0_i_2                                                                    | CLB.CARRY.CARRY8       |
+    | grp_twiddles8_fu_1971/grp_sin_or_cos_double_s_fu_119/mul_49ns_49ns_98_1_1_U6/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    +---------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/fft1D_512_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/fft1D_512_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/fft1D_512_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/fft1D_512_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/fft1D_512_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/fft1D_512_utilization_hierarchical_synth.rpt |
++--------------------------+------------------------------------------------------------------+
+
+

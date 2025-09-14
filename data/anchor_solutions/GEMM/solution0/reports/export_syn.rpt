@@ -1,0 +1,260 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Sun Sep 14 01:29:50 -03 2025
+    * Version:         2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:         GEMM
+    * Solution:        solution0 (Vivado IP Flow Target)
+    * Product family:  virtexuplusHBM
+    * Target device:   xcu50-fsvh2104-2-e
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  8 ns
+    * C-Synthesis target clock:    8 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              871
+FF:               993
+DSP:              11
+BRAM:             0
+URAM:             0
+SRL:              0
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 8.000       |
+| Post-Synthesis | 4.555       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++-------------------------------------+-----+-----+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                | LUT | FF  | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++-------------------------------------+-----+-----+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                | 871 | 993 | 11  |      |      |     |        |      |         |          |        |
+|   (inst)                            | 44  | 411 |     |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_4_full_dsp_1_U1 | 723 | 369 | 3   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_4_max_dsp_1_U2  | 104 | 213 | 8   |      |      |     |        |      |         |          |        |
++-------------------------------------+-----+-----+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 0.10%  | OK     |
+| FD                                                        | 50%       | 0.06%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+| CARRY8                                                    | 25%       | 0.04%  | OK     |
+| MUXF7                                                     | 15%       | 0.01%  | OK     |
+| DSP                                                       | 80%       | 0.18%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 0.18%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 16344     | 21     | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 1.28   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.300ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.208ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                                                                              | ENDPOINT PIN                                                                                                 | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                                                                             |                                                                                                              |              |            |                |          DELAY |        DELAY |
++-------+-------+-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 3.445 | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/D |           19 |        108 |          4.536 |          1.972 |        2.564 |
+| Path2 | 3.445 | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/D |           19 |        108 |          4.536 |          1.972 |        2.564 |
+| Path3 | 3.445 | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/D |           19 |        108 |          4.536 |          1.972 |        2.564 |
+| Path4 | 3.491 | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/D |           19 |        108 |          4.490 |          1.987 |        2.503 |
+| Path5 | 3.491 | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/D |           19 |        108 |          4.490 |          1.987 |        2.503 |
++-------+-------+-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                                                                                         | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__0                                                                   | CLB.LUT.LUT3           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__0                                                                                       | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__0                                                                                       | CLB.LUT.LUT4           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_9                                                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_6                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_2                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1                                                  | CLB.MUXF.MUXF7         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2                                                  | CLB.MUXF.MUXF8         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/SUB_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_1                                                                                     | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__1                    | CLB.LUT.LUT5           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__4                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/opt_has_pipe.first_q[7]_i_3                                                                                          | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[0]_i_2__1                 | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_1/opt_has_pipe.first_q[0]_i_1__2                         | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]                                                                          | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                                                                                         | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__0                                                                   | CLB.LUT.LUT3           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__0                                                                                       | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__0                                                                                       | CLB.LUT.LUT4           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_9                                                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_6                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_2                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1                                                  | CLB.MUXF.MUXF7         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2                                                  | CLB.MUXF.MUXF8         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/SUB_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_1                                                                                     | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__1                    | CLB.LUT.LUT5           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__4                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/opt_has_pipe.first_q[7]_i_3                                                                                          | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[1]_i_2__1                 | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[1]_i_1__0                 | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[1]                                                                          | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                                                                                         | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__0                                                                   | CLB.LUT.LUT3           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__0                                                                                       | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__0                                                                                       | CLB.LUT.LUT4           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_9                                                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_6                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_2                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1                                                  | CLB.MUXF.MUXF7         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2                                                  | CLB.MUXF.MUXF8         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/SUB_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_1                                                                                     | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__1                    | CLB.LUT.LUT5           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__4                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/opt_has_pipe.first_q[7]_i_3                                                                                          | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[2]_i_2                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_1/opt_has_pipe.first_q[2]_i_1                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[2]                                                                          | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                                                                                         | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__0                                                                   | CLB.LUT.LUT3           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__0                                                                                       | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__0                                                                                       | CLB.LUT.LUT4           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_9                                                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_6                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_2                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1                                                  | CLB.MUXF.MUXF7         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2                                                  | CLB.MUXF.MUXF8         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/SUB_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_1                                                                                     | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__1                    | CLB.LUT.LUT5           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__4                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/opt_has_pipe.first_q[7]_i_4                                                                                          | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[4]_i_2                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[4]_i_1                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[4]                                                                          | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                                                                                         | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/NUMB_CMP/FAST_CMP.CMP_BOT/C_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__0                                                                   | CLB.LUT.LUT3           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__0                                                                                       | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__0                                                                                       | CLB.LUT.LUT4           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4_CARRY8                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_9                                                            | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_6                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/BMA_EXP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_2                                                     | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1                                                  | CLB.MUXF.MUXF7         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2                                                  | CLB.MUXF.MUXF8         |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/SUB_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_1                                                                                     | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_2__1                    | CLB.LUT.LUT5           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.LOGIC_ADD.ADD_0/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1__4                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4_CARRY8                                                                           | CLB.CARRY.CARRY8       |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ZERO_DET_CC_1/opt_has_pipe.first_q[7]_i_4                                                                                          | CLB.LUT.LUT2           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[5]_i_2                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/i_no_versal_es1_workaround.DSP48E1_ADD.DSP48E1_ADD/opt_has_pipe.first_q[5]_i_1                    | CLB.LUT.LUT6           |
+    | i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/LZE/ENCODE[0].MUX_0/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[5]                                                                          | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+---------------------------------------------------------------+
+| Report Type              | Report Location                                               |
++--------------------------+---------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/bbgemm_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/bbgemm_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/bbgemm_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/bbgemm_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/bbgemm_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/bbgemm_utilization_hierarchical_synth.rpt |
++--------------------------+---------------------------------------------------------------+
+
+
