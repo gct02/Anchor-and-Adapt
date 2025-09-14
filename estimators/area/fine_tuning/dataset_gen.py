@@ -205,7 +205,6 @@ class DatasetGenerator:
                     for child in parent_proc.children(recursive=True):
                         child.kill()
                     parent_proc.kill()
-                    shutil.rmtree(solution_dir, ignore_errors=True)
                     return True
 
                 if (time.time() - start_time) > self.run_timeout:
@@ -223,14 +222,12 @@ class DatasetGenerator:
                 for child in parent_proc.children(recursive=True):
                     child.kill()
                 parent_proc.kill()
-                shutil.rmtree(solution_dir, ignore_errors=True)
                 return True
             else:
                 print(f'\n** Run ended with errors ({solution_dir.name}) **\n')
                 for child in parent_proc.children(recursive=True):
                     child.kill()
                 parent_proc.kill()
-                shutil.rmtree(solution_dir, ignore_errors=True)
                 shutil.rmtree(solution_dir, ignore_errors=True)
                 return False
 
