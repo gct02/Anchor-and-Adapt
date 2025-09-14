@@ -202,6 +202,10 @@ class DatasetGenerator:
                 if self._check_run_completion(solution_dir):
                     print(f'\n** Run completed successfully ({solution_dir.name}) **\n')
                     shutil.copy(self._directives_tcl_path, solution_dir / 'directives.tcl')
+                    for child in parent_proc.children(recursive=True):
+                        child.kill()
+                    parent_proc.kill()
+                    shutil.rmtree(solution_dir, ignore_errors=True)
                     return True
 
                 if (time.time() - start_time) > self.run_timeout:
@@ -216,9 +220,17 @@ class DatasetGenerator:
             if self._check_run_completion(solution_dir):
                 print(f'\n** Run completed successfully ({solution_dir.name}) **\n')
                 shutil.copy(self._directives_tcl_path, solution_dir / 'directives.tcl')
+                for child in parent_proc.children(recursive=True):
+                    child.kill()
+                parent_proc.kill()
+                shutil.rmtree(solution_dir, ignore_errors=True)
                 return True
             else:
-                print(f'\n** Run did not complete successfully ({solution_dir.name})**\n')
+                print(f'\n** Run ended with errors ({solution_dir.name}) **\n')
+                for child in parent_proc.children(recursive=True):
+                    child.kill()
+                parent_proc.kill()
+                shutil.rmtree(solution_dir, ignore_errors=True)
                 shutil.rmtree(solution_dir, ignore_errors=True)
                 return False
 
@@ -774,7 +786,7 @@ class DatasetGenerator:
             'control_tree': self.control_tree,
             'num_successful_runs': self.num_successful_runs
         }
-        with open(self._project_state_path, 'w') as f:
+        with open(self.prj_state_path, 'w') as f:
             json.dump(project_state, f, indent=2)
 
     def _save_directives_as_tcl(self, dct_config):
