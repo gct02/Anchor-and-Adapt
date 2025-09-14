@@ -788,8 +788,8 @@ if __name__ == '__main__':
 
     dataset_dir = '../dataset-fine-tuning'
     benchmark = 'ADPCM'
-    kernel_graph_path = 'estimators/area/fine_tuning/dataset/full/ADPCM/base_graph.pkl'
-    metrics_path = 'estimators/area/fine_tuning/dataset/full/ADPCM/base_metrics.json'
+    kernel_graph_path = 'estimators/area/dataset/full/ADPCM/base_graph.pkl'
+    metrics_path = 'estimators/area/dataset/full/ADPCM/base_metrics.json'
 
     with open(metrics_path, 'r') as f:
         metrics = json.load(f)
