@@ -1,0 +1,119 @@
+{
+  "directives": {
+    "unroll lp1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"xy/lp1\"",
+        "set_directive_unroll -factor 16 \"xy/lp1\""
+      ],
+      "function": "xy",
+      "label": "lp1",
+      "directive_type": "unroll"
+    },
+    "unroll lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"xy/lp2\"",
+        "set_directive_unroll -factor 16 \"xy/lp2\""
+      ],
+      "function": "xy",
+      "label": "lp2",
+      "directive_type": "unroll"
+    },
+    "pipeline lp1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"xy/lp1\"",
+        "set_directive_pipeline \"xy/lp1\""
+      ],
+      "function": "xy",
+      "label": "lp1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"xy/lp2\"",
+        "set_directive_pipeline \"xy/lp2\""
+      ],
+      "function": "xy",
+      "label": "lp2",
+      "directive_type": "pipeline"
+    },
+    "loop_flatten lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"xy/lp2\""
+      ],
+      "function": "xy",
+      "label": "lp2",
+      "directive_type": "loop_flatten"
+    },
+    "array_partition xy buff_x": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"xy\" buff_x",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"xy\" buff_x",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"xy\" buff_x",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"xy\" buff_x"
+      ],
+      "function": "xy",
+      "label": "",
+      "variable": "buff_x",
+      "directive_type": "array_partition"
+    },
+    "array_partition xy buff_y": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"xy\" buff_y",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"xy\" buff_y",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"xy\" buff_y",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"xy\" buff_y"
+      ],
+      "function": "xy",
+      "label": "",
+      "variable": "buff_y",
+      "directive_type": "array_partition"
+    },
+    "array_partition xy buff_A_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"xy\" buff_A_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"xy\" buff_A_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"xy\" buff_A_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"xy\" buff_A_out"
+      ],
+      "function": "xy",
+      "label": "",
+      "variable": "buff_A_out",
+      "directive_type": "array_partition"
+    }
+  },
+  "nested_loops": [
+    {
+      "function": "xy",
+      "label": "lprd_1",
+      "nest": {
+        "function": "xy",
+        "label": "lprd_2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "xy",
+      "label": "lp1",
+      "nest": {
+        "function": "xy",
+        "label": "lp2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "xy",
+      "label": "lpwr_1",
+      "nest": {
+        "function": "xy",
+        "label": "lpwr_2",
+        "nest": {}
+      }
+    }
+  ]
+}

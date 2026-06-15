@@ -1,0 +1,319 @@
+{
+  "directives": {
+    "unroll lprd_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lprd_1\"",
+        "set_directive_unroll -factor 4 \"mac_2/lprd_1\"",
+        "set_directive_unroll -factor 8 \"mac_2/lprd_1\"",
+        "set_directive_unroll -factor 16 \"mac_2/lprd_1\""
+      ],
+      "function": "mac_2",
+      "label": "lprd_1",
+      "directive_type": "unroll"
+    },
+    "unroll lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lprd_2\"",
+        "set_directive_unroll -factor 4 \"mac_2/lprd_2\"",
+        "set_directive_unroll -factor 8 \"mac_2/lprd_2\"",
+        "set_directive_unroll -factor 16 \"mac_2/lprd_2\""
+      ],
+      "function": "mac_2",
+      "label": "lprd_2",
+      "directive_type": "unroll"
+    },
+    "unroll lp1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lp1\"",
+        "set_directive_unroll -factor 4 \"mac_2/lp1\"",
+        "set_directive_unroll -factor 8 \"mac_2/lp1\"",
+        "set_directive_unroll -factor 16 \"mac_2/lp1\""
+      ],
+      "function": "mac_2",
+      "label": "lp1",
+      "directive_type": "unroll"
+    },
+    "unroll lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lp2\"",
+        "set_directive_unroll -factor 4 \"mac_2/lp2\"",
+        "set_directive_unroll -factor 8 \"mac_2/lp2\"",
+        "set_directive_unroll -factor 16 \"mac_2/lp2\""
+      ],
+      "function": "mac_2",
+      "label": "lp2",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lpwr_1\"",
+        "set_directive_unroll -factor 4 \"mac_2/lpwr_1\"",
+        "set_directive_unroll -factor 8 \"mac_2/lpwr_1\"",
+        "set_directive_unroll -factor 16 \"mac_2/lpwr_1\""
+      ],
+      "function": "mac_2",
+      "label": "lpwr_1",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"mac_2/lpwr_2\"",
+        "set_directive_unroll -factor 4 \"mac_2/lpwr_2\"",
+        "set_directive_unroll -factor 8 \"mac_2/lpwr_2\"",
+        "set_directive_unroll -factor 16 \"mac_2/lpwr_2\""
+      ],
+      "function": "mac_2",
+      "label": "lpwr_2",
+      "directive_type": "unroll"
+    },
+    "pipeline lprd_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lprd_1\"",
+        "set_directive_pipeline \"mac_2/lprd_1\""
+      ],
+      "function": "mac_2",
+      "label": "lprd_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lprd_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lprd_2\"",
+        "set_directive_pipeline \"mac_2/lprd_2\""
+      ],
+      "function": "mac_2",
+      "label": "lprd_2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lp1\"",
+        "set_directive_pipeline \"mac_2/lp1\""
+      ],
+      "function": "mac_2",
+      "label": "lp1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lp2\"",
+        "set_directive_pipeline \"mac_2/lp2\""
+      ],
+      "function": "mac_2",
+      "label": "lp2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lpwr_1\"",
+        "set_directive_pipeline \"mac_2/lpwr_1\""
+      ],
+      "function": "mac_2",
+      "label": "lpwr_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"mac_2/lpwr_2\"",
+        "set_directive_pipeline \"mac_2/lpwr_2\""
+      ],
+      "function": "mac_2",
+      "label": "lpwr_2",
+      "directive_type": "pipeline"
+    },
+    "loop_flatten lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"mac_2/lprd_2\""
+      ],
+      "function": "mac_2",
+      "label": "lprd_2",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"mac_2/lp2\""
+      ],
+      "function": "mac_2",
+      "label": "lp2",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"mac_2/lpwr_2\""
+      ],
+      "function": "mac_2",
+      "label": "lpwr_2",
+      "directive_type": "loop_flatten"
+    },
+    "array_partition mac_2 A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" A"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "A",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" B"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "B",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 C": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" C",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" C"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "C",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 A_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" A_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" A_out"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "A_out",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 buff_A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"mac_2\" buff_A",
+        "set_directive_array_partition -type complete \"mac_2\" buff_A"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "buff_A",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 buff_B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"mac_2\" buff_B",
+        "set_directive_array_partition -type complete \"mac_2\" buff_B"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "buff_B",
+      "directive_type": "array_partition"
+    },
+    "array_partition mac_2 buff_C": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"mac_2\" buff_C",
+        "set_directive_array_partition -type complete \"mac_2\" buff_C"
+      ],
+      "function": "mac_2",
+      "label": "",
+      "variable": "buff_C",
+      "directive_type": "array_partition"
+    }
+  },
+  "parent_loops":{
+    "lprd_2":["lprd_1"],
+    "lp2":["lp1"],
+    "lpwr_2":["lpwr_1"]
+  },
+  "nested_loops": [
+    {
+      "function": "mac_2",
+      "label": "lprd_1",
+      "nest": {
+        "function": "mac_2",
+        "label": "lprd_2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "mac_2",
+      "label": "lp1",
+      "nest": {
+        "function": "mac_2",
+        "label": "lp2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "mac_2",
+      "label": "lpwr_1",
+      "nest": {
+        "function": "mac_2",
+        "label": "lpwr_2",
+        "nest": {}
+      }
+    }
+  ]
+}

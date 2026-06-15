@@ -1,0 +1,84 @@
+{% if complex_math_conf > 0 %}
+#include <math.h>
+
+#define PI 3.1415926535
+{% endif %}
+
+#define N 2048
+#define M 8
+{% if use_local_bram %}
+#define L 256
+#define F 8
+{% else %}
+#define L 64
+#define F 32
+{% endif %}
+
+void top_fn(
+    double in[N],
+    {% if use_deep_array_access %}
+    double out[M][N]
+    {% else %}
+    double out[N]
+    {% endif %}
+) {
+    double loc[L];
+    double temp;
+    int i, j, k, l;
+
+    init_loop_i: for (i = 0; i < L; i++) {
+        loc[i] = 0.0;
+        init_loop_j: for (j = 0; j < F; j++) {
+            temp = in[i * F + j];
+            temp *= temp / 2.0;
+            {% if complex_math_conf > 1 %}
+            temp *= cos(-2.0 * j * PI) * temp + sin(-2.0 * j * PI) * temp + 1.0;
+            {% endif %}
+            loc[i] += temp;
+        }
+    }
+
+    {% if use_deep_array_access %}
+    main_loop_i: for (i = 0; i < M; i++) {
+        main_loop_j: for (j = 0; j < N; j++) {
+            out[i][j] = 0.0;
+            main_loop_k: for (k = 0; k < L; k++) {
+                main_loop_l: for (l = 0; l < F; l++) {
+                    temp = in[k * F + l];
+                    {% if use_iterator_mix %}
+                    temp += (i + j) * 0.1 * loc[k];
+                    {% endif %}
+                    temp = (2.0 * temp + 3.5 * loc[k]) / 5.5 - 3.25;
+                    temp /= (temp - 1.001);
+                    temp *= temp * loc[k] * 0.5;
+                    {% if complex_math_conf > 0 %}
+                    if (temp <= 0) temp = temp * -1.0 + 1.0;
+                    temp = sqrt(temp);
+                    {% endif %}
+                    out[i][j] += temp;
+                }
+            }
+        }
+    }
+    {% else %}
+    main_loop_j: for (j = 0; j < N; j++) {
+        out[j] = 0.0;
+        main_loop_k: for (k = 0; k < L; k++) {
+            main_loop_l: for (l = 0; l < F; l++) {
+                temp = in[k * F + l];
+                {% if use_iterator_mix %}
+                temp += j * 0.1 * loc[k];
+                {% endif %}
+                temp = (2.0 * temp + 3.5 * loc[k]) / 5.5 - 3.25;
+                temp /= (temp - 1.001);
+                temp *= temp * loc[k] * 0.5;
+                {% if complex_math_conf > 0 %}
+                if (temp <= 0) temp = temp * -1.0 + 1.0;
+                temp = sqrt(temp);
+                {% endif %}
+                out[j] += temp;
+            }
+        }
+    }
+    {% endif %}
+}

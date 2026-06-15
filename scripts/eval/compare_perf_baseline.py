@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import torch
 
-from estimators.common.losses import mape_loss
+from estimator.common.metrics import mape_loss
 
 plt.rcParams.update({'font.size': 12})
 

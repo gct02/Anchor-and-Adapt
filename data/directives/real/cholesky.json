@@ -1,0 +1,129 @@
+{
+  "directives":{
+    "unroll outer_loop":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_cholesky/outer_loop\"",
+        "set_directive_unroll -factor 4 \"kernel_cholesky/outer_loop\"",
+        "set_directive_unroll -factor 8 \"kernel_cholesky/outer_loop\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"outer_loop",
+      "directive_type":"unroll"
+    },
+    "unroll loop1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_cholesky/loop1\"",
+        "set_directive_unroll -factor 4 \"kernel_cholesky/loop1\"",
+        "set_directive_unroll -factor 8 \"kernel_cholesky/loop1\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop1",
+      "directive_type":"unroll"
+    },
+    "unroll loop1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_cholesky/loop1_1\"",
+        "set_directive_unroll -factor 4 \"kernel_cholesky/loop1_1\"",
+        "set_directive_unroll -factor 8 \"kernel_cholesky/loop1_1\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop1_1",
+      "directive_type":"unroll"
+    },
+    "unroll loop2":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_cholesky/loop2\"",
+        "set_directive_unroll -factor 4 \"kernel_cholesky/loop2\"",
+        "set_directive_unroll -factor 8 \"kernel_cholesky/loop2\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop2",
+      "directive_type":"unroll"
+    },
+    "pipeline outer_loop":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_cholesky/outer_loop\"",
+        "set_directive_pipeline \"kernel_cholesky/outer_loop\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"outer_loop",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_cholesky/loop1\"",
+        "set_directive_pipeline \"kernel_cholesky/loop1\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop1_1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_cholesky/loop1_1\"",
+        "set_directive_pipeline \"kernel_cholesky/loop1_1\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop1_1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop2":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_cholesky/loop2\"",
+        "set_directive_pipeline \"kernel_cholesky/loop2\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"loop2",
+      "directive_type":"pipeline"
+    },
+    "array_partition kernel_cholesky A":{
+      "possible_directives":[
+        "",
+        "set_directive_array_partition -type complete -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type complete -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 2 -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 1 \"kernel_cholesky\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 1 \"kernel_cholesky\" A"
+      ],
+      "function":"kernel_cholesky",
+      "label":"",
+      "variable":"A",
+      "directive_type":"array_partition"
+    },
+    "loop_merge outer_loop":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"kernel_cholesky/outer_loop\""
+      ],
+      "function":"kernel_cholesky",
+      "label":"outer_loop",
+      "directive_type":"loop_merge"
+    }
+  },
+  "nested_loops":[
+    {
+      "function":"kernel_cholesky",
+      "label":"loop1",
+      "nest":{
+        "function":"kernel_cholesky",
+        "label":"loop1_1",
+        "nest":{
+
+        }
+      }
+    }
+  ]
+}

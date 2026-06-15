@@ -1,0 +1,260 @@
+{
+  "directives":{
+    "unroll loop1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop1\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop1\"",
+        "set_directive_unroll \"kernel_heat_3d/loop1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1",
+      "directive_type":"unroll"
+    },
+    "unroll loop1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop1_1\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop1_1\"",
+        "set_directive_unroll \"kernel_heat_3d/loop1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1_1",
+      "directive_type":"unroll"
+    },
+    "unroll loop1_1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop1_1_1\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop1_1_1\"",
+        "set_directive_unroll \"kernel_heat_3d/loop1_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1_1_1",
+      "directive_type":"unroll"
+    },
+    "unroll loop2":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop2\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop2\"",
+        "set_directive_unroll \"kernel_heat_3d/loop2\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2",
+      "directive_type":"unroll"
+    },
+    "unroll loop2_1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop2_1\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop2_1\"",
+        "set_directive_unroll \"kernel_heat_3d/loop2_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2_1",
+      "directive_type":"unroll"
+    },
+    "unroll loop2_1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"kernel_heat_3d/loop2_1_1\"",
+        "set_directive_unroll -factor 4 \"kernel_heat_3d/loop2_1_1\"",
+        "set_directive_unroll \"kernel_heat_3d/loop2_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2_1_1",
+      "directive_type":"unroll"
+    },
+    "pipeline outer_loop":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/outer_loop\"",
+        "set_directive_pipeline \"kernel_heat_3d/outer_loop\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"outer_loop",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop1\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop1_1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop1_1\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1_1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop1_1_1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop1_1_1\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop1_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1_1_1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop2":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop2\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop2\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop2_1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop2_1\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop2_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2_1",
+      "directive_type":"pipeline"
+    },
+    "pipeline loop2_1_1":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"kernel_heat_3d/loop2_1_1\"",
+        "set_directive_pipeline \"kernel_heat_3d/loop2_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2_1_1",
+      "directive_type":"pipeline"
+    },
+    "array_partition kernel_heat_3d A":{
+      "possible_directives":[
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type complete -dim 1 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 2 -dim 1 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 1 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 1 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 1 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type complete -dim 2 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 2 -dim 2 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 2 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 2 \"kernel_heat_3d\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 2 \"kernel_heat_3d\" A"
+      ],
+      "function":"kernel_heat_3d",
+      "label":"",
+      "variable":"A",
+      "directive_type":"array_partition"
+    },
+    "array_partition kernel_heat_3d B":{
+      "possible_directives":[
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type complete -dim 1 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 2 -dim 1 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 1 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 1 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 1 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type complete -dim 2 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 2 -dim 2 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 2 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 2 \"kernel_heat_3d\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 2 \"kernel_heat_3d\" B"
+      ],
+      "function":"kernel_heat_3d",
+      "label":"",
+      "variable":"B",
+      "directive_type":"array_partition"
+    },
+    "loop_merge outer_loop":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"kernel_heat_3d/outer_loop\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"outer_loop",
+      "directive_type":"loop_merge"
+    },
+    "loop_merge loop1":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"kernel_heat_3d/loop1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1",
+      "directive_type":"loop_merge"
+    },
+    "loop_merge loop2":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"kernel_heat_3d/loop2\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2",
+      "directive_type":"loop_merge"
+    },
+    "loop_flatten loop1_1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_flatten \"kernel_heat_3d/loop1_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop1_1_1",
+      "directive_type":"loop_flatten"
+    },
+    "loop_flatten loop2_1_1":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_flatten \"kernel_heat_3d/loop2_1_1\""
+      ],
+      "function":"kernel_heat_3d",
+      "label":"loop2_1_1",
+      "directive_type":"loop_flatten"
+    }
+  },
+  "nested_loops":[
+    {
+      "function":"kernel_heat_3d",
+      "label":"loop1",
+      "nest":{
+        "function":"kernel_heat_3d",
+        "label":"loop1_1",
+        "nest":{
+          "function":"kernel_heat_3d",
+          "label":"loop1_1_1",
+          "nest":{
+
+          }
+        }
+      }
+    },
+    {
+      "function":"kernel_heat_3d",
+      "label":"loop2",
+      "nest":{
+        "function":"kernel_heat_3d",
+        "label":"loop2_1",
+        "nest":{
+          "function":"kernel_heat_3d",
+          "label":"loop2_1_1",
+          "nest":{
+
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13,12 +13,32 @@ __pycache__/
 # Build folders
 *build/
 
+# Vivado Simulation files
+*project.sim/
+
 # Approximate Computing project files (on hold)
 approx/
 llvm/profiler/
 llvm/utils/
 llvm/clang_plugins/
 
+# Ignore everything with this prefix
+___*
+
+/data/anchor_solutions/
+/figures/data/
+/baselines/
+/tests/
+
+dataset/
+models/
+
 hls_utils/*.tcl
+vitis_hls.log
 hls.app
-.temp/
+
+/*.tar.gz
+
+# Some preliminary experiments
+/results_temp
+estimator/aggregate

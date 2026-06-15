@@ -1,3 +1,5 @@
+set_directive_pipeline -off adpcm_main/adpcm_main_label12
+set_directive_pipeline -off adpcm_main/adpcm_main_label13
 set_directive_pipeline -off encode/encode_label0
 set_directive_pipeline -off encode/encode_label1
 set_directive_pipeline -off decode/decode_label2
@@ -10,8 +12,7 @@ set_directive_pipeline -off filtez/filtez_label8
 set_directive_pipeline -off quantl/quantl_label9
 set_directive_pipeline -off upzero/upzero_label10
 set_directive_pipeline -off upzero/upzero_label11
-set_directive_pipeline -off adpcm_main/adpcm_main_label12
-set_directive_pipeline -off adpcm_main/adpcm_main_label13
+
 set_directive_pipeline -off adpcm_main
 set_directive_pipeline -off encode
 set_directive_pipeline -off decode
@@ -19,6 +20,8 @@ set_directive_pipeline -off reset
 set_directive_pipeline -off filtez
 set_directive_pipeline -off quantl
 set_directive_pipeline -off upzero
+
+set_directive_inline -off adpcm_main
 set_directive_inline -off encode
 set_directive_inline -off decode
 set_directive_inline -off reset

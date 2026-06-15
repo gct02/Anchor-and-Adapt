@@ -12,12 +12,19 @@ set_directive_pipeline -off Autocorrelation/Autocorrelation_label3
 set_directive_pipeline -off Autocorrelation/Autocorrelation_label4
 set_directive_pipeline -off Autocorrelation/Autocorrelation_label5
 set_directive_pipeline -off gsm_div/gsm_div_label0
+
 set_directive_pipeline -off Gsm_LPC_Analysis
+set_directive_pipeline -off gsm_norm
 set_directive_pipeline -off gsm_div
 set_directive_pipeline -off Autocorrelation
 set_directive_pipeline -off Reflection_coefficients
+set_directive_pipeline -off Quantization_and_coding
+
 set_directive_loop_flatten -off Reflection_coefficients/Reflection_coefficients_label5
 set_directive_loop_flatten -off Reflection_coefficients/Reflection_coefficients_label6
+
 set_directive_inline -off gsm_div
+set_directive_inline -off gsm_norm
 set_directive_inline -off Autocorrelation
 set_directive_inline -off Reflection_coefficients
+set_directive_inline -off Quantization_and_coding

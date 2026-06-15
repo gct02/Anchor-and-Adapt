@@ -1,0 +1,472 @@
+{
+  "directives": {
+    "unroll lprd_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lprd_1\"",
+        "set_directive_unroll -factor 4 \"ABC/lprd_1\"",
+        "set_directive_unroll -factor 8 \"ABC/lprd_1\"",
+        "set_directive_unroll -factor 16 \"ABC/lprd_1\""
+      ],
+      "function": "ABC",
+      "label": "lprd_1",
+      "directive_type": "unroll"
+    },
+    "unroll lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lprd_2\"",
+        "set_directive_unroll -factor 4 \"ABC/lprd_2\"",
+        "set_directive_unroll -factor 8 \"ABC/lprd_2\"",
+        "set_directive_unroll -factor 16 \"ABC/lprd_2\""
+      ],
+      "function": "ABC",
+      "label": "lprd_2",
+      "directive_type": "unroll"
+    },
+    "unroll lp1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp1\"",
+        "set_directive_unroll -factor 4 \"ABC/lp1\"",
+        "set_directive_unroll -factor 8 \"ABC/lp1\"",
+        "set_directive_unroll -factor 16 \"ABC/lp1\""
+      ],
+      "function": "ABC",
+      "label": "lp1",
+      "directive_type": "unroll"
+    },
+    "unroll lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp2\"",
+        "set_directive_unroll -factor 4 \"ABC/lp2\"",
+        "set_directive_unroll -factor 8 \"ABC/lp2\"",
+        "set_directive_unroll -factor 16 \"ABC/lp2\""
+      ],
+      "function": "ABC",
+      "label": "lp2",
+      "directive_type": "unroll"
+    },
+    "unroll lp3": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp3\"",
+        "set_directive_unroll -factor 4 \"ABC/lp3\"",
+        "set_directive_unroll -factor 8 \"ABC/lp3\"",
+        "set_directive_unroll -factor 16 \"ABC/lp3\""
+      ],
+      "function": "ABC",
+      "label": "lp3",
+      "directive_type": "unroll"
+    },
+    "unroll lp4": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp4\"",
+        "set_directive_unroll -factor 4 \"ABC/lp4\"",
+        "set_directive_unroll -factor 8 \"ABC/lp4\"",
+        "set_directive_unroll -factor 16 \"ABC/lp4\""
+      ],
+      "function": "ABC",
+      "label": "lp4",
+      "directive_type": "unroll"
+    },
+    "unroll lp5": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp5\"",
+        "set_directive_unroll -factor 4 \"ABC/lp5\"",
+        "set_directive_unroll -factor 8 \"ABC/lp5\"",
+        "set_directive_unroll -factor 16 \"ABC/lp5\""
+      ],
+      "function": "ABC",
+      "label": "lp5",
+      "directive_type": "unroll"
+    },
+    "unroll lp6": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lp6\"",
+        "set_directive_unroll -factor 4 \"ABC/lp6\"",
+        "set_directive_unroll -factor 8 \"ABC/lp6\"",
+        "set_directive_unroll -factor 16 \"ABC/lp6\""
+      ],
+      "function": "ABC",
+      "label": "lp6",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lpwr_1\"",
+        "set_directive_unroll -factor 4 \"ABC/lpwr_1\"",
+        "set_directive_unroll -factor 8 \"ABC/lpwr_1\"",
+        "set_directive_unroll -factor 16 \"ABC/lpwr_1\""
+      ],
+      "function": "ABC",
+      "label": "lpwr_1",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"ABC/lpwr_2\"",
+        "set_directive_unroll -factor 4 \"ABC/lpwr_2\"",
+        "set_directive_unroll -factor 8 \"ABC/lpwr_2\"",
+        "set_directive_unroll -factor 16 \"ABC/lpwr_2\""
+      ],
+      "function": "ABC",
+      "label": "lpwr_2",
+      "directive_type": "unroll"
+    },
+    "pipeline lprd_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lprd_1\"",
+        "set_directive_pipeline \"ABC/lprd_1\""
+      ],
+      "function": "ABC",
+      "label": "lprd_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lprd_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lprd_2\"",
+        "set_directive_pipeline \"ABC/lprd_2\""
+      ],
+      "function": "ABC",
+      "label": "lprd_2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp1\"",
+        "set_directive_pipeline \"ABC/lp1\""
+      ],
+      "function": "ABC",
+      "label": "lp1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp2\"",
+        "set_directive_pipeline \"ABC/lp2\""
+      ],
+      "function": "ABC",
+      "label": "lp2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp3": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp3\"",
+        "set_directive_pipeline \"ABC/lp3\""
+      ],
+      "function": "ABC",
+      "label": "lp3",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp4": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp4\"",
+        "set_directive_pipeline \"ABC/lp4\""
+      ],
+      "function": "ABC",
+      "label": "lp4",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp5": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp5\"",
+        "set_directive_pipeline \"ABC/lp5\""
+      ],
+      "function": "ABC",
+      "label": "lp5",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp6": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lp6\"",
+        "set_directive_pipeline \"ABC/lp6\""
+      ],
+      "function": "ABC",
+      "label": "lp6",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lpwr_1\"",
+        "set_directive_pipeline \"ABC/lpwr_1\""
+      ],
+      "function": "ABC",
+      "label": "lpwr_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"ABC/lpwr_2\"",
+        "set_directive_pipeline \"ABC/lpwr_2\""
+      ],
+      "function": "ABC",
+      "label": "lpwr_2",
+      "directive_type": "pipeline"
+    },
+    "loop_flatten lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"ABC/lprd_2\""
+      ],
+      "function": "ABC",
+      "label": "lprd_2",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lp3": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"ABC/lp3\""
+      ],
+      "function": "ABC",
+      "label": "lp3",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lp6": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"ABC/lp6\""
+      ],
+      "function": "ABC",
+      "label": "lp6",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"ABC/lpwr_2\""
+      ],
+      "function": "ABC",
+      "label": "lpwr_2",
+      "directive_type": "loop_flatten"
+    },
+    "array_partition ABC A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" A"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "A",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" B"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "B",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC C": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" C",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" C"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "C",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC D_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" D_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" D_out"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "D_out",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC buff_A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"ABC\" buff_A",
+        "set_directive_array_partition -type complete \"ABC\" buff_A"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "buff_A",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC buff_B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"ABC\" buff_B",
+        "set_directive_array_partition -type complete \"ABC\" buff_B"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "buff_B",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC buff_C": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"ABC\" buff_C",
+        "set_directive_array_partition -type complete \"ABC\" buff_C"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "buff_C",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC buff_D_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"ABC\" buff_D_out",
+        "set_directive_array_partition -type complete \"ABC\" buff_D_out"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "buff_D_out",
+      "directive_type": "array_partition"
+    },
+    "array_partition ABC tmp": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"ABC\" tmp",
+        "set_directive_array_partition -type complete \"ABC\" tmp"
+      ],
+      "function": "ABC",
+      "label": "",
+      "variable": "tmp",
+      "directive_type": "array_partition"
+    }
+  },
+  "parent_loops":{
+    "lprd_2":["lprd_1"],
+    "lp2":["lp1"],
+    "lp3":["lp1", "lp2"],
+    "lp5":["lp4"],
+    "lp6":["lp4", "lp5"],
+    "lpwr_2":["lpwr_1"]
+  },
+  "nested_loops": [
+    {
+      "function": "ABC",
+      "label": "lprd_1",
+      "nest": {
+        "function": "ABC",
+        "label": "lprd_2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "ABC",
+      "label": "lp1",
+      "nest": {
+        "function": "ABC",
+        "label": "lp2",
+        "nest": {
+          "function": "ABC",
+          "label": "lp3",
+          "nest": {}
+        }
+      }
+    },
+    {
+      "function": "ABC",
+      "label": "lp4",
+      "nest": {
+        "function": "ABC",
+        "label": "lp5",
+        "nest": {
+          "function": "ABC",
+          "label": "lp6",
+          "nest": {}
+        }
+      }
+    },
+    {
+      "function": "ABC",
+      "label": "lpwr_1",
+      "nest": {
+        "function": "ABC",
+        "label": "lpwr_2",
+        "nest": {}
+      }
+    }
+  ]
+}

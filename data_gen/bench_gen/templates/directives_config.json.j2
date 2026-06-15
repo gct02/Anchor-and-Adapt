@@ -1,0 +1,265 @@
+{
+  "directives":{
+    
+    "unroll init_loop_i":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/init_loop_i\"",
+        "set_directive_unroll -factor 4 \"top_fn/init_loop_i\"",
+        "set_directive_unroll -factor 8 \"top_fn/init_loop_i\""
+      ],
+      "function":"top_fn",
+      "label":"init_loop_i",
+      "directive_type":"unroll"
+    },
+    "pipeline init_loop_i":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/init_loop_i\"",
+        "set_directive_pipeline \"top_fn/init_loop_i\""
+      ],
+      "function":"top_fn",
+      "label":"init_loop_i",
+      "directive_type":"pipeline"
+    },
+
+    "unroll init_loop_j":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/init_loop_j\"",
+        "set_directive_unroll -factor 4 \"top_fn/init_loop_j\"",
+        {% if use_local_bram %}
+        "set_directive_unroll -factor 8 \"top_fn/init_loop_j\"",
+        {% endif %}
+        "set_directive_unroll \"top_fn/init_loop_j\""
+      ],
+      "function":"top_fn",
+      "label":"init_loop_j",
+      "directive_type":"unroll"
+    },
+    "pipeline init_loop_j":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/init_loop_j\"",
+        "set_directive_pipeline \"top_fn/init_loop_j\""
+      ],
+      "function":"top_fn",
+      "label":"init_loop_j",
+      "directive_type":"pipeline"
+    },
+
+    {% if use_deep_array_access %}
+    "unroll main_loop_i":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/main_loop_i\"",
+        "set_directive_unroll -factor 4 \"top_fn/main_loop_i\"",
+        "set_directive_unroll \"top_fn/main_loop_i\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_i",
+      "directive_type":"unroll"
+    },
+    "pipeline main_loop_i":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/main_loop_i\"",
+        "set_directive_pipeline \"top_fn/main_loop_i\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_i",
+      "directive_type":"pipeline"
+    },
+    "loop_merge main_loop_i":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"top_fn/main_loop_i\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_i",
+      "directive_type":"loop_merge"
+    },
+    {% endif %}
+
+    "unroll main_loop_j":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/main_loop_j\"",
+        "set_directive_unroll -factor 4 \"top_fn/main_loop_j\"",
+        "set_directive_unroll -factor 8 \"top_fn/main_loop_j\"",
+        "set_directive_unroll \"top_fn/main_loop_j\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_j",
+      "directive_type":"unroll"
+    },
+    "pipeline main_loop_j":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/main_loop_j\"",
+        "set_directive_pipeline \"top_fn/main_loop_j\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_j",
+      "directive_type":"pipeline"
+    },
+    "loop_merge main_loop_j":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_merge \"top_fn/main_loop_j\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_j",
+      "directive_type":"loop_merge"
+    },
+
+    "unroll main_loop_k":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/main_loop_k\"",
+        "set_directive_unroll -factor 4 \"top_fn/main_loop_k\"",
+        "set_directive_unroll -factor 8 \"top_fn/main_loop_k\"",
+        "set_directive_unroll \"top_fn/main_loop_k\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_k",
+      "directive_type":"unroll"
+    },
+    "pipeline main_loop_k":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/main_loop_k\"",
+        "set_directive_pipeline \"top_fn/main_loop_k\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_k",
+      "directive_type":"pipeline"
+    },
+    "loop_flatten main_loop_l":{
+      "possible_directives":[
+        "",
+        "set_directive_loop_flatten \"top_fn/main_loop_l\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_l",
+      "directive_type":"loop_flatten"
+    },
+
+    "unroll main_loop_l":{
+      "possible_directives":[
+        "",
+        "set_directive_unroll -factor 2 \"top_fn/main_loop_l\"",
+        "set_directive_unroll -factor 4 \"top_fn/main_loop_l\"",
+        {% if use_local_bram %}
+        "set_directive_unroll -factor 8 \"top_fn/main_loop_l\"",
+        {% endif %}
+        "set_directive_unroll \"top_fn/main_loop_l\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_l",
+      "directive_type":"unroll"
+    },
+    "pipeline main_loop_l":{
+      "possible_directives":[
+        "set_directive_pipeline -off \"top_fn/main_loop_l\"",
+        "set_directive_pipeline \"top_fn/main_loop_l\""
+      ],
+      "function":"top_fn",
+      "label":"main_loop_l",
+      "directive_type":"pipeline"
+    },
+
+    "array_partition top_fn in":{
+      "possible_directives":[
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"top_fn\" in",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"top_fn\" in",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"top_fn\" in",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"top_fn\" in",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"top_fn\" in",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"top_fn\" in"
+      ],
+      "function":"top_fn",
+      "label":"in",
+      "variable":"in",
+      "directive_type":"array_partition"
+    },
+    "array_partition top_fn loc":{
+      "possible_directives":[
+        "",
+        "set_directive_array_partition -type complete -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"top_fn\" loc",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"top_fn\" loc"
+      ],
+      "function":"top_fn",
+      "label":"loc",
+      "variable":"loc",
+      "directive_type":"array_partition"
+    },
+    "array_partition top_fn out":{
+      "possible_directives":[
+        "",
+        {% if use_deep_array_access %}
+        "set_directive_array_partition -type complete -dim 1 \"top_fn\" out",
+        "set_directive_array_partition -type block -factor 2 -dim 1 \"top_fn\" out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 1 \"top_fn\" out",
+        "set_directive_array_partition -type block -factor 4 -dim 1 \"top_fn\" out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 1 \"top_fn\" out",
+        {% endif %}
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"top_fn\" out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"top_fn\" out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"top_fn\" out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"top_fn\" out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"top_fn\" out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"top_fn\" out"
+      ],
+      "function":"top_fn",
+      "label":"out",
+      "variable":"out",
+      "directive_type":"array_partition"
+    }
+  },
+  "nested_loops":[
+    {
+      "function":"top_fn",
+      "label":"init_loop_i",
+      "nest":{
+        "function":"top_fn",
+        "label":"init_loop_j",
+        "nest":{}
+      }
+    },
+    {% if use_deep_array_access %}
+    {
+      "function":"top_fn",
+      "label":"main_loop_i",
+      "nest":{
+        "function":"top_fn",
+        "label":"main_loop_j",
+        "nest":{
+          "function":"top_fn",
+          "label":"main_loop_k",
+          "nest":{
+            "function":"top_fn",
+            "label":"main_loop_l",
+            "nest":{}
+          }
+        }
+      }
+    }
+    {% else %}
+    {
+      "function":"top_fn",
+      "label":"main_loop_j",
+      "nest":{
+        "function":"top_fn",
+        "label":"main_loop_k",
+        "nest":{
+          "function":"top_fn",
+          "label":"main_loop_l",
+          "nest":{}
+        }
+      }
+    }
+    {% endif %}
+  ]
+}

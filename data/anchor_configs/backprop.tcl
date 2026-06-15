@@ -32,7 +32,14 @@ set_directive_pipeline -off update_weights/update_weights_loop10
 set_directive_pipeline -off update_weights/update_weights_loop11
 set_directive_pipeline -off update_weights/update_weights_loop11_1
 set_directive_pipeline -off update_weights/update_weights_loop12
+set_directive_pipeline -off add_bias_to_activations/add_bias_to_activations_loop1
+set_directive_pipeline -off soft_max/soft_max_loop1
+set_directive_pipeline -off soft_max/soft_max_loop2
+set_directive_pipeline -off RELU/RELU_loop1
+set_directive_pipeline -off take_difference/take_difference_loop1
 set_directive_pipeline -off backprop/backprop_loop1
+set_directive_pipeline -off backprop/backprop_loop1_1
+
 set_directive_pipeline -off backprop
 set_directive_pipeline -off matrix_vector_product_with_bias_input_layer
 set_directive_pipeline -off matrix_vector_product_with_bias_second_layer
@@ -43,6 +50,11 @@ set_directive_pipeline -off get_delta_matrix_weights3
 set_directive_pipeline -off get_oracle_activations1
 set_directive_pipeline -off get_oracle_activations2
 set_directive_pipeline -off update_weights
+set_directive_pipeline -off soft_max
+set_directive_pipeline -off RELU
+set_directive_pipeline -off add_bias_to_activations
+set_directive_pipeline -off take_difference
+
 set_directive_inline -off update_weights
 set_directive_inline -off matrix_vector_product_with_bias_input_layer
 set_directive_inline -off matrix_vector_product_with_bias_second_layer
@@ -52,6 +64,11 @@ set_directive_inline -off get_delta_matrix_weights2
 set_directive_inline -off get_delta_matrix_weights3
 set_directive_inline -off get_oracle_activations1
 set_directive_inline -off get_oracle_activations2
+set_directive_inline -off soft_max
+set_directive_inline -off RELU
+set_directive_inline -off add_bias_to_activations
+set_directive_inline -off take_difference
+
 set_directive_loop_flatten -off matrix_vector_product_with_bias_input_layer/matrix_vector_product_with_bias_input_layer_loop1_1
 set_directive_loop_flatten -off matrix_vector_product_with_bias_second_layer/matrix_vector_product_with_bias_second_layer_loop1_1
 set_directive_loop_flatten -off matrix_vector_product_with_bias_output_layer/matrix_vector_product_with_bias_output_layer_loop1_1

@@ -9,10 +9,7 @@ import sklearn
 import matplotlib.pyplot as plt
 from numpy.typing import NDArray
 
-from estimators.common.analysis_utils import (
-    cluster_by_directive,
-    collate_data_for_analysis
-)
+from estimator.common.analysis.utils import cluster_by_directive, collate_data_for_analysis
 
 
 def visualize_data(
@@ -24,7 +21,7 @@ def visualize_data(
     output_dir: Optional[str] = None,
     n_clusters: int = 8,
     cluster_method: str = 'kmeans',
-    n_components: Union[int, float] = 0.85
+    n_components: Union[int, float] = 0.9
 ):
     plt.figure(figsize=(10, 6), dpi=150)
 
@@ -56,10 +53,7 @@ def visualize_data(
 
         for i in range(n_clusters):
             cluster_solutions = metrics[clusters == i]["solution"].tolist()
-            solution_indices = []
-            for solution in cluster_solutions:
-                solution_indices.append(int(solution.split("solution")[1].strip()))
-            output_data[f"Cluster {i}"] = solution_indices
+            output_data[f"Cluster {i}"] = cluster_solutions
             
         with open(output_file, 'w') as f:
             json.dump(output_data, f, indent=2)
@@ -102,24 +96,22 @@ def parse_args():
                         help='Path to the dataset directory')
     parser.add_argument('-b', '--benchmark-name', required=True,
                         help='The name of the benchmark to analyze')
-    parser.add_argument('-o', '--output-dir', required=False, default=None, 
+    parser.add_argument('-o', '--output-dir', required=False, default='scripts/analysis/outputs', 
                         help='Path to the output directory')
     parser.add_argument('-dc', '--directive-config', required=False, default=None,
                         help='Path to the file containing the available directive configurations')
     parser.add_argument('-x', '--x-data', required=False, default='lut',
                         help='X axis data (default: "lut")')
-    parser.add_argument('-y', '--y-data', required=False, default='time',
-                        help='Y axis data (default: "time")')
+    parser.add_argument('-y', '--y-data', required=False, default='dynamic_power',
+                        help='Y axis data (default: "dynamic_power")')
     parser.add_argument('-s', '--seed', required=False, default=42,
                         help='Random seed for clustering (default: 42)')
     parser.add_argument('-c', '--num-clusters', required=False, default=8,
                         help='Number of clusters to group solutions (default: 8)')
     parser.add_argument('-cm', '--cluster-method', choices=['kmeans', 'aggl'], default='kmeans',
                         help='Clustering method (default: kmeans)')
-    parser.add_argument('-f', '--filtered', required=False, action='store_true', default=False,
-                        help='Sinalize if the dataset is filtered (default: False)')
-    parser.add_argument('-pc', '--principal-components', required=False, default=0.85,
-                        help='Number of principal components for PCA (default: 0.85)')
+    parser.add_argument('-pc', '--principal-components', required=False, default=0.9,
+                        help='Number of principal components for PCA (default: 0.9)')
     return parser.parse_args()
 
 
@@ -130,7 +122,6 @@ def main(args):
     x_data = args.x_data
     y_data = args.y_data
     output_dir = args.output_dir
-    filtered = args.filtered
     cluster_method = args.cluster_method
     n_clusters = int(args.num_clusters)
     seed = int(args.seed)
@@ -157,9 +148,9 @@ def main(args):
             os.makedirs(output_dir)
 
     metrics, directives = collate_data_for_analysis(
-        dataset_dir, benchmark, filtered=filtered,
+        dataset_dir, benchmark,
         dct_config_path=directive_config_path
-    )
+    )   
     visualize_data(
         metrics, benchmark, x_data, y_data, directives=directives,
         output_dir=output_dir, n_clusters=n_clusters, 

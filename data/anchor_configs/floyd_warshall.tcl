@@ -1,0 +1,7 @@
+set_directive_pipeline -off kernel_floyd_warshall/loop1
+set_directive_pipeline -off kernel_floyd_warshall/loop2
+set_directive_pipeline -off kernel_floyd_warshall/loop3
+set_directive_pipeline -off kernel_floyd_warshall
+set_directive_loop_flatten -off kernel_floyd_warshall/loop1
+set_directive_loop_flatten -off kernel_floyd_warshall/loop2
+set_directive_loop_flatten -off kernel_floyd_warshall/loop3

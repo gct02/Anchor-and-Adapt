@@ -1,116 +1,200 @@
 {
-    "ADPCM": {
-        "name": "ADPCM",
-        "top_level": "adpcm_main",
-        "directives_path": "data/directives/adpcm.json",
-        "base_solution_dir": "data/base_solutions/ADPCM/solution0",
-        "base_directives_tcl": "data/base_directives/adpcm.tcl",
+    "aA": {
+        "benchmark_name": "aA",
+        "top_function": "aA",
+        "directive_config_path": "data/directives/synthetic/complex/aA.json",
+        "anchor_dir": "../dataset-filtered/aA/solution0",
+        "ir_path": "data/benchmarks/synthetic/PowerGear/aA/aA.ll",
+        "array_param_dims": {
+            "aA/A": [64, 64],
+            "aA/A_out": [64, 64]
+        },
         "source_files": [
-            "data/benchmarks/adpcm/adpcm.c"
+            "data/benchmarks/synthetic/PowerGear/aA/aA.c"
+        ],
+        "last_base_index": 84
+    },
+
+    "ADPCM": {
+        "benchmark_name": "ADPCM",
+        "top_function": "adpcm_main",
+        "directive_config_path": "data/directives/real/adpcm.json",
+        "anchor_dir": "../dataset-filtered/ADPCM/solution0",
+        "anchor_config_path": "data/anchor_configs/adpcm.tcl",
+        "ir_path": "data/benchmarks/real/adpcm/adpcm.ll",
+        "array_param_dims": {},
+        "source_files": [
+            "data/benchmarks/real/adpcm/adpcm.c"
         ],
         "last_base_index": 83
     },
+
     "AES": {
-        "name": "AES",
-        "top_level": "aes_main",
-        "directives_path": "data/directives/aes.json",
-        "base_solution_dir": "data/base_solutions/AES/solution0",
-        "base_directives_tcl": "data/base_directives/aes.tcl",
+        "benchmark_name": "AES",
+        "top_function": "aes_main",
+        "directive_config_path": "data/directives/real/aes.json",
+        "anchor_dir": "../dataset-filtered/AES/solution0",
+        "anchor_config_path": "data/anchor_configs/aes.tcl",
+        "ir_path": "data/benchmarks/real/aes/aes.ll",
+        "array_param_dims": {},
         "source_files": [
-            "data/benchmarks/aes/aes_dec.c",
-            "data/benchmarks/aes/aes_enc.c",
-            "data/benchmarks/aes/aes.c",
-            "data/benchmarks/aes/aes_key.c"
+            "data/benchmarks/real/aes/aes_dec.c",
+            "data/benchmarks/real/aes/aes_enc.c",
+            "data/benchmarks/real/aes/aes.c",
+            "data/benchmarks/real/aes/aes_key.c"
         ],
         "last_base_index": 65
     },
+
     "BACKPROP": {
-        "name": "BACKPROP",
-        "top_level": "backprop",
-        "directives_path": "data/directives/backprop.json",
-        "base_solution_dir": "data/base_solutions/BACKPROP/solution0",
-        "base_directives_tcl": "data/base_directives/backprop.tcl",
+        "benchmark_name": "BACKPROP",
+        "top_function": "backprop",
+        "directive_config_path": "data/directives/real/backprop.json",
+        "anchor_dir": "../dataset-filtered/BACKPROP/solution0",
+        "anchor_config_path": "data/anchor_configs/backprop.tcl",
+        "ir_path": "data/benchmarks/real/backprop/backprop.ll",
+        "array_param_dims": {},
         "source_files": [
-            "data/benchmarks/backprop/backprop.c"
+            "data/benchmarks/real/backprop/backprop.c"
         ],
         "last_base_index": 261
     },
-    "GEMM": {
-        "name": "GEMM",
-        "top_level": "bbgemm",
-        "directives_path": "data/directives/gemm.json",
-        "base_solution_dir": "data/base_solutions/GEMM/solution0",
-        "base_directives_tcl": "data/base_directives/gemm.tcl",
+
+    "FLOYD_WARSHALL": {
+        "benchmark_name": "FLOYD_WARSHALL",
+        "top_function": "kernel_floyd_warshall",
+        "directive_config_path": "data/directives/real/floyd_warshall.json",
+        "anchor_dir": "../dataset-filtered/FLOYD_WARSHALL/solution0",
+        "anchor_config_path": "data/anchor_configs/floyd_warshall.tcl",
+        "ir_path": "data/benchmarks/real/floyd_warshall/floyd_warshall.ll",
+        "array_param_dims": {
+            "kernel_floyd_warshall/path": [500, 500]
+        },
         "source_files": [
-            "data/benchmarks/gemm/gemm.c"
+            "data/benchmarks/real/floyd_warshall/floyd_warshall.c"
+        ],
+        "last_base_index": 30
+    },
+
+    "GEMM": {
+        "benchmark_name": "GEMM",
+        "top_function": "bbgemm",
+        "directive_config_path": "data/directives/real/gemm.json",
+        "anchor_dir": "../dataset-filtered/GEMM/solution0",
+        "anchor_config_path": "data/anchor_configs/gemm.tcl",
+        "ir_path": "data/benchmarks/real/gemm/gemm.ll",
+        "array_param_dims": {},
+        "source_files": [
+            "data/benchmarks/real/gemm/gemm.c"
         ],
         "last_base_index": 70
     },
+
     "GRAMSCHMIDT": {
-        "name": "GRAMSCHMIDT",
-        "top_level": "kernel_gramschmidt",
-        "directives_path": "data/directives/gramschmidt.json",
-        "base_solution_dir": "data/base_solutions/GRAMSCHMIDT/solution0",
-        "base_directives_tcl": "data/base_directives/gramschmidt.tcl",
+        "benchmark_name": "GRAMSCHMIDT",
+        "top_function": "kernel_gramschmidt",
+        "directive_config_path": "data/directives/real/gramschmidt.json",
+        "anchor_dir": "../dataset-filtered/GRAMSCHMIDT/solution0",
+        "anchor_config_path": "data/anchor_configs/gramschmidt.tcl",
+        "ir_path": "data/benchmarks/real/gramschmidt/gramschmidt.ll",
+        "array_param_dims": {
+            "kernel_gramschmidt/A": [512, 512],
+            "kernel_gramschmidt/R": [512, 512],
+            "kernel_gramschmidt/Q": [512, 512]
+        },
         "source_files": [
-            "data/benchmarks/gramschmidt/gramschmidt.c"
+            "data/benchmarks/real/gramschmidt/gramschmidt.c"
         ],
         "last_base_index": 102
     },
+
     "GSM": {
-        "name": "GSM",
-        "top_level": "Gsm_LPC_Analysis",
-        "directives_path": "data/directives/gsm.json",
-        "base_solution_dir": "data/base_solutions/GSM/solution0",
-        "base_directives_tcl": "data/base_directives/gsm.tcl",
+        "benchmark_name": "GSM",
+        "top_function": "Gsm_LPC_Analysis",
+        "directive_config_path": "data/directives/real/gsm.json",
+        "anchor_dir": "../dataset-filtered/GSM/solution0",
+        "anchor_config_path": "data/anchor_configs/gsm.tcl",
+        "ir_path": "data/benchmarks/real/gsm/gsm.ll",
+        "array_param_dims": {},
         "source_files": [
-            "data/benchmarks/gsm/gsm_add.c",
-            "data/benchmarks/gsm/gsm.c",
-            "data/benchmarks/gsm/gsm_lpc.c"
+            "data/benchmarks/real/gsm/gsm_add.c",
+            "data/benchmarks/real/gsm/gsm.c",
+            "data/benchmarks/real/gsm/gsm_lpc.c"
         ],
         "last_base_index": 56
     },
-    "KNN": {
-        "name": "KNN",
-        "top_level": "md_kernel",
-        "directives_path": "data/directives/knn.json",
-        "base_solution_dir": "data/base_solutions/KNN/solution0",
-        "base_directives_tcl": "data/base_directives/knn.tcl",
+
+    "HEAT3D": {
+        "benchmark_name": "HEAT3D",
+        "top_function": "kernel_heat_3d",
+        "directive_config_path": "data/directives/real/heat3d.json",
+        "anchor_dir": "../dataset-filtered/HEAT3D/solution0",
+        "anchor_config_path": "data/anchor_configs/heat3d.tcl",
+        "ir_path": "data/benchmarks/real/heat3d/heat3d.ll",
+        "array_param_dims": {
+            "kernel_heat_3d/A": [40, 40, 40],
+            "kernel_heat_3d/B": [40, 40, 40]
+        },
         "source_files": [
-            "data/benchmarks/knn/md.c"
+            "data/benchmarks/real/heat3d/heat3d.c"
+        ],
+        "last_base_index": 55
+    },
+
+    "KNN": {
+        "benchmark_name": "KNN",
+        "top_function": "md_kernel",
+        "directive_config_path": "data/directives/real/knn.json",
+        "anchor_dir": "../dataset-filtered/KNN/solution0",
+        "anchor_config_path": "data/anchor_configs/knn.tcl",
+        "ir_path": "data/benchmarks/real/knn/knn.ll",
+        "array_param_dims": {},
+        "source_files": [
+            "data/benchmarks/real/knn/md.c"
         ],
         "last_base_index": 94
     },
+
     "SHA": {
-        "name": "SHA",
-        "top_level": "sha_stream",
-        "directives_path": "data/directives/sha.json",
-        "base_solution_dir": "data/base_solutions/SHA/solution0",
-        "base_directives_tcl": "data/base_directives/sha.tcl",
+        "benchmark_name": "SHA",
+        "top_function": "sha_stream",
+        "directive_config_path": "data/directives/real/sha.json",
+        "anchor_dir": "../dataset-filtered/SHA/solution0",
+        "anchor_config_path": "data/anchor_configs/sha.tcl",
+        "ir_path": "data/benchmarks/real/sha/sha.ll",
+        "array_param_dims": {
+            "sha_stream/indata": [2, 8192]
+        },
         "source_files": [
-            "data/benchmarks/sha/sha.c"
+            "data/benchmarks/real/sha/sha.c"
         ],
         "last_base_index": 60
     },
+
     "STENCIL3D": {
-        "name": "STENCIL3D",
-        "top_level": "stencil3d",
-        "directives_path": "data/directives/stencil3d.json",
-        "base_solution_dir": "data/base_solutions/STENCIL3D/solution0",
-        "base_directives_tcl": "data/base_directives/stencil3d.tcl",
+        "benchmark_name": "STENCIL3D",
+        "top_function": "stencil3d",
+        "directive_config_path": "data/directives/real/stencil3d.json",
+        "anchor_dir": "../dataset-filtered/STENCIL3D/solution0",
+        "anchor_config_path": "data/anchor_configs/stencil3d.tcl",
+        "ir_path": "data/benchmarks/real/stencil3d/stencil.ll",
+        "array_param_dims": {},
         "source_files": [
-            "data/benchmarks/stencil3d/stencil.c"
+            "data/benchmarks/real/stencil3d/stencil.c"
         ],
         "last_base_index": 64
     },
+
     "TRANS_FFT": {
-        "name": "TRANS_FFT",
-        "top_level": "fft1D_512",
-        "directives_path": "data/directives/transposed_fft.json",
-        "base_solution_dir": "data/base_solutions/TRANS_FFT/solution0",
-        "base_directives_tcl": "data/base_directives/transposed_fft.tcl",
+        "benchmark_name": "TRANS_FFT",
+        "top_function": "fft1D_512",
+        "directive_config_path": "data/directives/real/transposed_fft.json",
+        "anchor_dir": "../dataset-filtered/TRANS_FFT/solution0",
+        "anchor_config_path": "data/anchor_configs/transposed_fft.tcl",
+        "ir_path": "data/benchmarks/real/transposed_fft/transposed_fft.ll",
+        "array_param_dims": {},
         "source_files": [
-            "data/benchmarks/transposed_fft/transposed_fft.c"
+            "data/benchmarks/real/transposed_fft/transposed_fft.c"
         ],
         "last_base_index": 130
     }

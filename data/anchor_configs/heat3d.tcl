@@ -1,0 +1,10 @@
+set_directive_pipeline -off kernel_heat_3d/outer_loop
+set_directive_pipeline -off kernel_heat_3d/loop1
+set_directive_pipeline -off kernel_heat_3d/loop1_1
+set_directive_pipeline -off kernel_heat_3d/loop1_1_1
+set_directive_pipeline -off kernel_heat_3d/loop2
+set_directive_pipeline -off kernel_heat_3d/loop2_1
+set_directive_pipeline -off kernel_heat_3d/loop2_1_1
+set_directive_pipeline -off kernel_heat_3d
+set_directive_loop_flatten -off kernel_heat_3d/loop1_1_1
+set_directive_loop_flatten -off kernel_heat_3d/loop2_1_1

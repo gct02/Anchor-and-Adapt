@@ -1,10 +1,23 @@
 # Anchor-and-Adapt
 
-Fast and accurate GNN-based QoR estimator for High-Level Synthesis Design Space Exploration
+Fast and accurate GNN-based QoR estimator for High-Level Synthesis Design Space Exploration 
 
 ## Project Overview
 
 Graph Neural Networks (GNNs) have emerged as powerful tools for guiding Design Space Exploration (DSE) in High-Level Synthesis (HLS), but they face a critical trade-off: models that base inference on pre-HLS inputs are often inaccurate, while accurate models based on post-HLS inputs are too slow for iterative exploration. This paper introduces a novel framework that targets this dilemma. Our approach centers on an **anchor-based graph representation**, where a single, ground-truth hardware implementation is used to seed a design graph with rich, post-implementation data. A heterogeneous GNN is then trained to predict the QoR delta caused by applying new optimization directives to this anchor, enabling rapid and high-fidelity estimation without re-running the HLS toolchain.
+
+More details can be found in our DATE 2026 paper. If you find the repository useful, please cite our paper:
+
+```
+@inproceedings{tavares2026anchor,
+  title={Anchor-and-Adapt: HLS QoR Prediction using Ground-Truth Seeding and Few-Shot Fine-Tuning},
+  author={Tavares, Gabriel C and De Andrade, Heitor C and Itturriet, F{\'a}bio P and Nazar, Gabriel L},
+  booktitle={2026 Design, Automation \& Test in Europe Conference (DATE)},
+  pages={1--7},
+  year={2026},
+  organization={IEEE}
+}
+```
 
 ## Instalation
 
@@ -72,3 +85,4 @@ If you use this work, please cite our paper (details to be added upon publicatio
   year={2026}
 }
 ```
+

@@ -13,19 +13,26 @@ set_directive_pipeline -off KeySchedule/KeySchedule_label8
 set_directive_pipeline -off KeySchedule/KeySchedule_label9
 set_directive_pipeline -off encrypt/encrypt_label1
 set_directive_pipeline -off decrypt/decrypt_label4
+
 set_directive_pipeline -off aes_main
+set_directive_pipeline -off ByteSub_ShiftRow
+set_directive_pipeline -off InversShiftRow_ByteSub
 set_directive_pipeline -off MixColumn_AddRoundKey
 set_directive_pipeline -off AddRoundKey_InversMixColumn
 set_directive_pipeline -off encrypt
 set_directive_pipeline -off decrypt
 set_directive_pipeline -off KeySchedule
 set_directive_pipeline -off AddRoundKey
+
 set_directive_loop_flatten -off AddRoundKey_InversMixColumn/AddRoundKey_InversMixColumn_label1
 set_directive_loop_flatten -off KeySchedule/KeySchedule_label5
 set_directive_loop_flatten -off KeySchedule/KeySchedule_label6
 set_directive_loop_flatten -off KeySchedule/KeySchedule_label7
 set_directive_loop_flatten -off KeySchedule/KeySchedule_label8
 set_directive_loop_flatten -off KeySchedule/KeySchedule_label9
+
+set_directive_inline -off ByteSub_ShiftRow
+set_directive_inline -off InversShiftRow_ByteSub
 set_directive_inline -off MixColumn_AddRoundKey
 set_directive_inline -off AddRoundKey_InversMixColumn
 set_directive_inline -off encrypt

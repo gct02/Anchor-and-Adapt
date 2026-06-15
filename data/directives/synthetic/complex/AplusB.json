@@ -1,0 +1,302 @@
+{
+  "directives": {
+    "unroll lprd_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lprd_1\"",
+        "set_directive_unroll -factor 4 \"AplusB/lprd_1\"",
+        "set_directive_unroll -factor 8 \"AplusB/lprd_1\"",
+        "set_directive_unroll -factor 16 \"AplusB/lprd_1\""
+      ],
+      "function": "AplusB",
+      "label": "lprd_1",
+      "directive_type": "unroll"
+    },
+    "unroll lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lprd_2\"",
+        "set_directive_unroll -factor 4 \"AplusB/lprd_2\"",
+        "set_directive_unroll -factor 8 \"AplusB/lprd_2\"",
+        "set_directive_unroll -factor 16 \"AplusB/lprd_2\""
+      ],
+      "function": "AplusB",
+      "label": "lprd_2",
+      "directive_type": "unroll"
+    },
+    "unroll lp1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lp1\"",
+        "set_directive_unroll -factor 4 \"AplusB/lp1\"",
+        "set_directive_unroll -factor 8 \"AplusB/lp1\"",
+        "set_directive_unroll -factor 16 \"AplusB/lp1\""
+      ],
+      "function": "AplusB",
+      "label": "lp1",
+      "directive_type": "unroll"
+    },
+    "unroll lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lp2\"",
+        "set_directive_unroll -factor 4 \"AplusB/lp2\"",
+        "set_directive_unroll -factor 8 \"AplusB/lp2\"",
+        "set_directive_unroll -factor 16 \"AplusB/lp2\""
+      ],
+      "function": "AplusB",
+      "label": "lp2",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_1": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lpwr_1\"",
+        "set_directive_unroll -factor 4 \"AplusB/lpwr_1\"",
+        "set_directive_unroll -factor 8 \"AplusB/lpwr_1\"",
+        "set_directive_unroll -factor 16 \"AplusB/lpwr_1\""
+      ],
+      "function": "AplusB",
+      "label": "lpwr_1",
+      "directive_type": "unroll"
+    },
+    "unroll lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_unroll -factor 2 \"AplusB/lpwr_2\"",
+        "set_directive_unroll -factor 4 \"AplusB/lpwr_2\"",
+        "set_directive_unroll -factor 8 \"AplusB/lpwr_2\"",
+        "set_directive_unroll -factor 16 \"AplusB/lpwr_2\""
+      ],
+      "function": "AplusB",
+      "label": "lpwr_2",
+      "directive_type": "unroll"
+    },
+    "pipeline lprd_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lprd_1\"",
+        "set_directive_pipeline \"AplusB/lprd_1\""
+      ],
+      "function": "AplusB",
+      "label": "lprd_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lprd_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lprd_2\"",
+        "set_directive_pipeline \"AplusB/lprd_2\""
+      ],
+      "function": "AplusB",
+      "label": "lprd_2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lp1\"",
+        "set_directive_pipeline \"AplusB/lp1\""
+      ],
+      "function": "AplusB",
+      "label": "lp1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lp2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lp2\"",
+        "set_directive_pipeline \"AplusB/lp2\""
+      ],
+      "function": "AplusB",
+      "label": "lp2",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_1": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lpwr_1\"",
+        "set_directive_pipeline \"AplusB/lpwr_1\""
+      ],
+      "function": "AplusB",
+      "label": "lpwr_1",
+      "directive_type": "pipeline"
+    },
+    "pipeline lpwr_2": {
+      "possible_directives": [
+        "set_directive_pipeline -off \"AplusB/lpwr_2\"",
+        "set_directive_pipeline \"AplusB/lpwr_2\""
+      ],
+      "function": "AplusB",
+      "label": "lpwr_2",
+      "directive_type": "pipeline"
+    },
+    "loop_flatten lprd_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"AplusB/lprd_2\""
+      ],
+      "function": "AplusB",
+      "label": "lprd_2",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lp2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"AplusB/lp2\""
+      ],
+      "function": "AplusB",
+      "label": "lp2",
+      "directive_type": "loop_flatten"
+    },
+    "loop_flatten lpwr_2": {
+      "possible_directives": [
+        "",
+        "set_directive_loop_flatten \"AplusB/lpwr_2\""
+      ],
+      "function": "AplusB",
+      "label": "lpwr_2",
+      "directive_type": "loop_flatten"
+    },
+    "array_partition AplusB A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" A"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "A",
+      "directive_type": "array_partition"
+    },
+    "array_partition AplusB B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" B"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "B",
+      "directive_type": "array_partition"
+    },
+    "array_partition AplusB C_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" C_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" C_out"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "C_out",
+      "directive_type": "array_partition"
+    },
+    "array_partition AplusB buff_A": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"AplusB\" buff_A",
+        "set_directive_array_partition -type complete \"AplusB\" buff_A"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "buff_A",
+      "directive_type": "array_partition"
+    },
+    "array_partition AplusB buff_B": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"AplusB\" buff_B",
+        "set_directive_array_partition -type complete \"AplusB\" buff_B"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "buff_B",
+      "directive_type": "array_partition"
+    },
+    "array_partition AplusB buff_C_out": {
+      "possible_directives": [
+        "",
+        "set_directive_array_partition -type block -factor 2 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type cyclic -factor 2 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type block -factor 4 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type cyclic -factor 4 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type block -factor 8 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type cyclic -factor 8 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type block -factor 16 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type cyclic -factor 16 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type block -factor 32 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type cyclic -factor 32 -dim 0 \"AplusB\" buff_C_out",
+        "set_directive_array_partition -type complete \"AplusB\" buff_C_out"
+      ],
+      "function": "AplusB",
+      "label": "",
+      "variable": "buff_C_out",
+      "directive_type": "array_partition"
+    }
+  },
+  "parent_loops":{
+    "lprd_2":["lprd_1"],
+    "lp2":["lp1"],
+    "lpwr_2":["lpwr_1"]
+  },
+  "nested_loops": [
+    {
+      "function": "AplusB",
+      "label": "lprd_1",
+      "nest": {
+        "function": "AplusB",
+        "label": "lprd_2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "AplusB",
+      "label": "lp1",
+      "nest": {
+        "function": "AplusB",
+        "label": "lp2",
+        "nest": {}
+      }
+    },
+    {
+      "function": "AplusB",
+      "label": "lpwr_1",
+      "nest": {
+        "function": "AplusB",
+        "label": "lpwr_2",
+        "nest": {}
+      }
+    }
+  ]
+}
