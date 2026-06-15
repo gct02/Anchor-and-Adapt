@@ -395,9 +395,9 @@ class CDFG:
         for elem in element.findall("item"):
             opcode = elem.findtext("opcode", "")
             if opcode in ["alloca", "GlobalMem"]:
-                node = MemBufNode(elem, self.module_name, self.source_name)
+                node = MemBufNode(self.config, elem, self.module_name, self.source_name)
             else:
-                node = OpNode(elem, self.module_name, self.source_name)
+                node = OpNode(self.config, elem, self.module_name, self.source_name)
                 self._operand_edges[node.id] = []
                 op_edges = elem.find("oprand_edges")
                 if op_edges is not None:
@@ -415,7 +415,7 @@ class CDFG:
         if element is None: return
         for elem in element.findall("item"):
             node = MemBufNode(
-                elem, self.module_name, self.source_name, 
+                self.config, elem, self.module_name, self.source_name, 
                 is_port=True, is_interface=self.is_top_function
             )
             self.nodes[node.id] = node
@@ -439,7 +439,7 @@ class CDFG:
         self.entry_block = None
         if element is None: return
         for elem in element.findall("item"):
-            node = BlockNode(elem, self.module_name, self.source_name)
+            node = BlockNode(self.config, elem, self.module_name, self.source_name)
             node.ops = [op for op in node.ops if op in self.nodes]
             for op in node.ops:
                 self.nodes[op].parent_block = node.id
@@ -479,7 +479,7 @@ class CDFG:
             region_id = f"{self.module_name}.loop.{mid}"
             if region_id in region_blocks_map: continue
 
-            node = RegionNode(elem, self.module_name, self.source_name)
+            node = RegionNode(self.config, elem, self.module_name, self.source_name)
             sub_loops = set()
             blocks = set(node.blocks)
             for sub in node.sub_regions:
@@ -544,6 +544,7 @@ class CDFG:
 
         # The first CDFG region represents the function itself
         function_node = RegionNode(
+            config=self.config,
             element=function_elem,
             module_name=self.module_name,
             source_function_name=self.source_name, 

@@ -161,13 +161,13 @@ def prepare_train_test_loaders(
     _ = dataset_class(root=dataset_dir)
 
     train_loader = prepare_loader(
-        dataset_dir, train_benches, 
+        dataset_class, dataset_dir, train_benches, 
         balanced=balanced, batch_size=batch_size, 
         shuffle=shuffle, drop_last=drop_last, 
         num_workers=num_workers, pin_memory=pin_memory
     )
     test_loader = prepare_loader(
-        dataset_dir, test_bench,
+        dataset_class, dataset_dir, test_bench,
         balanced=False, batch_size=batch_size, 
         shuffle=False, drop_last=False, 
         num_workers=num_workers, pin_memory=pin_memory
