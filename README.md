@@ -72,17 +72,3 @@ To perform few-shot fine-tuning on a pre-trained model for a specific kernel, ru
 ```bash
 python -m estimators.area.fine_tuning.fine_tune --model-dir <path_to_model> --dataset-dir <path_to_dataset>
 ```
-
-## Citation
-
-If you use this work, please cite our paper (details to be added upon publication).
-
-```bibtex
-@inproceedings{anonymous2026anchor,
-  title={Anchor-and-Adapt: HLS QoR Prediction using Ground-Truth Seeding and Few-Shot Fine-Tuning},
-  author={Anonymous Author(s)},
-  booktitle={Anonymous Conference},
-  year={2026}
-}
-```
-
