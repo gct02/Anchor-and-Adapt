@@ -20,7 +20,7 @@ BENCHMARKS=(
     "TRANS_FFT"
 )
 
-bash scripts/sample_solutions_all.sh
+# bash scripts/sample_solutions_all.sh
 
 for METRIC in "${METRICS[@]}"; do
     echo "========================================================================"

@@ -13,24 +13,24 @@ from estimator.common.parsers import parse_directive_command, extract_metrics
 
 
 def cluster_by_directive(
-    directives: NDArray[np.int_],
+    encoded_directives: NDArray[np.int_],
     n_clusters: int = 8,
     max_iter: int = 1000,
     cluster_method: str = 'kmeans',
     n_components: Union[int, float] = 0.9,
-    metrics: Optional[NDArray[np.float_]] = None,
-    log_transform_metrics: bool = True
+    hardware_targets: Optional[NDArray[np.float_]] = None,
+    log_scale: bool = True
 ) -> NDArray[np.int_]:
-    if directives.ndim > 2:
-        directives = directives.reshape(directives.shape[0], -1)
+    if encoded_directives.ndim > 2:
+        encoded_directives = encoded_directives.reshape(encoded_directives.shape[0], -1)
 
-    if metrics is not None:
-        if log_transform_metrics:
-            metrics = np.log1p(metrics)
-        directives = np.append(directives, metrics, axis=1)
+    if hardware_targets is not None:
+        if log_scale:
+            hardware_targets = np.log1p(hardware_targets)
+        encoded_directives = np.append(encoded_directives, hardware_targets, axis=1)
 
     pca = PCA(n_components=n_components)
-    directives = pca.fit_transform(directives)
+    encoded_directives = pca.fit_transform(encoded_directives)
 
     if cluster_method == 'kmeans':
         model = KMeans(
@@ -44,12 +44,12 @@ def cluster_by_directive(
     else:
         raise ValueError(f"Unknown clustering method: {cluster_method}")
     
-    clusters = model.fit_predict(directives)
+    clusters = model.fit_predict(encoded_directives)
     
     if len(np.unique(clusters)) > 1:
-        sil_score = silhouette_score(directives, clusters)
-        db_score = davies_bouldin_score(directives, clusters)
-        ch_score = calinski_harabasz_score(directives, clusters)
+        sil_score = silhouette_score(encoded_directives, clusters)
+        db_score = davies_bouldin_score(encoded_directives, clusters)
+        ch_score = calinski_harabasz_score(encoded_directives, clusters)
         print(f'Silhouette score: {sil_score:.2f}')
         print(f'Davies-Bouldin score: {db_score:.2f}')
         print(f'Calinski-Harabasz score: {ch_score:.2f}')
@@ -60,18 +60,18 @@ def cluster_by_directive(
 def collate_data_for_analysis(
     dataset_dir: str, 
     benchmark: str, 
-    dct_config_path: Optional[str] = None,
-    include_base_solution: bool = False
+    directives_config_path: Optional[str] = None,
+    include_anchor_solution: bool = False
 ) -> Tuple[pd.DataFrame, Optional[NDArray[np.int_]]]:
     reports = []
-    directives = [] if dct_config_path else None
+    directives = [] if directives_config_path else None
 
     bench_dir = f"{dataset_dir}/{benchmark}"
     solutions = [d for d in os.listdir(bench_dir) if d.startswith('solution')]
     solutions = sorted(solutions, key=lambda s: int(s.split("solution")[1]))
 
     for sol in solutions:
-        if not include_base_solution and sol == 'solution0':
+        if not include_anchor_solution and sol == 'solution0':
             continue
 
         sol_dir = os.path.join(bench_dir, sol)
@@ -83,9 +83,9 @@ def collate_data_for_analysis(
         report['solution'] = int(sol.split("solution")[1].strip())
         reports.append(report)
 
-        if dct_config_path is not None:
+        if directives_config_path is not None:
             tcl_path = f'{sol_dir}/directives.tcl'
-            directives.append(encode_directives_for_clustering(dct_config_path, tcl_path))
+            directives.append(encode_directives_for_clustering(directives_config_path, tcl_path))
             
     if directives is not None:
         directives = np.stack(directives)

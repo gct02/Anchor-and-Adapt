@@ -1,7 +1,9 @@
 from typing import Dict, Union, List
 
+import numpy as np
 import torch
 from torch import Tensor
+from scipy.stats import kendalltau
 
 from estimator.common.constants import AVAILABLE_RESOURCES
 
@@ -21,6 +23,13 @@ def compute_snru(
             snru += rel_util
     if as_tensor: return snru
     return snru.flatten().tolist()
+
+
+def compute_tau(preds: List[float], targets: List[float]):
+    if len(np.unique(targets)) == 1: return None
+    if len(np.unique(preds)) == 1: return 0.0
+    tau, _ = kendalltau(preds, targets)
+    return tau
 
 
 def mape_loss(pred: Tensor, target: Tensor, eps: float = 1e-12, reduce: bool = True) -> Tensor:

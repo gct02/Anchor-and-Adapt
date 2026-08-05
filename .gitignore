@@ -41,4 +41,8 @@ hls.app
 
 # Some preliminary experiments
 /results_temp
-estimator/aggregate
+
+data/benchmarks/synthetic/
+data/directives/synthetic/
+data_gen/bench_gen/
+figures/

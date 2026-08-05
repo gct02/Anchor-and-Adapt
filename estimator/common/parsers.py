@@ -12,6 +12,15 @@ from torch import Tensor
 from estimator.common.constants import *
 
 
+@dataclass
+class EvalReport:
+    indices: List[int]
+    preds: Union[Tensor, List[float]]
+    targets: Union[Tensor, List[float]]
+    errors: Union[Tensor, List[float]]
+    smape: float
+
+
 def extract_achieved_clk(solution_dir) -> float:
     solution_dir = Path(solution_dir)
     if not solution_dir.is_dir():
@@ -77,7 +86,6 @@ def extract_area(solution_dir) -> Dict[str, int]:
         if rpt_path.is_file():
             return parse_area_rpt(rpt_path)
         
-    # If no reports found, return default values
     return {key: -1 for key in AREA_METRICS}
 
 
@@ -319,12 +327,8 @@ def extract_hls_area_estimates(solution_dir) -> Dict[str, int]:
     
     if Path(solution_dir / 'reports').is_dir():
         xml_path = Path(solution_dir) / 'reports/csynth.xml'
-        # if not xml_path.is_file():
-        #     xml_path = Path(solution_dir) / 'reports/synth.xml'
     else:
         xml_path = Path(solution_dir) / 'syn/report/csynth.xml'
-        # if not xml_path.is_file():
-        #     xml_path = Path(solution_dir) / 'syn/report/synth.xml'
 
     if not xml_path.is_file():
         print(f'Area estimates report not found in {solution_dir}')
@@ -566,15 +570,6 @@ def extract_early_auto_pipelines(log_lines):
     return list(auto_pipelines)
 
 
-@dataclass
-class EvalReport:
-    indices: List[int]
-    preds: Union[Tensor, List[float]]
-    targets: Union[Tensor, List[float]]
-    errors: Optional[Union[Tensor, List[float]]]
-    mape: Optional[float]
-
-
 def parse_predictions(filepath: str) -> EvalReport:
     with open(filepath, 'r') as f:
         lines = f.readlines()
@@ -591,10 +586,10 @@ def parse_predictions(filepath: str) -> EvalReport:
 
     return EvalReport(
         indices=indices,
-        preds=preds,
         targets=targets,
+        preds=preds,
         errors=errors,
-        mape=np.mean(errors)
+        smape=np.mean(errors)
     )
 
 

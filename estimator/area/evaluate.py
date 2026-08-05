@@ -13,7 +13,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate a pre-trained ensemble.")
     parser.add_argument("-d", "--dataset-dir", type=str, default="estimator/area/dataset",
                         help="The dataset directory.")
-    parser.add_argument("-m", "--model_dir", type=str, default=None,
+    parser.add_argument("-m", "--model-dir", type=str, default=None,
                         help="Path to the directory containing the trained models and associated metadata.")
     parser.add_argument("-b", "--batch-size", type=int, default=32,
                         help="The batch size.")

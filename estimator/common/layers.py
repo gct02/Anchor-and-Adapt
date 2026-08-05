@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from torch.nn.parameter import Parameter
 from torch.nn.modules import Module, Dropout
-from torch.nn.modules.container import Sequential, ModuleList, ModuleDict
+from torch.nn.modules.container import Sequential, ModuleDict
 from torch.nn.modules.activation import GELU
 
 from torch_geometric.nn.conv import MessagePassing

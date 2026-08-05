@@ -1,6 +1,5 @@
 import random
 import os
-from dataclasses import dataclass
 from typing import (
     Dict, List, Tuple, Union, Set, Type,
     Optional, Any, Iterable, Callable
@@ -9,7 +8,6 @@ from typing import (
 import numpy as np
 import torch
 import torch.nn as nn
-from torch import Tensor
 from torch.optim import Optimizer, AdamW
 from torch.optim.lr_scheduler import (
     LRScheduler, 
@@ -24,15 +22,7 @@ from estimator.common.dataset import BaseDataset
 from estimator.common.sampler import BalancedBenchmarkSampler
 from estimator.common.losses import GroupWiseRankingLoss
 from estimator.common.constants import BENCHMARKS, BENCHMARK_INDEX_MAP
-
-
-@dataclass
-class EvalReport:
-    indices: List[int]
-    preds: Union[Tensor, List[float]]
-    targets: Union[Tensor, List[float]]
-    errors: Union[Tensor, List[float]]
-    smape: float
+from estimator.common.parsers import EvalReport
 
 
 def set_random_seeds(seed: int):

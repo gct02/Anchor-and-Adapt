@@ -26,8 +26,7 @@ BRAM_18K_BITS = 18432
 LUTRAM_THRESHOLD = 1024
 
 DIRECTIVES = [
-    "array_partition", "loop_flatten", "loop_merge",
-    "pipeline", "unroll"
+    "array_partition", "loop_flatten", "loop_merge", "pipeline", "unroll"
 ]
 
 BENCHMARKS = [

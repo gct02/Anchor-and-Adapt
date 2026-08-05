@@ -149,7 +149,7 @@ def main(args):
 
     metrics, directives = collate_data_for_analysis(
         dataset_dir, benchmark,
-        dct_config_path=directive_config_path
+        directives_config_path=directive_config_path
     )   
     visualize_data(
         metrics, benchmark, x_data, y_data, directives=directives,
