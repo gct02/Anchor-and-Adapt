@@ -25,24 +25,18 @@ llvm/clang_plugins/
 # Ignore everything with this prefix
 ___*
 
-/data/anchor_solutions/
-/figures/data/
+data/anchor_solutions/
+
 /baselines/
 /tests/
+/results_temp/
 
 dataset/
 models/
 
+/scripts/shap/
+/scripts/analysis/
+
 hls_utils/*.tcl
 vitis_hls.log
 hls.app
-
-/*.tar.gz
-
-# Some preliminary experiments
-/results_temp
-
-data/benchmarks/synthetic/
-data/directives/synthetic/
-data_gen/bench_gen/
-figures/
